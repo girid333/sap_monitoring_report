@@ -1,0 +1,1707 @@
+
+**** Log file opened at 2026-05-11 17:44:33.253748 UTC+05:30 (UTC), Encoding UTF-8
+NW RFC Library: SDK variant, Release 750 Patch Level 18
+Compilation date          : Dec  2 2025 15:53:22
+CPIC library              : 754.2025.08.18 version 3
+NI library                : 40
+Kernel Release            : 754 Patch Level 627
+Current working directory : /Users/giri/Antigravity/sap_monitoring/backend
+Program                   : Python
+Process ID                : 31591
+User                      : giri
+Hardware                  : Apple Macintosh with Mac OS X (Darwin) Apple Silicon arm64 arm64
+Operating_system          : Darwin 25.4.0
+Hostname                  : RLPDWRQWVH
+IP address                : 
+IPv6 address              : 
+NI IPv6 status            : inactive
+Global trace level        : 0 : None
+
+2026-05-11 17:44:33.254053 [8451496128] >> Info entry
+	Did not find config file /Users/giri/Antigravity/sap_monitoring/backend/sapnwrfc.ini.
+2026-05-11 17:47:32.449237 [8451496128] >> Error entry
+	[Handle: 42863542272	ConvID: 	Target: 	SysID: 	SysNr: 	User: 	Codepage: 4103]
+	RfcCommunicationException: Return Value: 20, Code: RFC_COMMUNICATION_FAILURE, Message: 
+LOCATION    CPIC (TCP/IP) on local host with Unicode
+ERROR       partner '192.168.0.189:3300' not reached
+TIME        Mon May 11 17:47:32 2026
+RELEASE     754
+COMPONENT   NI (network interface)
+VERSION     40
+RC          -10
+MODULE      /bas/754_REL/src/base/ni/nixxi.cpp
+LINE        3458
+DETAIL      NiPConnect2: 192.168.0.189:3300
+SYSTEM CALL connect
+ERRNO       61
+ERRNO TEXT  Connection refused
+COUNTER     8
+
+
+**** Log file opened at 2026-05-12 18:18:38.034115 UTC+05:30 (UTC), Encoding UTF-8
+NW RFC Library: SDK variant, Release 750 Patch Level 18
+Compilation date          : Dec  2 2025 15:53:22
+CPIC library              : 754.2025.08.18 version 3
+NI library                : 40
+Kernel Release            : 754 Patch Level 627
+Current working directory : /Users/giri/Antigravity/sap_monitoring/backend
+Program                   : Python
+Process ID                : 85288
+User                      : giri
+Hardware                  : Apple Macintosh with Mac OS X (Darwin) Apple Silicon arm64 arm64
+Operating_system          : Darwin 25.4.0
+Hostname                  : RLPDWRQWVH
+IP address                : 
+IPv6 address              : 
+NI IPv6 status            : inactive
+Global trace level        : 0 : None
+
+2026-05-12 18:18:38.032597 [8451496128] >> Info entry
+	throwRfcErrorMsg called at:
+[Thr 8451496128] ------------------ C-STACK ----------------------
+[Thr 8451496128] ------------------ c-stack end ------------------
+
+
+**** Log file opened at 2026-05-12 18:43:20.756333 UTC+05:30 (UTC), Encoding UTF-8
+NW RFC Library: SDK variant, Release 750 Patch Level 18
+Compilation date          : Dec  2 2025 15:53:22
+CPIC library              : 754.2025.08.18 version 3
+NI library                : 40
+Kernel Release            : 754 Patch Level 627
+Current working directory : /Users/giri/Antigravity/sap_monitoring/backend
+Program                   : Python
+Process ID                : 87512
+User                      : giri
+Hardware                  : Apple Macintosh with Mac OS X (Darwin) Apple Silicon arm64 arm64
+Operating_system          : Darwin 25.4.0
+Hostname                  : RLPDWRQWVH
+IP address                : 
+IPv6 address              : 
+NI IPv6 status            : inactive
+Global trace level        : 0 : None
+
+2026-05-12 18:43:20.755593 [8451496128] >> Info entry
+	throwRfcErrorMsg called at:
+[Thr 8451496128] ------------------ C-STACK ----------------------
+[Thr 8451496128] ------------------ c-stack end ------------------
+
+
+**** Log file opened at 2026-05-12 19:18:47.984828 UTC+05:30 (UTC), Encoding UTF-8
+NW RFC Library: SDK variant, Release 750 Patch Level 18
+Compilation date          : Dec  2 2025 15:53:22
+CPIC library              : 754.2025.08.18 version 3
+NI library                : 40
+Kernel Release            : 754 Patch Level 627
+Current working directory : /Users/giri/Antigravity/sap_monitoring/backend
+Program                   : Python
+Process ID                : 89204
+User                      : giri
+Hardware                  : Apple Macintosh with Mac OS X (Darwin) Apple Silicon arm64 arm64
+Operating_system          : Darwin 25.4.0
+Hostname                  : RLPDWRQWVH
+IP address                : 
+IPv6 address              : 
+NI IPv6 status            : inactive
+Global trace level        : 0 : None
+
+2026-05-12 19:18:47.984124 [8451496128] >> Info entry
+	throwRfcErrorMsg called at:
+[Thr 8451496128] ------------------ C-STACK ----------------------
+[Thr 8451496128] ------------------ c-stack end ------------------
+
+
+**** Log file opened at 2026-05-12 19:22:51.256420 UTC+05:30 (UTC), Encoding UTF-8
+NW RFC Library: SDK variant, Release 750 Patch Level 18
+Compilation date          : Dec  2 2025 15:53:22
+CPIC library              : 754.2025.08.18 version 3
+NI library                : 40
+Kernel Release            : 754 Patch Level 627
+Current working directory : /Users/giri/Antigravity/sap_monitoring/backend
+Program                   : Python
+Process ID                : 89633
+User                      : giri
+Hardware                  : Apple Macintosh with Mac OS X (Darwin) Apple Silicon arm64 arm64
+Operating_system          : Darwin 25.4.0
+Hostname                  : RLPDWRQWVH
+IP address                : 
+IPv6 address              : 
+NI IPv6 status            : inactive
+Global trace level        : 0 : None
+
+2026-05-12 19:22:51.255331 [8451496128] >> Info entry
+	throwRfcErrorMsg called at:
+[Thr 8451496128] ------------------ C-STACK ----------------------
+[Thr 8451496128] ------------------ c-stack end ------------------
+
+
+**** Log file opened at 2026-05-12 19:30:05.242850 UTC+05:30 (UTC), Encoding UTF-8
+NW RFC Library: SDK variant, Release 750 Patch Level 18
+Compilation date          : Dec  2 2025 15:53:22
+CPIC library              : 754.2025.08.18 version 3
+NI library                : 40
+Kernel Release            : 754 Patch Level 627
+Current working directory : /Users/giri/Antigravity/sap_monitoring/backend
+Program                   : Python
+Process ID                : 90244
+User                      : giri
+Hardware                  : Apple Macintosh with Mac OS X (Darwin) Apple Silicon arm64 arm64
+Operating_system          : Darwin 25.4.0
+Hostname                  : RLPDWRQWVH
+IP address                : 
+IPv6 address              : 
+NI IPv6 status            : inactive
+Global trace level        : 0 : None
+
+2026-05-12 19:30:05.242172 [8451496128] >> Info entry
+	throwRfcErrorMsg called at:
+[Thr 8451496128] ------------------ C-STACK ----------------------
+[Thr 8451496128] ------------------ c-stack end ------------------
+
+
+**** Log file opened at 2026-05-12 19:37:40.505796 UTC+05:30 (UTC), Encoding UTF-8
+NW RFC Library: SDK variant, Release 750 Patch Level 18
+Compilation date          : Dec  2 2025 15:53:22
+CPIC library              : 754.2025.08.18 version 3
+NI library                : 40
+Kernel Release            : 754 Patch Level 627
+Current working directory : /Users/giri/Antigravity/sap_monitoring/backend
+Program                   : Python
+Process ID                : 90703
+User                      : giri
+Hardware                  : Apple Macintosh with Mac OS X (Darwin) Apple Silicon arm64 arm64
+Operating_system          : Darwin 25.4.0
+Hostname                  : RLPDWRQWVH
+IP address                : 
+IPv6 address              : 
+NI IPv6 status            : inactive
+Global trace level        : 0 : None
+
+2026-05-12 19:37:40.505027 [8451496128] >> Info entry
+	throwRfcErrorMsg called at:
+[Thr 8451496128] ------------------ C-STACK ----------------------
+[Thr 8451496128] ------------------ c-stack end ------------------
+
+
+**** Log file opened at 2026-05-12 19:50:05.114206 UTC+05:30 (UTC), Encoding UTF-8
+NW RFC Library: SDK variant, Release 750 Patch Level 18
+Compilation date          : Dec  2 2025 15:53:22
+CPIC library              : 754.2025.08.18 version 3
+NI library                : 40
+Kernel Release            : 754 Patch Level 627
+Current working directory : /Users/giri/Antigravity/sap_monitoring/backend
+Program                   : Python
+Process ID                : 91381
+User                      : giri
+Hardware                  : Apple Macintosh with Mac OS X (Darwin) Apple Silicon arm64 arm64
+Operating_system          : Darwin 25.4.0
+Hostname                  : RLPDWRQWVH
+IP address                : 
+IPv6 address              : 
+NI IPv6 status            : inactive
+Global trace level        : 0 : None
+
+2026-05-12 19:50:05.110459 [8451496128] >> Info entry
+	throwRfcErrorMsg called at:
+[Thr 8451496128] ------------------ C-STACK ----------------------
+[Thr 8451496128] ------------------ c-stack end ------------------
+
+
+**** Log file opened at 2026-05-12 19:55:30.796972 UTC+05:30 (UTC), Encoding UTF-8
+NW RFC Library: SDK variant, Release 750 Patch Level 18
+Compilation date          : Dec  2 2025 15:53:22
+CPIC library              : 754.2025.08.18 version 3
+NI library                : 40
+Kernel Release            : 754 Patch Level 627
+Current working directory : /Users/giri/Antigravity/sap_monitoring/backend
+Program                   : Python
+Process ID                : 92026
+User                      : giri
+Hardware                  : Apple Macintosh with Mac OS X (Darwin) Apple Silicon arm64 arm64
+Operating_system          : Darwin 25.4.0
+Hostname                  : RLPDWRQWVH
+IP address                : 
+IPv6 address              : 
+NI IPv6 status            : inactive
+Global trace level        : 0 : None
+
+2026-05-12 19:55:30.796210 [8451496128] >> Info entry
+	throwRfcErrorMsg called at:
+[Thr 8451496128] ------------------ C-STACK ----------------------
+[Thr 8451496128] ------------------ c-stack end ------------------
+
+
+**** Log file opened at 2026-05-12 20:15:41.718664 UTC+05:30 (UTC), Encoding UTF-8
+NW RFC Library: SDK variant, Release 750 Patch Level 18
+Compilation date          : Dec  2 2025 15:53:22
+CPIC library              : 754.2025.08.18 version 3
+NI library                : 40
+Kernel Release            : 754 Patch Level 627
+Current working directory : /Users/giri/Antigravity/sap_monitoring/backend
+Program                   : Python
+Process ID                : 92946
+User                      : giri
+Hardware                  : Apple Macintosh with Mac OS X (Darwin) Apple Silicon arm64 arm64
+Operating_system          : Darwin 25.4.0
+Hostname                  : RLPDWRQWVH
+IP address                : 
+IPv6 address              : 
+NI IPv6 status            : inactive
+Global trace level        : 0 : None
+
+2026-05-12 20:15:41.718028 [8451496128] >> Info entry
+	throwRfcErrorMsg called at:
+[Thr 8451496128] ------------------ C-STACK ----------------------
+[Thr 8451496128] ------------------ c-stack end ------------------
+
+
+**** Log file opened at 2026-05-12 20:24:22.636106 UTC+05:30 (UTC), Encoding UTF-8
+NW RFC Library: SDK variant, Release 750 Patch Level 18
+Compilation date          : Dec  2 2025 15:53:22
+CPIC library              : 754.2025.08.18 version 3
+NI library                : 40
+Kernel Release            : 754 Patch Level 627
+Current working directory : /Users/giri/Antigravity/sap_monitoring/backend
+Program                   : Python
+Process ID                : 93418
+User                      : giri
+Hardware                  : Apple Macintosh with Mac OS X (Darwin) Apple Silicon arm64 arm64
+Operating_system          : Darwin 25.4.0
+Hostname                  : RLPDWRQWVH
+IP address                : 
+IPv6 address              : 
+NI IPv6 status            : inactive
+Global trace level        : 0 : None
+
+2026-05-12 20:24:22.635647 [8451496128] >> Info entry
+	throwRfcErrorMsg called at:
+[Thr 8451496128] ------------------ C-STACK ----------------------
+[Thr 8451496128] ------------------ c-stack end ------------------
+
+
+**** Log file opened at 2026-05-12 20:41:42.938123 UTC+05:30 (UTC), Encoding UTF-8
+NW RFC Library: SDK variant, Release 750 Patch Level 18
+Compilation date          : Dec  2 2025 15:53:22
+CPIC library              : 754.2025.08.18 version 3
+NI library                : 40
+Kernel Release            : 754 Patch Level 627
+Current working directory : /Users/giri/Antigravity/sap_monitoring/backend
+Program                   : Python
+Process ID                : 94621
+User                      : giri
+Hardware                  : Apple Macintosh with Mac OS X (Darwin) Apple Silicon arm64 arm64
+Operating_system          : Darwin 25.4.0
+Hostname                  : RLPDWRQWVH
+IP address                : 
+IPv6 address              : 
+NI IPv6 status            : inactive
+Global trace level        : 0 : None
+
+2026-05-12 20:41:42.937362 [8451496128] >> Info entry
+	throwRfcErrorMsg called at:
+[Thr 8451496128] ------------------ C-STACK ----------------------
+[Thr 8451496128] ------------------ c-stack end ------------------
+
+
+**** Log file opened at 2026-05-13 09:48:00.467910 UTC+05:30 (UTC), Encoding UTF-8
+NW RFC Library: SDK variant, Release 750 Patch Level 18
+Compilation date          : Dec  2 2025 15:53:22
+CPIC library              : 754.2025.08.18 version 3
+NI library                : 40
+Kernel Release            : 754 Patch Level 627
+Current working directory : /Users/giri/Antigravity/sap_monitoring/backend
+Program                   : Python
+Process ID                : 80954
+User                      : giri
+Hardware                  : Apple Macintosh with Mac OS X (Darwin) Apple Silicon arm64 arm64
+Operating_system          : Darwin 25.4.0
+Hostname                  : RLPDWRQWVH
+IP address                : 
+IPv6 address              : 
+NI IPv6 status            : inactive
+Global trace level        : 0 : None
+
+2026-05-13 09:48:00.466898 [8451496128] >> Info entry
+	throwRfcErrorMsg called at:
+[Thr 8451496128] ------------------ C-STACK ----------------------
+[Thr 8451496128] ------------------ c-stack end ------------------
+
+
+**** Log file opened at 2026-05-13 10:41:13.200479 UTC+05:30 (UTC), Encoding UTF-8
+NW RFC Library: SDK variant, Release 750 Patch Level 18
+Compilation date          : Dec  2 2025 15:53:22
+CPIC library              : 754.2025.08.18 version 3
+NI library                : 40
+Kernel Release            : 754 Patch Level 627
+Current working directory : /Users/giri/Antigravity/sap_monitoring/backend
+Program                   : Python
+Process ID                : 83096
+User                      : giri
+Hardware                  : Apple Macintosh with Mac OS X (Darwin) Apple Silicon arm64 arm64
+Operating_system          : Darwin 25.4.0
+Hostname                  : RLPDWRQWVH
+IP address                : 
+IPv6 address              : 
+NI IPv6 status            : inactive
+Global trace level        : 0 : None
+
+2026-05-13 10:41:13.199620 [8451496128] >> Info entry
+	throwRfcErrorMsg called at:
+[Thr 8451496128] ------------------ C-STACK ----------------------
+[Thr 8451496128] ------------------ c-stack end ------------------
+
+
+**** Log file opened at 2026-05-13 10:55:22.859782 UTC+05:30 (UTC), Encoding UTF-8
+NW RFC Library: SDK variant, Release 750 Patch Level 18
+Compilation date          : Dec  2 2025 15:53:22
+CPIC library              : 754.2025.08.18 version 3
+NI library                : 40
+Kernel Release            : 754 Patch Level 627
+Current working directory : /Users/giri/Antigravity/sap_monitoring/backend
+Program                   : Python
+Process ID                : 83853
+User                      : giri
+Hardware                  : Apple Macintosh with Mac OS X (Darwin) Apple Silicon arm64 arm64
+Operating_system          : Darwin 25.4.0
+Hostname                  : RLPDWRQWVH
+IP address                : 
+IPv6 address              : 
+NI IPv6 status            : inactive
+Global trace level        : 0 : None
+
+2026-05-13 10:55:22.858447 [8451496128] >> Info entry
+	throwRfcErrorMsg called at:
+[Thr 8451496128] ------------------ C-STACK ----------------------
+[Thr 8451496128] ------------------ c-stack end ------------------
+
+
+**** Log file opened at 2026-05-13 11:10:27.927648 UTC+05:30 (UTC), Encoding UTF-8
+NW RFC Library: SDK variant, Release 750 Patch Level 18
+Compilation date          : Dec  2 2025 15:53:22
+CPIC library              : 754.2025.08.18 version 3
+NI library                : 40
+Kernel Release            : 754 Patch Level 627
+Current working directory : /Users/giri/Antigravity/sap_monitoring/backend
+Program                   : Python
+Process ID                : 84854
+User                      : giri
+Hardware                  : Apple Macintosh with Mac OS X (Darwin) Apple Silicon arm64 arm64
+Operating_system          : Darwin 25.4.0
+Hostname                  : RLPDWRQWVH
+IP address                : 
+IPv6 address              : 
+NI IPv6 status            : inactive
+Global trace level        : 0 : None
+
+2026-05-13 11:10:27.926874 [8451496128] >> Info entry
+	throwRfcErrorMsg called at:
+[Thr 8451496128] ------------------ C-STACK ----------------------
+[Thr 8451496128] ------------------ c-stack end ------------------
+
+
+**** Log file opened at 2026-05-13 11:29:42.144221 UTC+05:30 (UTC), Encoding UTF-8
+NW RFC Library: SDK variant, Release 750 Patch Level 18
+Compilation date          : Dec  2 2025 15:53:22
+CPIC library              : 754.2025.08.18 version 3
+NI library                : 40
+Kernel Release            : 754 Patch Level 627
+Current working directory : /Users/giri/Antigravity/sap_monitoring/backend
+Program                   : Python
+Process ID                : 85803
+User                      : giri
+Hardware                  : Apple Macintosh with Mac OS X (Darwin) Apple Silicon arm64 arm64
+Operating_system          : Darwin 25.4.0
+Hostname                  : RLPDWRQWVH
+IP address                : 
+IPv6 address              : 
+NI IPv6 status            : inactive
+Global trace level        : 0 : None
+
+2026-05-13 11:29:42.143306 [8451496128] >> Info entry
+	throwRfcErrorMsg called at:
+[Thr 8451496128] ------------------ C-STACK ----------------------
+[Thr 8451496128] ------------------ c-stack end ------------------
+
+
+**** Log file opened at 2026-05-13 11:59:30.336494 UTC+05:30 (UTC), Encoding UTF-8
+NW RFC Library: SDK variant, Release 750 Patch Level 18
+Compilation date          : Dec  2 2025 15:53:22
+CPIC library              : 754.2025.08.18 version 3
+NI library                : 40
+Kernel Release            : 754 Patch Level 627
+Current working directory : /Users/giri/Antigravity/sap_monitoring/backend
+Program                   : Python
+Process ID                : 87119
+User                      : giri
+Hardware                  : Apple Macintosh with Mac OS X (Darwin) Apple Silicon arm64 arm64
+Operating_system          : Darwin 25.4.0
+Hostname                  : RLPDWRQWVH
+IP address                : 
+IPv6 address              : 
+NI IPv6 status            : inactive
+Global trace level        : 0 : None
+
+2026-05-13 11:59:30.335835 [8451496128] >> Info entry
+	throwRfcErrorMsg called at:
+[Thr 8451496128] ------------------ C-STACK ----------------------
+[Thr 8451496128] ------------------ c-stack end ------------------
+
+
+**** Log file opened at 2026-05-13 12:18:00.073785 UTC+05:30 (UTC), Encoding UTF-8
+NW RFC Library: SDK variant, Release 750 Patch Level 18
+Compilation date          : Dec  2 2025 15:53:22
+CPIC library              : 754.2025.08.18 version 3
+NI library                : 40
+Kernel Release            : 754 Patch Level 627
+Current working directory : /Users/giri/Antigravity/sap_monitoring/backend
+Program                   : Python
+Process ID                : 88013
+User                      : giri
+Hardware                  : Apple Macintosh with Mac OS X (Darwin) Apple Silicon arm64 arm64
+Operating_system          : Darwin 25.4.0
+Hostname                  : RLPDWRQWVH
+IP address                : 
+IPv6 address              : 
+NI IPv6 status            : inactive
+Global trace level        : 0 : None
+
+2026-05-13 12:18:00.073154 [8451496128] >> Info entry
+	throwRfcErrorMsg called at:
+[Thr 8451496128] ------------------ C-STACK ----------------------
+[Thr 8451496128] ------------------ c-stack end ------------------
+
+
+**** Log file opened at 2026-05-13 12:29:06.154808 UTC+05:30 (UTC), Encoding UTF-8
+NW RFC Library: SDK variant, Release 750 Patch Level 18
+Compilation date          : Dec  2 2025 15:53:22
+CPIC library              : 754.2025.08.18 version 3
+NI library                : 40
+Kernel Release            : 754 Patch Level 627
+Current working directory : /Users/giri/Antigravity/sap_monitoring/backend
+Program                   : Python
+Process ID                : 88721
+User                      : giri
+Hardware                  : Apple Macintosh with Mac OS X (Darwin) Apple Silicon arm64 arm64
+Operating_system          : Darwin 25.4.0
+Hostname                  : RLPDWRQWVH
+IP address                : 
+IPv6 address              : 
+NI IPv6 status            : inactive
+Global trace level        : 0 : None
+
+2026-05-13 12:29:06.154214 [8451496128] >> Info entry
+	throwRfcErrorMsg called at:
+[Thr 8451496128] ------------------ C-STACK ----------------------
+[Thr 8451496128] ------------------ c-stack end ------------------
+
+
+**** Log file opened at 2026-05-13 13:08:52.302465 UTC+05:30 (UTC), Encoding UTF-8
+NW RFC Library: SDK variant, Release 750 Patch Level 18
+Compilation date          : Dec  2 2025 15:53:22
+CPIC library              : 754.2025.08.18 version 3
+NI library                : 40
+Kernel Release            : 754 Patch Level 627
+Current working directory : /Users/giri/Antigravity/sap_monitoring/backend
+Program                   : Python
+Process ID                : 90428
+User                      : giri
+Hardware                  : Apple Macintosh with Mac OS X (Darwin) Apple Silicon arm64 arm64
+Operating_system          : Darwin 25.4.0
+Hostname                  : RLPDWRQWVH
+IP address                : 
+IPv6 address              : 
+NI IPv6 status            : inactive
+Global trace level        : 0 : None
+
+2026-05-13 13:08:52.301838 [8451496128] >> Info entry
+	throwRfcErrorMsg called at:
+[Thr 8451496128] ------------------ C-STACK ----------------------
+[Thr 8451496128] ------------------ c-stack end ------------------
+
+
+**** Log file opened at 2026-05-13 21:35:16.275056 UTC+05:30 (UTC), Encoding UTF-8
+NW RFC Library: SDK variant, Release 750 Patch Level 18
+Compilation date          : Dec  2 2025 15:53:22
+CPIC library              : 754.2025.08.18 version 3
+NI library                : 40
+Kernel Release            : 754 Patch Level 627
+Current working directory : /Users/giri/Antigravity/sap_monitoring/backend
+Program                   : Python
+Process ID                : 11686
+User                      : giri
+Hardware                  : Apple Macintosh with Mac OS X (Darwin) Apple Silicon arm64 arm64
+Operating_system          : Darwin 25.4.0
+Hostname                  : RLPDWRQWVH
+IP address                : 
+IPv6 address              : 
+NI IPv6 status            : inactive
+Global trace level        : 0 : None
+
+2026-05-13 21:35:16.274607 [8451496128] >> Info entry
+	throwRfcErrorMsg called at:
+[Thr 8451496128] ------------------ C-STACK ----------------------
+[Thr 8451496128] ------------------ c-stack end ------------------
+
+
+**** Log file opened at 2026-05-13 23:48:25.977640 UTC+05:30 (UTC), Encoding UTF-8
+NW RFC Library: SDK variant, Release 750 Patch Level 18
+Compilation date          : Dec  2 2025 15:53:22
+CPIC library              : 754.2025.08.18 version 3
+NI library                : 40
+Kernel Release            : 754 Patch Level 627
+Current working directory : /Users/giri/Antigravity/sap_monitoring/backend
+Program                   : Python
+Process ID                : 17474
+User                      : giri
+Hardware                  : Apple Macintosh with Mac OS X (Darwin) Apple Silicon arm64 arm64
+Operating_system          : Darwin 25.4.0
+Hostname                  : RLPDWRQWVH
+IP address                : 
+IPv6 address              : 
+NI IPv6 status            : inactive
+Global trace level        : 0 : None
+
+2026-05-13 23:48:25.976888 [8451496128] >> Info entry
+	throwRfcErrorMsg called at:
+[Thr 8451496128] ------------------ C-STACK ----------------------
+[Thr 8451496128] ------------------ c-stack end ------------------
+
+
+**** Log file opened at 2026-05-14 16:26:10.704499 UTC+05:30 (UTC), Encoding UTF-8
+NW RFC Library: SDK variant, Release 750 Patch Level 18
+Compilation date          : Dec  2 2025 15:53:22
+CPIC library              : 754.2025.08.18 version 3
+NI library                : 40
+Kernel Release            : 754 Patch Level 627
+Current working directory : /Users/giri/Antigravity/sap_monitoring/backend
+Program                   : Python
+Process ID                : 52970
+User                      : giri
+Hardware                  : Apple Macintosh with Mac OS X (Darwin) Apple Silicon arm64 arm64
+Operating_system          : Darwin 25.4.0
+Hostname                  : RLPDWRQWVH
+IP address                : 
+IPv6 address              : 
+NI IPv6 status            : inactive
+Global trace level        : 0 : None
+
+2026-05-14 16:26:10.693220 [8451496128] >> Info entry
+	throwRfcErrorMsg called at:
+[Thr 8451496128] ------------------ C-STACK ----------------------
+[Thr 8451496128] ------------------ c-stack end ------------------
+
+
+**** Log file opened at 2026-05-14 19:01:26.117127 UTC+05:30 (UTC), Encoding UTF-8
+NW RFC Library: SDK variant, Release 750 Patch Level 18
+Compilation date          : Dec  2 2025 15:53:22
+CPIC library              : 754.2025.08.18 version 3
+NI library                : 40
+Kernel Release            : 754 Patch Level 627
+Current working directory : /Users/giri/Antigravity/sap_monitoring/backend
+Program                   : Python
+Process ID                : 58159
+User                      : giri
+Hardware                  : Apple Macintosh with Mac OS X (Darwin) Apple Silicon arm64 arm64
+Operating_system          : Darwin 25.4.0
+Hostname                  : RLPDWRQWVH
+IP address                : 
+IPv6 address              : 
+NI IPv6 status            : inactive
+Global trace level        : 0 : None
+
+2026-05-14 19:01:26.115860 [8451496128] >> Info entry
+	throwRfcErrorMsg called at:
+[Thr 8451496128] ------------------ C-STACK ----------------------
+[Thr 8451496128] ------------------ c-stack end ------------------
+
+
+**** Log file opened at 2026-05-14 20:32:54.499172 UTC+05:30 (UTC), Encoding UTF-8
+NW RFC Library: SDK variant, Release 750 Patch Level 18
+Compilation date          : Dec  2 2025 15:53:22
+CPIC library              : 754.2025.08.18 version 3
+NI library                : 40
+Kernel Release            : 754 Patch Level 627
+Current working directory : /Users/giri/Antigravity/sap_monitoring/backend
+Program                   : Python
+Process ID                : 64001
+User                      : giri
+Hardware                  : Apple Macintosh with Mac OS X (Darwin) Apple Silicon arm64 arm64
+Operating_system          : Darwin 25.4.0
+Hostname                  : RLPDWRQWVH
+IP address                : 
+IPv6 address              : 
+NI IPv6 status            : inactive
+Global trace level        : 0 : None
+
+2026-05-14 20:32:54.497992 [8451496128] >> Info entry
+	throwRfcErrorMsg called at:
+[Thr 8451496128] ------------------ C-STACK ----------------------
+[Thr 8451496128] ------------------ c-stack end ------------------
+
+
+**** Log file opened at 2026-05-14 23:10:13.567777 UTC+05:30 (UTC), Encoding UTF-8
+NW RFC Library: SDK variant, Release 750 Patch Level 18
+Compilation date          : Dec  2 2025 15:53:22
+CPIC library              : 754.2025.08.18 version 3
+NI library                : 40
+Kernel Release            : 754 Patch Level 627
+Current working directory : /Users/giri/Antigravity/sap_monitoring/backend
+Program                   : Python
+Process ID                : 71049
+User                      : giri
+Hardware                  : Apple Macintosh with Mac OS X (Darwin) Apple Silicon arm64 arm64
+Operating_system          : Darwin 25.4.0
+Hostname                  : RLPDWRQWVH
+IP address                : 
+IPv6 address              : 
+NI IPv6 status            : inactive
+Global trace level        : 0 : None
+
+2026-05-14 23:10:13.566962 [8451496128] >> Info entry
+	throwRfcErrorMsg called at:
+[Thr 8451496128] ------------------ C-STACK ----------------------
+[Thr 8451496128] ------------------ c-stack end ------------------
+
+
+**** Log file opened at 2026-05-14 23:30:17.869414 UTC+05:30 (UTC), Encoding UTF-8
+NW RFC Library: SDK variant, Release 750 Patch Level 18
+Compilation date          : Dec  2 2025 15:53:22
+CPIC library              : 754.2025.08.18 version 3
+NI library                : 40
+Kernel Release            : 754 Patch Level 627
+Current working directory : /Users/giri/Antigravity/sap_monitoring/backend
+Program                   : Python
+Process ID                : 72034
+User                      : giri
+Hardware                  : Apple Macintosh with Mac OS X (Darwin) Apple Silicon arm64 arm64
+Operating_system          : Darwin 25.4.0
+Hostname                  : RLPDWRQWVH
+IP address                : 
+IPv6 address              : 
+NI IPv6 status            : inactive
+Global trace level        : 0 : None
+
+2026-05-14 23:30:17.868324 [8451496128] >> Info entry
+	throwRfcErrorMsg called at:
+[Thr 8451496128] ------------------ C-STACK ----------------------
+[Thr 8451496128] ------------------ c-stack end ------------------
+
+
+**** Log file opened at 2026-05-14 23:39:01.495059 UTC+05:30 (UTC), Encoding UTF-8
+NW RFC Library: SDK variant, Release 750 Patch Level 18
+Compilation date          : Dec  2 2025 15:53:22
+CPIC library              : 754.2025.08.18 version 3
+NI library                : 40
+Kernel Release            : 754 Patch Level 627
+Current working directory : /Users/giri/Antigravity/sap_monitoring/backend
+Program                   : Python
+Process ID                : 72740
+User                      : giri
+Hardware                  : Apple Macintosh with Mac OS X (Darwin) Apple Silicon arm64 arm64
+Operating_system          : Darwin 25.4.0
+Hostname                  : RLPDWRQWVH
+IP address                : 
+IPv6 address              : 
+NI IPv6 status            : inactive
+Global trace level        : 0 : None
+
+2026-05-14 23:39:01.494304 [8451496128] >> Info entry
+	throwRfcErrorMsg called at:
+[Thr 8451496128] ------------------ C-STACK ----------------------
+[Thr 8451496128] ------------------ c-stack end ------------------
+
+
+**** Log file opened at 2026-05-15 11:22:11.387984 UTC+05:30 (UTC), Encoding UTF-8
+NW RFC Library: SDK variant, Release 750 Patch Level 18
+Compilation date          : Dec  2 2025 15:53:22
+CPIC library              : 754.2025.08.18 version 3
+NI library                : 40
+Kernel Release            : 754 Patch Level 627
+Current working directory : /Users/giri/Antigravity/sap_monitoring/backend
+Program                   : Python
+Process ID                : 96288
+User                      : giri
+Hardware                  : Apple Macintosh with Mac OS X (Darwin) Apple Silicon arm64 arm64
+Operating_system          : Darwin 25.4.0
+Hostname                  : RLPDWRQWVH
+IP address                : 
+IPv6 address              : 
+NI IPv6 status            : inactive
+Global trace level        : 0 : None
+
+2026-05-15 11:22:11.386887 [8451496128] >> Info entry
+	throwRfcErrorMsg called at:
+[Thr 8451496128] ------------------ C-STACK ----------------------
+[Thr 8451496128] ------------------ c-stack end ------------------
+
+
+**** Log file opened at 2026-05-15 11:35:35.068653 UTC+05:30 (UTC), Encoding UTF-8
+NW RFC Library: SDK variant, Release 750 Patch Level 18
+Compilation date          : Dec  2 2025 15:53:22
+CPIC library              : 754.2025.08.18 version 3
+NI library                : 40
+Kernel Release            : 754 Patch Level 627
+Current working directory : /Users/giri/Antigravity/sap_monitoring/backend
+Program                   : Python
+Process ID                : 97683
+User                      : giri
+Hardware                  : Apple Macintosh with Mac OS X (Darwin) Apple Silicon arm64 arm64
+Operating_system          : Darwin 25.4.0
+Hostname                  : RLPDWRQWVH
+IP address                : 
+IPv6 address              : 
+NI IPv6 status            : inactive
+Global trace level        : 0 : None
+
+2026-05-15 11:35:35.067833 [8451496128] >> Info entry
+	throwRfcErrorMsg called at:
+[Thr 8451496128] ------------------ C-STACK ----------------------
+[Thr 8451496128] ------------------ c-stack end ------------------
+
+
+**** Log file opened at 2026-05-15 12:25:21.136912 UTC+05:30 (UTC), Encoding UTF-8
+NW RFC Library: SDK variant, Release 750 Patch Level 18
+Compilation date          : Dec  2 2025 15:53:22
+CPIC library              : 754.2025.08.18 version 3
+NI library                : 40
+Kernel Release            : 754 Patch Level 627
+Current working directory : /Users/giri/Antigravity/sap_monitoring/backend
+Program                   : Python
+Process ID                : 99815
+User                      : giri
+Hardware                  : Apple Macintosh with Mac OS X (Darwin) Apple Silicon arm64 arm64
+Operating_system          : Darwin 25.4.0
+Hostname                  : RLPDWRQWVH
+IP address                : 
+IPv6 address              : 
+NI IPv6 status            : inactive
+Global trace level        : 0 : None
+
+2026-05-15 12:25:21.128928 [8451496128] >> Info entry
+	throwRfcErrorMsg called at:
+[Thr 8451496128] ------------------ C-STACK ----------------------
+[Thr 8451496128] ------------------ c-stack end ------------------
+
+
+**** Log file opened at 2026-05-15 12:44:43.237509 UTC+05:30 (UTC), Encoding UTF-8
+NW RFC Library: SDK variant, Release 750 Patch Level 18
+Compilation date          : Dec  2 2025 15:53:22
+CPIC library              : 754.2025.08.18 version 3
+NI library                : 40
+Kernel Release            : 754 Patch Level 627
+Current working directory : /Users/giri/Antigravity/sap_monitoring/backend
+Program                   : Python
+Process ID                : 01293
+User                      : giri
+Hardware                  : Apple Macintosh with Mac OS X (Darwin) Apple Silicon arm64 arm64
+Operating_system          : Darwin 25.4.0
+Hostname                  : RLPDWRQWVH
+IP address                : 
+IPv6 address              : 
+NI IPv6 status            : inactive
+Global trace level        : 0 : None
+
+2026-05-15 12:44:43.236689 [8451496128] >> Info entry
+	throwRfcErrorMsg called at:
+[Thr 8451496128] ------------------ C-STACK ----------------------
+[Thr 8451496128] ------------------ c-stack end ------------------
+
+
+**** Log file opened at 2026-05-15 13:02:09.898792 UTC+05:30 (UTC), Encoding UTF-8
+NW RFC Library: SDK variant, Release 750 Patch Level 18
+Compilation date          : Dec  2 2025 15:53:22
+CPIC library              : 754.2025.08.18 version 3
+NI library                : 40
+Kernel Release            : 754 Patch Level 627
+Current working directory : /Users/giri/Antigravity/sap_monitoring/backend
+Program                   : Python
+Process ID                : 02147
+User                      : giri
+Hardware                  : Apple Macintosh with Mac OS X (Darwin) Apple Silicon arm64 arm64
+Operating_system          : Darwin 25.4.0
+Hostname                  : RLPDWRQWVH
+IP address                : 
+IPv6 address              : 
+NI IPv6 status            : inactive
+Global trace level        : 0 : None
+
+2026-05-15 13:02:09.898178 [8451496128] >> Info entry
+	throwRfcErrorMsg called at:
+[Thr 8451496128] ------------------ C-STACK ----------------------
+[Thr 8451496128] ------------------ c-stack end ------------------
+
+
+**** Log file opened at 2026-05-15 14:54:40.562625 UTC+05:30 (UTC), Encoding UTF-8
+NW RFC Library: SDK variant, Release 750 Patch Level 18
+Compilation date          : Dec  2 2025 15:53:22
+CPIC library              : 754.2025.08.18 version 3
+NI library                : 40
+Kernel Release            : 754 Patch Level 627
+Current working directory : /Users/giri/Antigravity/sap_monitoring/backend
+Program                   : Python
+Process ID                : 06734
+User                      : giri
+Hardware                  : Apple Macintosh with Mac OS X (Darwin) Apple Silicon arm64 arm64
+Operating_system          : Darwin 25.4.0
+Hostname                  : RLPDWRQWVH
+IP address                : 
+IPv6 address              : 
+NI IPv6 status            : inactive
+Global trace level        : 0 : None
+
+2026-05-15 14:54:40.561956 [8451496128] >> Info entry
+	throwRfcErrorMsg called at:
+[Thr 8451496128] ------------------ C-STACK ----------------------
+[Thr 8451496128] ------------------ c-stack end ------------------
+
+
+**** Log file opened at 2026-05-15 15:29:00.162121 UTC+05:30 (UTC), Encoding UTF-8
+NW RFC Library: SDK variant, Release 750 Patch Level 18
+Compilation date          : Dec  2 2025 15:53:22
+CPIC library              : 754.2025.08.18 version 3
+NI library                : 40
+Kernel Release            : 754 Patch Level 627
+Current working directory : /Users/giri/Antigravity/sap_monitoring/backend
+Program                   : Python
+Process ID                : 07907
+User                      : giri
+Hardware                  : Apple Macintosh with Mac OS X (Darwin) Apple Silicon arm64 arm64
+Operating_system          : Darwin 25.4.0
+Hostname                  : RLPDWRQWVH
+IP address                : 
+IPv6 address              : 
+NI IPv6 status            : inactive
+Global trace level        : 0 : None
+
+2026-05-15 15:29:00.160891 [8451496128] >> Info entry
+	throwRfcErrorMsg called at:
+[Thr 8451496128] ------------------ C-STACK ----------------------
+[Thr 8451496128] ------------------ c-stack end ------------------
+
+
+**** Log file opened at 2026-05-15 21:42:12.576694 UTC+05:30 (UTC), Encoding UTF-8
+NW RFC Library: SDK variant, Release 750 Patch Level 18
+Compilation date          : Dec  2 2025 15:53:22
+CPIC library              : 754.2025.08.18 version 3
+NI library                : 40
+Kernel Release            : 754 Patch Level 627
+Current working directory : /Users/giri/Antigravity/sap_monitoring/backend
+Program                   : Python
+Process ID                : 22937
+User                      : giri
+Hardware                  : Apple Macintosh with Mac OS X (Darwin) Apple Silicon arm64 arm64
+Operating_system          : Darwin 25.4.0
+Hostname                  : RLPDWRQWVH
+IP address                : 
+IPv6 address              : 
+NI IPv6 status            : inactive
+Global trace level        : 0 : None
+
+2026-05-15 21:42:12.575893 [8451496128] >> Info entry
+	throwRfcErrorMsg called at:
+[Thr 8451496128] ------------------ C-STACK ----------------------
+[Thr 8451496128] ------------------ c-stack end ------------------
+
+
+**** Log file opened at 2026-05-15 21:55:01.084015 UTC+05:30 (UTC), Encoding UTF-8
+NW RFC Library: SDK variant, Release 750 Patch Level 18
+Compilation date          : Dec  2 2025 15:53:22
+CPIC library              : 754.2025.08.18 version 3
+NI library                : 40
+Kernel Release            : 754 Patch Level 627
+Current working directory : /Users/giri/Antigravity/sap_monitoring/backend
+Program                   : Python
+Process ID                : 23673
+User                      : giri
+Hardware                  : Apple Macintosh with Mac OS X (Darwin) Apple Silicon arm64 arm64
+Operating_system          : Darwin 25.4.0
+Hostname                  : RLPDWRQWVH
+IP address                : 
+IPv6 address              : 
+NI IPv6 status            : inactive
+Global trace level        : 0 : None
+
+2026-05-15 21:55:01.083355 [8451496128] >> Info entry
+	throwRfcErrorMsg called at:
+[Thr 8451496128] ------------------ C-STACK ----------------------
+[Thr 8451496128] ------------------ c-stack end ------------------
+
+
+**** Log file opened at 2026-05-15 22:03:57.969138 UTC+05:30 (UTC), Encoding UTF-8
+NW RFC Library: SDK variant, Release 750 Patch Level 18
+Compilation date          : Dec  2 2025 15:53:22
+CPIC library              : 754.2025.08.18 version 3
+NI library                : 40
+Kernel Release            : 754 Patch Level 627
+Current working directory : /Users/giri/Antigravity/sap_monitoring/backend
+Program                   : Python
+Process ID                : 24304
+User                      : giri
+Hardware                  : Apple Macintosh with Mac OS X (Darwin) Apple Silicon arm64 arm64
+Operating_system          : Darwin 25.4.0
+Hostname                  : RLPDWRQWVH
+IP address                : 
+IPv6 address              : 
+NI IPv6 status            : inactive
+Global trace level        : 0 : None
+
+2026-05-15 22:03:57.968492 [8451496128] >> Info entry
+	throwRfcErrorMsg called at:
+[Thr 8451496128] ------------------ C-STACK ----------------------
+[Thr 8451496128] ------------------ c-stack end ------------------
+
+
+**** Log file opened at 2026-05-15 22:32:17.346656 UTC+05:30 (UTC), Encoding UTF-8
+NW RFC Library: SDK variant, Release 750 Patch Level 18
+Compilation date          : Dec  2 2025 15:53:22
+CPIC library              : 754.2025.08.18 version 3
+NI library                : 40
+Kernel Release            : 754 Patch Level 627
+Current working directory : /Users/giri/Antigravity/sap_monitoring/backend
+Program                   : Python
+Process ID                : 25585
+User                      : giri
+Hardware                  : Apple Macintosh with Mac OS X (Darwin) Apple Silicon arm64 arm64
+Operating_system          : Darwin 25.4.0
+Hostname                  : RLPDWRQWVH
+IP address                : 
+IPv6 address              : 
+NI IPv6 status            : inactive
+Global trace level        : 0 : None
+
+2026-05-15 22:32:17.346017 [8451496128] >> Info entry
+	throwRfcErrorMsg called at:
+[Thr 8451496128] ------------------ C-STACK ----------------------
+[Thr 8451496128] ------------------ c-stack end ------------------
+
+
+**** Log file opened at 2026-05-16 00:05:17.347922 UTC+05:30 (UTC), Encoding UTF-8
+NW RFC Library: SDK variant, Release 750 Patch Level 18
+Compilation date          : Dec  2 2025 15:53:22
+CPIC library              : 754.2025.08.18 version 3
+NI library                : 40
+Kernel Release            : 754 Patch Level 627
+Current working directory : /Users/giri/Antigravity/sap_monitoring/backend
+Program                   : Python
+Process ID                : 29170
+User                      : giri
+Hardware                  : Apple Macintosh with Mac OS X (Darwin) Apple Silicon arm64 arm64
+Operating_system          : Darwin 25.4.0
+Hostname                  : RLPDWRQWVH
+IP address                : 
+IPv6 address              : 
+NI IPv6 status            : inactive
+Global trace level        : 0 : None
+
+2026-05-16 00:05:17.347360 [8451496128] >> Info entry
+	throwRfcErrorMsg called at:
+[Thr 8451496128] ------------------ C-STACK ----------------------
+[Thr 8451496128] ------------------ c-stack end ------------------
+
+
+**** Log file opened at 2026-05-16 00:15:56.666838 UTC+05:30 (UTC), Encoding UTF-8
+NW RFC Library: SDK variant, Release 750 Patch Level 18
+Compilation date          : Dec  2 2025 15:53:22
+CPIC library              : 754.2025.08.18 version 3
+NI library                : 40
+Kernel Release            : 754 Patch Level 627
+Current working directory : /Users/giri/Antigravity/sap_monitoring/backend
+Program                   : Python
+Process ID                : 29881
+User                      : giri
+Hardware                  : Apple Macintosh with Mac OS X (Darwin) Apple Silicon arm64 arm64
+Operating_system          : Darwin 25.4.0
+Hostname                  : RLPDWRQWVH
+IP address                : 
+IPv6 address              : 
+NI IPv6 status            : inactive
+Global trace level        : 0 : None
+
+2026-05-16 00:15:56.666142 [8451496128] >> Info entry
+	throwRfcErrorMsg called at:
+[Thr 8451496128] ------------------ C-STACK ----------------------
+[Thr 8451496128] ------------------ c-stack end ------------------
+
+
+**** Log file opened at 2026-05-19 14:55:42.273138 UTC+05:30 (UTC), Encoding UTF-8
+NW RFC Library: SDK variant, Release 750 Patch Level 18
+Compilation date          : Dec  2 2025 15:53:22
+CPIC library              : 754.2025.08.18 version 3
+NI library                : 40
+Kernel Release            : 754 Patch Level 627
+Current working directory : /Users/giri/Antigravity/sap_monitoring/backend
+Program                   : Python
+Process ID                : 19893
+User                      : giri
+Hardware                  : Apple Macintosh with Mac OS X (Darwin) Apple Silicon arm64 arm64
+Operating_system          : Darwin 25.4.0
+Hostname                  : RLPDWRQWVH
+IP address                : 
+IPv6 address              : 
+NI IPv6 status            : inactive
+Global trace level        : 0 : None
+
+2026-05-19 14:55:42.271373 [8427739328] >> Info entry
+	throwRfcErrorMsg called at:
+[Thr 8427739328] ------------------ C-STACK ----------------------
+[Thr 8427739328] ------------------ c-stack end ------------------
+
+
+**** Log file opened at 2026-05-19 17:47:25.629861 UTC+05:30 (UTC), Encoding UTF-8
+NW RFC Library: SDK variant, Release 750 Patch Level 18
+Compilation date          : Dec  2 2025 15:53:22
+CPIC library              : 754.2025.08.18 version 3
+NI library                : 40
+Kernel Release            : 754 Patch Level 627
+Current working directory : /Users/giri/Antigravity/sap_monitoring/backend
+Program                   : Python
+Process ID                : 60903
+User                      : giri
+Hardware                  : Apple Macintosh with Mac OS X (Darwin) Apple Silicon arm64 arm64
+Operating_system          : Darwin 25.4.0
+Hostname                  : RLPDWRQWVH
+IP address                : 
+IPv6 address              : 
+NI IPv6 status            : inactive
+Global trace level        : 0 : None
+
+2026-05-19 17:47:25.629090 [8427739328] >> Info entry
+	throwRfcErrorMsg called at:
+[Thr 8427739328] ------------------ C-STACK ----------------------
+[Thr 8427739328] ------------------ c-stack end ------------------
+
+
+**** Log file opened at 2026-05-19 19:09:33.552152 UTC+05:30 (UTC), Encoding UTF-8
+NW RFC Library: SDK variant, Release 750 Patch Level 18
+Compilation date          : Dec  2 2025 15:53:22
+CPIC library              : 754.2025.08.18 version 3
+NI library                : 40
+Kernel Release            : 754 Patch Level 627
+Current working directory : /Users/giri/Antigravity/sap_monitoring/backend
+Program                   : Python
+Process ID                : 63874
+User                      : giri
+Hardware                  : Apple Macintosh with Mac OS X (Darwin) Apple Silicon arm64 arm64
+Operating_system          : Darwin 25.4.0
+Hostname                  : RLPDWRQWVH
+IP address                : 
+IPv6 address              : 
+NI IPv6 status            : inactive
+Global trace level        : 0 : None
+
+2026-05-19 19:09:33.551171 [8427739328] >> Info entry
+	throwRfcErrorMsg called at:
+[Thr 8427739328] ------------------ C-STACK ----------------------
+[Thr 8427739328] ------------------ c-stack end ------------------
+
+
+**** Log file opened at 2026-05-20 20:57:14.589938 UTC+05:30 (UTC), Encoding UTF-8
+NW RFC Library: SDK variant, Release 750 Patch Level 18
+Compilation date          : Dec  2 2025 15:53:22
+CPIC library              : 754.2025.08.18 version 3
+NI library                : 40
+Kernel Release            : 754 Patch Level 627
+Current working directory : /Users/giri/Antigravity/sap_monitoring/backend
+Program                   : Python
+Process ID                : 23767
+User                      : giri
+Hardware                  : Apple Macintosh with Mac OS X (Darwin) Apple Silicon arm64 arm64
+Operating_system          : Darwin 25.4.0
+Hostname                  : RLPDWRQWVH
+IP address                : 
+IPv6 address              : 
+NI IPv6 status            : inactive
+Global trace level        : 0 : None
+
+2026-05-20 20:57:14.588517 [8427739328] >> Error entry
+	[Handle: 49309827072	ConvID: 	Target: 	SysID: 	SysNr: 	User: 	Codepage: 4103]
+	RfcCommunicationException: Return Value: 20, Code: RFC_COMMUNICATION_FAILURE, Message: 
+LOCATION    CPIC (TCP/IP) on local host with Unicode
+ERROR       partner '192.168.0.189:3300' not reached
+TIME        Wed May 20 20:57:14 2026
+RELEASE     754
+COMPONENT   NI (network interface)
+VERSION     40
+RC          -10
+MODULE      /bas/754_REL/src/base/ni/nixxi.cpp
+LINE        3071
+DETAIL      NiPConnect: 192.168.0.189:3300
+SYSTEM CALL connect
+ERRNO       65
+ERRNO TEXT  No route to host
+COUNTER     6
+
+2026-05-20 21:02:17.016355 [8427739328] >> Info entry
+	throwRfcErrorMsg called at:
+[Thr 8427739328] ------------------ C-STACK ----------------------
+[Thr 8427739328] ------------------ c-stack end ------------------
+
+
+**** Log file opened at 2026-05-20 22:08:26.631450 UTC+05:30 (UTC), Encoding UTF-8
+NW RFC Library: SDK variant, Release 750 Patch Level 18
+Compilation date          : Dec  2 2025 15:53:22
+CPIC library              : 754.2025.08.18 version 3
+NI library                : 40
+Kernel Release            : 754 Patch Level 627
+Current working directory : /Users/giri/Antigravity/sap_monitoring/backend
+Program                   : Python
+Process ID                : 26185
+User                      : giri
+Hardware                  : Apple Macintosh with Mac OS X (Darwin) Apple Silicon arm64 arm64
+Operating_system          : Darwin 25.4.0
+Hostname                  : RLPDWRQWVH
+IP address                : 
+IPv6 address              : 
+NI IPv6 status            : inactive
+Global trace level        : 0 : None
+
+2026-05-20 22:08:26.629904 [8427739328] >> Error entry
+	[Handle: 38064553984	ConvID: 	Target: 	SysID: 	SysNr: 	User: 	Codepage: 4103]
+	RfcCommunicationException: Return Value: 20, Code: RFC_COMMUNICATION_FAILURE, Message: 
+LOCATION    CPIC (TCP/IP) on local host with Unicode
+ERROR       partner '192.168.0.189:3300' not reached
+TIME        Wed May 20 22:08:26 2026
+RELEASE     754
+COMPONENT   NI (network interface)
+VERSION     40
+RC          -10
+MODULE      /bas/754_REL/src/base/ni/nixxi.cpp
+LINE        3458
+DETAIL      NiPConnect2: 192.168.0.189:3300
+SYSTEM CALL connect
+ERRNO       60
+ERRNO TEXT  Operation timed out
+COUNTER     6
+
+2026-05-20 22:21:53.728411 [8427739328] >> Info entry
+	throwRfcErrorMsg called at:
+[Thr 8427739328] ------------------ C-STACK ----------------------
+[Thr 8427739328] ------------------ c-stack end ------------------
+
+
+**** Log file opened at 2026-05-21 17:56:03.220662 UTC+05:30 (UTC), Encoding UTF-8
+NW RFC Library: SDK variant, Release 750 Patch Level 18
+Compilation date          : Dec  2 2025 15:53:22
+CPIC library              : 754.2025.08.18 version 3
+NI library                : 40
+Kernel Release            : 754 Patch Level 627
+Current working directory : /Users/giri/Antigravity/sap_monitoring/backend
+Program                   : Python
+Process ID                : 65960
+User                      : giri
+Hardware                  : Apple Macintosh with Mac OS X (Darwin) Apple Silicon arm64 arm64
+Operating_system          : Darwin 25.4.0
+Hostname                  : RLPDWRQWVH
+IP address                : 
+IPv6 address              : 
+NI IPv6 status            : inactive
+Global trace level        : 0 : None
+
+2026-05-21 17:56:03.208203 [8427739328] >> Info entry
+	throwRfcErrorMsg called at:
+[Thr 8427739328] ------------------ C-STACK ----------------------
+[Thr 8427739328] ------------------ c-stack end ------------------
+
+
+**** Log file opened at 2026-05-21 19:08:31.435607 UTC+05:30 (UTC), Encoding UTF-8
+NW RFC Library: SDK variant, Release 750 Patch Level 18
+Compilation date          : Dec  2 2025 15:53:22
+CPIC library              : 754.2025.08.18 version 3
+NI library                : 40
+Kernel Release            : 754 Patch Level 627
+Current working directory : /Users/giri/Antigravity/sap_monitoring/backend
+Program                   : Python
+Process ID                : 68427
+User                      : giri
+Hardware                  : Apple Macintosh with Mac OS X (Darwin) Apple Silicon arm64 arm64
+Operating_system          : Darwin 25.4.0
+Hostname                  : RLPDWRQWVH
+IP address                : 
+IPv6 address              : 
+NI IPv6 status            : inactive
+Global trace level        : 0 : None
+
+2026-05-21 19:08:31.434318 [8427739328] >> Info entry
+	throwRfcErrorMsg called at:
+[Thr 8427739328] ------------------ C-STACK ----------------------
+[Thr 8427739328] ------------------ c-stack end ------------------
+
+
+**** Log file opened at 2026-05-21 19:46:55.537268 UTC+05:30 (UTC), Encoding UTF-8
+NW RFC Library: SDK variant, Release 750 Patch Level 18
+Compilation date          : Dec  2 2025 15:53:22
+CPIC library              : 754.2025.08.18 version 3
+NI library                : 40
+Kernel Release            : 754 Patch Level 627
+Current working directory : /Users/giri/Antigravity/sap_monitoring/backend
+Program                   : Python
+Process ID                : 69820
+User                      : giri
+Hardware                  : Apple Macintosh with Mac OS X (Darwin) Apple Silicon arm64 arm64
+Operating_system          : Darwin 25.4.0
+Hostname                  : RLPDWRQWVH
+IP address                : 
+IPv6 address              : 
+NI IPv6 status            : inactive
+Global trace level        : 0 : None
+
+2026-05-21 19:46:55.536532 [8427739328] >> Info entry
+	throwRfcErrorMsg called at:
+[Thr 8427739328] ------------------ C-STACK ----------------------
+[Thr 8427739328] ------------------ c-stack end ------------------
+
+
+**** Log file opened at 2026-05-21 22:17:06.762163 UTC+05:30 (UTC), Encoding UTF-8
+NW RFC Library: SDK variant, Release 750 Patch Level 18
+Compilation date          : Dec  2 2025 15:53:22
+CPIC library              : 754.2025.08.18 version 3
+NI library                : 40
+Kernel Release            : 754 Patch Level 627
+Current working directory : /Users/giri/Antigravity/sap_monitoring/backend
+Program                   : Python
+Process ID                : 74707
+User                      : giri
+Hardware                  : Apple Macintosh with Mac OS X (Darwin) Apple Silicon arm64 arm64
+Operating_system          : Darwin 25.4.0
+Hostname                  : RLPDWRQWVH
+IP address                : 
+IPv6 address              : 
+NI IPv6 status            : inactive
+Global trace level        : 0 : None
+
+2026-05-21 22:17:06.760747 [8427739328] >> Info entry
+	throwRfcErrorMsg called at:
+[Thr 8427739328] ------------------ C-STACK ----------------------
+[Thr 8427739328] ------------------ c-stack end ------------------
+
+
+**** Log file opened at 2026-05-21 22:52:41.396602 UTC+05:30 (UTC), Encoding UTF-8
+NW RFC Library: SDK variant, Release 750 Patch Level 18
+Compilation date          : Dec  2 2025 15:53:22
+CPIC library              : 754.2025.08.18 version 3
+NI library                : 40
+Kernel Release            : 754 Patch Level 627
+Current working directory : /Users/giri/Antigravity/sap_monitoring/backend
+Program                   : Python
+Process ID                : 75876
+User                      : giri
+Hardware                  : Apple Macintosh with Mac OS X (Darwin) Apple Silicon arm64 arm64
+Operating_system          : Darwin 25.4.0
+Hostname                  : RLPDWRQWVH
+IP address                : 
+IPv6 address              : 
+NI IPv6 status            : inactive
+Global trace level        : 0 : None
+
+2026-05-21 22:52:41.396130 [8427739328] >> Info entry
+	throwRfcErrorMsg called at:
+[Thr 8427739328] ------------------ C-STACK ----------------------
+[Thr 8427739328] ------------------ c-stack end ------------------
+
+
+**** Log file opened at 2026-05-21 23:47:19.448978 UTC+05:30 (UTC), Encoding UTF-8
+NW RFC Library: SDK variant, Release 750 Patch Level 18
+Compilation date          : Dec  2 2025 15:53:22
+CPIC library              : 754.2025.08.18 version 3
+NI library                : 40
+Kernel Release            : 754 Patch Level 627
+Current working directory : /Users/giri/Antigravity/sap_monitoring/backend
+Program                   : Python
+Process ID                : 77662
+User                      : giri
+Hardware                  : Apple Macintosh with Mac OS X (Darwin) Apple Silicon arm64 arm64
+Operating_system          : Darwin 25.4.0
+Hostname                  : RLPDWRQWVH
+IP address                : 
+IPv6 address              : 
+NI IPv6 status            : inactive
+Global trace level        : 0 : None
+
+2026-05-21 23:47:19.447874 [8427739328] >> Info entry
+	throwRfcErrorMsg called at:
+[Thr 8427739328] ------------------ C-STACK ----------------------
+[Thr 8427739328] ------------------ c-stack end ------------------
+
+
+**** Log file opened at 2026-05-22 00:43:30.080228 UTC+05:30 (UTC), Encoding UTF-8
+NW RFC Library: SDK variant, Release 750 Patch Level 18
+Compilation date          : Dec  2 2025 15:53:22
+CPIC library              : 754.2025.08.18 version 3
+NI library                : 40
+Kernel Release            : 754 Patch Level 627
+Current working directory : /Users/giri/Antigravity/sap_monitoring/backend
+Program                   : Python
+Process ID                : 79782
+User                      : giri
+Hardware                  : Apple Macintosh with Mac OS X (Darwin) Apple Silicon arm64 arm64
+Operating_system          : Darwin 25.4.0
+Hostname                  : RLPDWRQWVH
+IP address                : 
+IPv6 address              : 
+NI IPv6 status            : inactive
+Global trace level        : 0 : None
+
+2026-05-22 00:43:29.970847 [8427739328] >> Info entry
+	throwRfcErrorMsg called at:
+[Thr 8427739328] ------------------ C-STACK ----------------------
+[Thr 8427739328] ------------------ c-stack end ------------------
+
+
+**** Log file opened at 2026-05-22 07:40:11.813453 UTC+05:30 (UTC), Encoding UTF-8
+NW RFC Library: SDK variant, Release 750 Patch Level 18
+Compilation date          : Dec  2 2025 15:53:22
+CPIC library              : 754.2025.08.18 version 3
+NI library                : 40
+Kernel Release            : 754 Patch Level 627
+Current working directory : /Users/giri/Antigravity/sap_monitoring/backend
+Program                   : Python
+Process ID                : 94045
+User                      : giri
+Hardware                  : Apple Macintosh with Mac OS X (Darwin) Apple Silicon arm64 arm64
+Operating_system          : Darwin 25.4.0
+Hostname                  : RLPDWRQWVH
+IP address                : 
+IPv6 address              : 
+NI IPv6 status            : inactive
+Global trace level        : 0 : None
+
+2026-05-22 07:40:11.812136 [8427739328] >> Info entry
+	throwRfcErrorMsg called at:
+[Thr 8427739328] ------------------ C-STACK ----------------------
+[Thr 8427739328] ------------------ c-stack end ------------------
+
+
+**** Log file opened at 2026-05-22 08:01:04.395989 UTC+05:30 (UTC), Encoding UTF-8
+NW RFC Library: SDK variant, Release 750 Patch Level 18
+Compilation date          : Dec  2 2025 15:53:22
+CPIC library              : 754.2025.08.18 version 3
+NI library                : 40
+Kernel Release            : 754 Patch Level 627
+Current working directory : /Users/giri/Antigravity/sap_monitoring/backend
+Program                   : Python
+Process ID                : 94941
+User                      : giri
+Hardware                  : Apple Macintosh with Mac OS X (Darwin) Apple Silicon arm64 arm64
+Operating_system          : Darwin 25.4.0
+Hostname                  : RLPDWRQWVH
+IP address                : 
+IPv6 address              : 
+NI IPv6 status            : inactive
+Global trace level        : 0 : None
+
+2026-05-22 08:01:04.395487 [8427739328] >> Info entry
+	throwRfcErrorMsg called at:
+[Thr 8427739328] ------------------ C-STACK ----------------------
+[Thr 8427739328] ------------------ c-stack end ------------------
+
+
+**** Log file opened at 2026-05-22 08:37:30.408588 UTC+05:30 (UTC), Encoding UTF-8
+NW RFC Library: SDK variant, Release 750 Patch Level 18
+Compilation date          : Dec  2 2025 15:53:22
+CPIC library              : 754.2025.08.18 version 3
+NI library                : 40
+Kernel Release            : 754 Patch Level 627
+Current working directory : /Users/giri/Antigravity/sap_monitoring/backend
+Program                   : Python
+Process ID                : 96070
+User                      : giri
+Hardware                  : Apple Macintosh with Mac OS X (Darwin) Apple Silicon arm64 arm64
+Operating_system          : Darwin 25.4.0
+Hostname                  : RLPDWRQWVH
+IP address                : 
+IPv6 address              : 
+NI IPv6 status            : inactive
+Global trace level        : 0 : None
+
+2026-05-22 08:37:30.407014 [8427739328] >> Info entry
+	throwRfcErrorMsg called at:
+[Thr 8427739328] ------------------ C-STACK ----------------------
+[Thr 8427739328] ------------------ c-stack end ------------------
+
+
+**** Log file opened at 2026-05-22 09:07:56.530723 UTC+05:30 (UTC), Encoding UTF-8
+NW RFC Library: SDK variant, Release 750 Patch Level 18
+Compilation date          : Dec  2 2025 15:53:22
+CPIC library              : 754.2025.08.18 version 3
+NI library                : 40
+Kernel Release            : 754 Patch Level 627
+Current working directory : /Users/giri/Antigravity/sap_monitoring/backend
+Program                   : Python
+Process ID                : 97164
+User                      : giri
+Hardware                  : Apple Macintosh with Mac OS X (Darwin) Apple Silicon arm64 arm64
+Operating_system          : Darwin 25.4.0
+Hostname                  : RLPDWRQWVH
+IP address                : 
+IPv6 address              : 
+NI IPv6 status            : inactive
+Global trace level        : 0 : None
+
+2026-05-22 09:07:56.530227 [8427739328] >> Info entry
+	throwRfcErrorMsg called at:
+[Thr 8427739328] ------------------ C-STACK ----------------------
+[Thr 8427739328] ------------------ c-stack end ------------------
+
+
+**** Log file opened at 2026-05-22 09:34:30.564991 UTC+05:30 (UTC), Encoding UTF-8
+NW RFC Library: SDK variant, Release 750 Patch Level 18
+Compilation date          : Dec  2 2025 15:53:22
+CPIC library              : 754.2025.08.18 version 3
+NI library                : 40
+Kernel Release            : 754 Patch Level 627
+Current working directory : /Users/giri/Antigravity/sap_monitoring/backend
+Program                   : Python
+Process ID                : 97999
+User                      : giri
+Hardware                  : Apple Macintosh with Mac OS X (Darwin) Apple Silicon arm64 arm64
+Operating_system          : Darwin 25.4.0
+Hostname                  : RLPDWRQWVH
+IP address                : 
+IPv6 address              : 
+NI IPv6 status            : inactive
+Global trace level        : 0 : None
+
+2026-05-22 09:34:30.563453 [8427739328] >> Info entry
+	throwRfcErrorMsg called at:
+[Thr 8427739328] ------------------ C-STACK ----------------------
+[Thr 8427739328] ------------------ c-stack end ------------------
+
+
+**** Log file opened at 2026-05-22 10:03:22.162068 UTC+05:30 (UTC), Encoding UTF-8
+NW RFC Library: SDK variant, Release 750 Patch Level 18
+Compilation date          : Dec  2 2025 15:53:22
+CPIC library              : 754.2025.08.18 version 3
+NI library                : 40
+Kernel Release            : 754 Patch Level 627
+Current working directory : /Users/giri/Antigravity/sap_monitoring/backend
+Program                   : Python
+Process ID                : 98942
+User                      : giri
+Hardware                  : Apple Macintosh with Mac OS X (Darwin) Apple Silicon arm64 arm64
+Operating_system          : Darwin 25.4.0
+Hostname                  : RLPDWRQWVH
+IP address                : 
+IPv6 address              : 
+NI IPv6 status            : inactive
+Global trace level        : 0 : None
+
+2026-05-22 10:03:22.161455 [8427739328] >> Info entry
+	throwRfcErrorMsg called at:
+[Thr 8427739328] ------------------ C-STACK ----------------------
+[Thr 8427739328] ------------------ c-stack end ------------------
+
+
+**** Log file opened at 2026-05-22 10:44:48.038193 UTC+05:30 (UTC), Encoding UTF-8
+NW RFC Library: SDK variant, Release 750 Patch Level 18
+Compilation date          : Dec  2 2025 15:53:22
+CPIC library              : 754.2025.08.18 version 3
+NI library                : 40
+Kernel Release            : 754 Patch Level 627
+Current working directory : /Users/giri/Antigravity/sap_monitoring/backend
+Program                   : Python
+Process ID                : 00422
+User                      : giri
+Hardware                  : Apple Macintosh with Mac OS X (Darwin) Apple Silicon arm64 arm64
+Operating_system          : Darwin 25.4.0
+Hostname                  : RLPDWRQWVH
+IP address                : 
+IPv6 address              : 
+NI IPv6 status            : inactive
+Global trace level        : 0 : None
+
+2026-05-22 10:44:48.030154 [8427739328] >> Info entry
+	throwRfcErrorMsg called at:
+[Thr 8427739328] ------------------ C-STACK ----------------------
+[Thr 8427739328] ------------------ c-stack end ------------------
+
+
+**** Log file opened at 2026-05-22 10:57:13.614162 UTC+05:30 (UTC), Encoding UTF-8
+NW RFC Library: SDK variant, Release 750 Patch Level 18
+Compilation date          : Dec  2 2025 15:53:22
+CPIC library              : 754.2025.08.18 version 3
+NI library                : 40
+Kernel Release            : 754 Patch Level 627
+Current working directory : /Users/giri/Antigravity/sap_monitoring/backend
+Program                   : Python
+Process ID                : 01096
+User                      : giri
+Hardware                  : Apple Macintosh with Mac OS X (Darwin) Apple Silicon arm64 arm64
+Operating_system          : Darwin 25.4.0
+Hostname                  : RLPDWRQWVH
+IP address                : 
+IPv6 address              : 
+NI IPv6 status            : inactive
+Global trace level        : 0 : None
+
+2026-05-22 10:57:13.613256 [8427739328] >> Info entry
+	throwRfcErrorMsg called at:
+[Thr 8427739328] ------------------ C-STACK ----------------------
+[Thr 8427739328] ------------------ c-stack end ------------------
+
+
+**** Log file opened at 2026-05-22 12:18:53.576135 UTC+05:30 (UTC), Encoding UTF-8
+NW RFC Library: SDK variant, Release 750 Patch Level 18
+Compilation date          : Dec  2 2025 15:53:22
+CPIC library              : 754.2025.08.18 version 3
+NI library                : 40
+Kernel Release            : 754 Patch Level 627
+Current working directory : /Users/giri/Antigravity/sap_monitoring/backend
+Program                   : Python
+Process ID                : 03715
+User                      : giri
+Hardware                  : Apple Macintosh with Mac OS X (Darwin) Apple Silicon arm64 arm64
+Operating_system          : Darwin 25.4.0
+Hostname                  : RLPDWRQWVH
+IP address                : 
+IPv6 address              : 
+NI IPv6 status            : inactive
+Global trace level        : 0 : None
+
+2026-05-22 12:18:53.575447 [8427739328] >> Info entry
+	throwRfcErrorMsg called at:
+[Thr 8427739328] ------------------ C-STACK ----------------------
+[Thr 8427739328] ------------------ c-stack end ------------------
+
+
+**** Log file opened at 2026-05-22 12:42:04.876602 UTC+05:30 (UTC), Encoding UTF-8
+NW RFC Library: SDK variant, Release 750 Patch Level 18
+Compilation date          : Dec  2 2025 15:53:22
+CPIC library              : 754.2025.08.18 version 3
+NI library                : 40
+Kernel Release            : 754 Patch Level 627
+Current working directory : /Users/giri/Antigravity/sap_monitoring/backend
+Program                   : Python
+Process ID                : 04644
+User                      : giri
+Hardware                  : Apple Macintosh with Mac OS X (Darwin) Apple Silicon arm64 arm64
+Operating_system          : Darwin 25.4.0
+Hostname                  : RLPDWRQWVH
+IP address                : 
+IPv6 address              : 
+NI IPv6 status            : inactive
+Global trace level        : 0 : None
+
+2026-05-22 12:42:04.872548 [8427739328] >> Info entry
+	throwRfcErrorMsg called at:
+[Thr 8427739328] ------------------ C-STACK ----------------------
+[Thr 8427739328] ------------------ c-stack end ------------------
+
+
+**** Log file opened at 2026-05-22 14:49:51.826789 UTC+05:30 (UTC), Encoding UTF-8
+NW RFC Library: SDK variant, Release 750 Patch Level 18
+Compilation date          : Dec  2 2025 15:53:22
+CPIC library              : 754.2025.08.18 version 3
+NI library                : 40
+Kernel Release            : 754 Patch Level 627
+Current working directory : /Users/giri/Antigravity/sap_monitoring/backend
+Program                   : Python
+Process ID                : 09213
+User                      : giri
+Hardware                  : Apple Macintosh with Mac OS X (Darwin) Apple Silicon arm64 arm64
+Operating_system          : Darwin 25.4.0
+Hostname                  : RLPDWRQWVH
+IP address                : 
+IPv6 address              : 
+NI IPv6 status            : inactive
+Global trace level        : 0 : None
+
+2026-05-22 14:49:51.825516 [8427739328] >> Info entry
+	throwRfcErrorMsg called at:
+[Thr 8427739328] ------------------ C-STACK ----------------------
+[Thr 8427739328] ------------------ c-stack end ------------------
+
+
+**** Log file opened at 2026-05-22 15:56:23.799562 UTC+05:30 (UTC), Encoding UTF-8
+NW RFC Library: SDK variant, Release 750 Patch Level 18
+Compilation date          : Dec  2 2025 15:53:22
+CPIC library              : 754.2025.08.18 version 3
+NI library                : 40
+Kernel Release            : 754 Patch Level 627
+Current working directory : /Users/giri/Antigravity/sap_monitoring/backend
+Program                   : Python
+Process ID                : 11543
+User                      : giri
+Hardware                  : Apple Macintosh with Mac OS X (Darwin) Apple Silicon arm64 arm64
+Operating_system          : Darwin 25.4.0
+Hostname                  : RLPDWRQWVH
+IP address                : 
+IPv6 address              : 
+NI IPv6 status            : inactive
+Global trace level        : 0 : None
+
+2026-05-22 15:56:23.798378 [8427739328] >> Info entry
+	throwRfcErrorMsg called at:
+[Thr 8427739328] ------------------ C-STACK ----------------------
+[Thr 8427739328] ------------------ c-stack end ------------------
+
+
+**** Log file opened at 2026-05-22 16:17:12.955523 UTC+05:30 (UTC), Encoding UTF-8
+NW RFC Library: SDK variant, Release 750 Patch Level 18
+Compilation date          : Dec  2 2025 15:53:22
+CPIC library              : 754.2025.08.18 version 3
+NI library                : 40
+Kernel Release            : 754 Patch Level 627
+Current working directory : /Users/giri/Antigravity/sap_monitoring/backend
+Program                   : Python
+Process ID                : 12296
+User                      : giri
+Hardware                  : Apple Macintosh with Mac OS X (Darwin) Apple Silicon arm64 arm64
+Operating_system          : Darwin 25.4.0
+Hostname                  : RLPDWRQWVH
+IP address                : 
+IPv6 address              : 
+NI IPv6 status            : inactive
+Global trace level        : 0 : None
+
+2026-05-22 16:17:12.954611 [8427739328] >> Info entry
+	throwRfcErrorMsg called at:
+[Thr 8427739328] ------------------ C-STACK ----------------------
+[Thr 8427739328] ------------------ c-stack end ------------------
+
+
+**** Log file opened at 2026-05-22 20:32:54.744369 UTC+05:30 (UTC), Encoding UTF-8
+NW RFC Library: SDK variant, Release 750 Patch Level 18
+Compilation date          : Dec  2 2025 15:53:22
+CPIC library              : 754.2025.08.18 version 3
+NI library                : 40
+Kernel Release            : 754 Patch Level 627
+Current working directory : /Users/giri/Antigravity/sap_monitoring/backend
+Program                   : Python
+Process ID                : 20931
+User                      : giri
+Hardware                  : Apple Macintosh with Mac OS X (Darwin) Apple Silicon arm64 arm64
+Operating_system          : Darwin 25.4.0
+Hostname                  : RLPDWRQWVH
+IP address                : 
+IPv6 address              : 
+NI IPv6 status            : inactive
+Global trace level        : 0 : None
+
+2026-05-22 20:32:54.743515 [8427739328] >> Info entry
+	throwRfcErrorMsg called at:
+[Thr 8427739328] ------------------ C-STACK ----------------------
+[Thr 8427739328] ------------------ c-stack end ------------------
+
+
+**** Log file opened at 2026-05-22 20:50:58.385908 UTC+05:30 (UTC), Encoding UTF-8
+NW RFC Library: SDK variant, Release 750 Patch Level 18
+Compilation date          : Dec  2 2025 15:53:22
+CPIC library              : 754.2025.08.18 version 3
+NI library                : 40
+Kernel Release            : 754 Patch Level 627
+Current working directory : /Users/giri/Antigravity/sap_monitoring/backend
+Program                   : Python
+Process ID                : 22872
+User                      : giri
+Hardware                  : Apple Macintosh with Mac OS X (Darwin) Apple Silicon arm64 arm64
+Operating_system          : Darwin 25.4.0
+Hostname                  : RLPDWRQWVH
+IP address                : 
+IPv6 address              : 
+NI IPv6 status            : inactive
+Global trace level        : 0 : None
+
+2026-05-22 20:50:58.385075 [8427739328] >> Info entry
+	throwRfcErrorMsg called at:
+[Thr 8427739328] ------------------ C-STACK ----------------------
+[Thr 8427739328] ------------------ c-stack end ------------------
+

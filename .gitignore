@@ -1,0 +1,26 @@
+# SAP SDK & Credentials
+config.json
+nwrfcsdk/
+pyrfc-env/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.env
+venv/
+ENV/
+
+# Output Data
+backend/screenshots/
+backend/reports/
+strust_*.html
+okcode_dump.html
+
+# Node
+node_modules/
+.npm/
+
+# OS Files
+.DS_Store
+Thumbs.db

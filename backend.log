@@ -1,0 +1,666 @@
+INFO:     Started server process [22872]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     127.0.0.1:50766 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50766 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50766 - "OPTIONS /api/run HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50766 - "POST /api/run HTTP/1.1" 200 OK
+Running SAP Checks...
+
+============================================================
+SAP WebGUI Screenshot Engine
+URL: https://nwrhel9.techlabhome.in/sap/bc/gui/sap/its/webgui/?sap-client=100&sap-language=en#
+============================================================
+
+[Step 1] Navigating to WebGUI URL...
+INFO:     127.0.0.1:50766 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50766 - "GET /api/status HTTP/1.1" 200 OK
+
+[Step 2] Logging in via JavaScript (bypassing CSS visibility)...
+  Login form fill result: {'success': True, 'userName': 'sap-user', 'passName': 'sap-password'}
+
+[Step 3] Submitting login form...
+  Waiting for login to complete...
+INFO:     127.0.0.1:50766 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50766 - "GET /api/status HTTP/1.1" 200 OK
+  Post-login URL: https://nwrhel9.techlabhome.in/sap/bc/gui/sap/its/webgui/?sap-client=100&sap-language=EN#
+  Post-login title: SAP Easy Access
+INFO:     127.0.0.1:50766 - "GET /api/status HTTP/1.1" 200 OK
+  Post-login screenshot: 1892933 bytes (real content)
+
+[Step 4] Verifying login...
+  ✓ LOGIN VERIFIED - command field 'ToolbarOkCode' in frame ''
+
+[Step 5] Capturing 23 T-code screenshots via URL navigation...
+
+  --- SM50 ---
+    URL: https://nwrhel9.techlabhome.in/sap/bc/gui/sap/its/webgui/?sap-client=100&sap-language=en&~transaction=SM50
+    → Navigating via URL reload fallback
+INFO:     127.0.0.1:50766 - "GET /api/status HTTP/1.1" 200 OK
+    Page title: Work Processes of AS Instance nwrhel9_F4H_00
+    ✓ Valid: 170,971 bytes
+
+  --- SM51 ---
+    URL: https://nwrhel9.techlabhome.in/sap/bc/gui/sap/its/webgui/?sap-client=100&sap-language=en&~transaction=SM51
+    → Navigating via URL reload fallback
+INFO:     127.0.0.1:50766 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50766 - "GET /api/status HTTP/1.1" 200 OK
+    Page title: AS Instances of SAP System F4H
+    ✓ Valid: 52,128 bytes
+
+  --- ST06 ---
+    URL: https://nwrhel9.techlabhome.in/sap/bc/gui/sap/its/webgui/?sap-client=100&sap-language=en&~transaction=ST06
+    → Navigating via URL reload fallback
+INFO:     127.0.0.1:50766 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50766 - "GET /api/status HTTP/1.1" 200 OK
+    Page title: F4H nwrhel9_F4H_00 Linux nwrhel9 5.14.0-427.37.1.el9_4.x86_64 #1 SMP
+    ✓ Valid: 199,797 bytes
+
+  --- SM66 ---
+    URL: https://nwrhel9.techlabhome.in/sap/bc/gui/sap/its/webgui/?sap-client=100&sap-language=en&~transaction=SM66
+    → Navigating via URL reload fallback
+INFO:     127.0.0.1:50766 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50766 - "GET /api/status HTTP/1.1" 200 OK
+    Page title: Work Processes of All AS Instances of System F4H
+    ✓ Valid: 181,037 bytes
+
+  --- SM21 ---
+    URL: https://nwrhel9.techlabhome.in/sap/bc/gui/sap/its/webgui/?sap-client=100&sap-language=en&~transaction=SM21
+    → Navigating via URL reload fallback
+INFO:     127.0.0.1:50766 - "GET /api/status HTTP/1.1" 200 OK
+    Performing SM21 interaction (Last 24h)...
+    Frame 0 (''): 28 inputs
+      [0] id=M0:46:::1:34 val='22.05.2026'
+      [1] id=M0:46:::1:51 val='19:00:00'
+      [2] id=M0:46:::2:34 val=''
+      [3] id=M0:46:::2:51 val='00:00:00'
+      [4] id=M0:46:::3:34 val=''
+      [5] id=M0:46:::3:59 val=''
+      [6] id=M0:46:::4:34 val=''
+      [7] id=M0:46:::4:59 val=''
+      [8] id=M0:46:::5:34 val=''
+      [9] id=M0:46:::5:59 val=''
+    ✓ Target frame: '' (28 inputs)
+      From Date: clicking [id="M0:46:::1:34"], typing '21.05.2026'
+      ✓ From Date filled
+      From Time: clicking [id="M0:46:::1:51"], typing '20:46:37'
+INFO:     127.0.0.1:50766 - "GET /api/status HTTP/1.1" 200 OK
+      ✓ From Time filled
+      To Date: clicking [id="M0:46:::2:34"], typing '22.05.2026'
+      ✓ To Date filled
+      To Time: clicking [id="M0:46:::2:51"], typing '20:46:37'
+INFO:     127.0.0.1:50766 - "GET /api/status HTTP/1.1" 200 OK
+      ✓ To Time filled
+      Clearing Instance: [id="M0:46:::9:34"] (was 'nwrhel9_F4H_00')
+      ✓ Instance field cleared
+    Diagnostic screenshot: 84350 bytes
+    Clicking Execute...
+    ✓ Clicked 'Execute' text in frame ''
+    Waiting for SM21 results...
+INFO:     127.0.0.1:50766 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50766 - "GET /api/status HTTP/1.1" 200 OK
+    Scrolling through SM21 results...
+      Found log table in frame '' (219 rows)
+      Page 1: 364,569 bytes
+        (99 new log lines extracted)
+INFO:     127.0.0.1:50766 - "GET /api/status HTTP/1.1" 200 OK
+      Page 2: 361,758 bytes
+        (34 new log lines extracted)
+INFO:     127.0.0.1:50766 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50766 - "GET /api/status HTTP/1.1" 200 OK
+      Page 3: 372,567 bytes
+        (32 new log lines extracted)
+INFO:     127.0.0.1:50766 - "GET /api/status HTTP/1.1" 200 OK
+      Page 4: 362,587 bytes
+        (32 new log lines extracted)
+INFO:     127.0.0.1:50766 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50766 - "GET /api/status HTTP/1.1" 200 OK
+      Page 5: 371,203 bytes
+        (0 new log lines extracted)
+INFO:     127.0.0.1:50766 - "GET /api/status HTTP/1.1" 200 OK
+      Page 6: 362,878 bytes
+        (32 new log lines extracted)
+INFO:     127.0.0.1:50766 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50766 - "GET /api/status HTTP/1.1" 200 OK
+      Page 7: 367,511 bytes
+        (30 new log lines extracted)
+INFO:     127.0.0.1:50766 - "GET /api/status HTTP/1.1" 200 OK
+      Page 8: 364,017 bytes
+        (32 new log lines extracted)
+INFO:     127.0.0.1:50766 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50766 - "GET /api/status HTTP/1.1" 200 OK
+      Page 9: 354,480 bytes
+        (33 new log lines extracted)
+INFO:     127.0.0.1:50766 - "GET /api/status HTTP/1.1" 200 OK
+      Page 10: 369,101 bytes
+        (30 new log lines extracted)
+INFO:     127.0.0.1:50766 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50766 - "GET /api/status HTTP/1.1" 200 OK
+      Page 11: 360,117 bytes
+        (33 new log lines extracted)
+INFO:     127.0.0.1:50766 - "GET /api/status HTTP/1.1" 200 OK
+      Page 12: 371,714 bytes
+        (30 new log lines extracted)
+INFO:     127.0.0.1:50766 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50766 - "GET /api/status HTTP/1.1" 200 OK
+      Page 13: 410,330 bytes
+        (11 new log lines extracted)
+INFO:     127.0.0.1:50766 - "GET /api/status HTTP/1.1" 200 OK
+      Page 14: 370,808 bytes
+        (2 new log lines extracted)
+INFO:     127.0.0.1:50766 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50766 - "GET /api/status HTTP/1.1" 200 OK
+      Page 15: 366,942 bytes
+        (2 new log lines extracted)
+INFO:     127.0.0.1:50766 - "GET /api/status HTTP/1.1" 200 OK
+      Page 16: 366,516 bytes
+        (1 new log lines extracted)
+INFO:     127.0.0.1:50766 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50766 - "GET /api/status HTTP/1.1" 200 OK
+      Page 17: 366,466 bytes
+        (1 new log lines extracted)
+INFO:     127.0.0.1:50766 - "GET /api/status HTTP/1.1" 200 OK
+      Page 18: 366,528 bytes
+        (1 new log lines extracted)
+INFO:     127.0.0.1:50766 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50766 - "GET /api/status HTTP/1.1" 200 OK
+      Page 19: 366,578 bytes
+        (0 new log lines extracted)
+INFO:     127.0.0.1:50766 - "GET /api/status HTTP/1.1" 200 OK
+      Page 20: 366,614 bytes
+        (1 new log lines extracted)
+INFO:     127.0.0.1:50766 - "GET /api/status HTTP/1.1" 200 OK
+      Page 21: 366,467 bytes
+        (3 new log lines extracted)
+      Page 22: 365,617 bytes
+        (1 new log lines extracted)
+      Page 23: 364,204 bytes
+        (1 new log lines extracted)
+      Page 24: 364,359 bytes
+        (1 new log lines extracted)
+      Page 25: 364,242 bytes
+        (1 new log lines extracted)
+    ✓ SM21: 25 pages, 443 log lines captured
+    SM21 interaction complete.
+    Page title: Syslog messages
+    SM21 already captured via scroll handler
+
+  --- DB02 ---
+    URL: https://nwrhel9.techlabhome.in/sap/bc/gui/sap/its/webgui/?sap-client=100&sap-language=en&~transaction=DB02
+    → Navigating via URL reload fallback
+    Performing DB02 tree interaction & screenshots...
+      ✓ Captured initial DB02 screen (Missing Indexes)
+      Found DB02 tree in frame: 
+      ✓ Clicked 'Current Status' expand: expand_dispatched
+      ✓ Double-clicked 'Overview': dblclick_dispatched
+      Waiting for Overview pane to load...
+      ✓ Captured Overview Initial screenshot
+      --- DB02 SQL Editor Graph ---
+      ✓ Expanded 'Diagnostics': expand_dispatched
+      ✓ Double-clicked 'SQL Editor': dblclick_dispatched
+      Waiting for SQL Editor pane to load...
+      Inputting SQL query...
+      ✓ Filled SQL query in textarea in frame ''
+      Clicking Execute...
+      ✓ Clicked Execute button in frame ''
+      Waiting for SQL execution to complete...
+      Extracting result data...
+      ✓ Found 206 rows in frame ''
+      Parsed 206 data points. Generating graph...
+      ✓ Saved graph to /Users/giri/Antigravity/sap_monitoring/backend/screenshots/DB02_Performance_Graph_20260522_204804.png
+
+  --- DB12 ---
+    URL: https://nwrhel9.techlabhome.in/sap/bc/gui/sap/its/webgui/?sap-client=100&sap-language=en&~transaction=DB12
+    → Navigating via URL reload fallback
+    Page title: Backup Catalog
+    ✓ Valid: 182,466 bytes
+
+  --- ST03N ---
+    URL: https://nwrhel9.techlabhome.in/sap/bc/gui/sap/its/webgui/?sap-client=100&sap-language=en&~transaction=ST03N
+    → Navigating via URL reload fallback
+    Performing ST03N tree interaction & screenshots...
+      ✓ Captured initial ST03N screen
+      Found ST03N tree frame.
+      ✓ Double-clicked date: 17.10.2025
+      Checking for calculation popup...
+INFO:     127.0.0.1:50885 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50885 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50885 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50885 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50885 - "GET /api/status HTTP/1.1" 200 OK
+      ✓ Clicked 'Dialog' to calculate data. Waiting dynamically for processing to finish...
+INFO:     127.0.0.1:50885 - "GET /api/status HTTP/1.1" 200 OK
+      ✓ Calculation finished. Popup disappeared.
+      Waiting for Workload Overview to load...
+INFO:     127.0.0.1:50885 - "GET /api/status HTTP/1.1" 200 OK
+      Sorting Response Time (ms) column descending...
+      ✓ Captured Workload Overview (Sorted)
+      ✓ Double-clicked 'Standard' transaction profile
+      Waiting for Transaction Profile to load...
+      ✓ Captured Transaction Profile
+      ✓ Double-clicked 'Time Profile'
+      Waiting for Time Profile to load...
+      ✓ Captured Time Profile
+      ✓ Double-clicked 'Response Time Distribution'
+      Waiting for Response Time Distribution to load...
+      ✓ Captured Response Time Distribution
+    ST03N interaction complete.
+    Page title: Workload in System F4H
+    ST03N already captured via ST03N handler
+
+  --- SCC4 ---
+    URL: https://nwrhel9.techlabhome.in/sap/bc/gui/sap/its/webgui/?sap-client=100&sap-language=en&~transaction=SCC4
+    → Navigating via URL reload fallback
+    Performing SCC4 specific interaction...
+      ✓ Captured initial SCC4 screen
+      ✓ Double-clicked first client row in frame: 
+      Waiting for Details screen to load...
+      ✓ Extracted Client 000:
+        Changes: No changes allowed
+        Cross-Client: Changes to repository and cross-client customizing allowed
+        Protection: Protection level 1: No overwriting
+        eCATT: eCATT and CATT Not Allowed
+      ✓ Clicked 'Next Entry'
+      ✓ Extracted Client 100:
+        Changes: Changes without automatic recording
+        Cross-Client: Changes to repository and cross-client customizing allowed
+        Protection: Protection level 0: No restriction
+        eCATT: eCATT and CATT Allowed
+      ✓ Clicked 'Next Entry'
+      Reached end of clients list (Client number stopped changing).
+    SCC4 interaction complete.
+    Page title: Display View "Clients": Details
+    SCC4 already captured via SCC4 handler
+
+  --- SMLG ---
+    URL: https://nwrhel9.techlabhome.in/sap/bc/gui/sap/its/webgui/?sap-client=100&sap-language=en&~transaction=SMLG
+    → Navigating via URL reload fallback
+    Performing SMLG specific interaction...
+      ✓ Captured initial SMLG screen
+      ✓ Clicked 'Load distribution'
+      ✓ Captured Load distribution screen
+      ✓ Parsed SMLG Server: nwrhel9_F4H_00 | Response Time: 36ms
+      ✓ Completed SMLG Load Distribution parsing
+    SMLG interaction complete.
+    Page title: CCMS: Load Distribution
+    SMLG already captured via SMLG handler
+
+  --- SMGW ---
+    URL: https://nwrhel9.techlabhome.in/sap/bc/gui/sap/its/webgui/?sap-client=100&sap-language=en&~transaction=SMGW
+    → Navigating via URL reload fallback
+    Performing SMGW specific interaction...
+      ✓ Captured SMGW Active Connections screen
+      ✓ Captured SMGW Logged on Clients screen
+      ✓ SMGW connection scan complete. Anomalies found: 0
+    SMGW interaction complete.
+    Page title: Gateway Monitor for nwrhel9_F4H_00 / Active Connections
+    SMGW already captured via SMGW handler
+
+  --- AL08 ---
+    URL: https://nwrhel9.techlabhome.in/sap/bc/gui/sap/its/webgui/?sap-client=100&sap-language=en&~transaction=AL08
+    → Navigating via URL reload fallback
+    Page title: System-Wide List of User Sessions in SAP System F4H
+    ✓ Valid: 228,064 bytes
+
+  --- SM12 ---
+    URL: https://nwrhel9.techlabhome.in/sap/bc/gui/sap/its/webgui/?sap-client=100&sap-language=en&~transaction=SM12
+    → Navigating via URL reload fallback
+    Performing SM12 interaction (Search all lock entries)...
+      Found SM12 in frame 0 ('') — 5 visible inputs:
+        [1] id='M0:46:1::1:23' val='100' type=text w=40
+        [2] id='M0:46:1::2:23' val='DDIC' type=text w=130
+        [3] id='M0:46:1::3:23' val='' type=text w=310
+        [4] id='M0:46:1::4:23' val='' type=text w=510
+        [5] id='M0:46:1::5:23' val='1.000' type=text w=90
+      JS fill [0] '100' → '*' (id=M0:46:1::1:23)
+      JS fill [1] 'DDIC' → '*' (id=M0:46:1::2:23)
+      Debug screenshot: /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SM12_debug_filled.png
+    Clicking Search...
+    ✓ Clicked 'Search' in frame ''
+    Waiting for SM12 results...
+    SM12 interaction complete.
+    Page title: Enqueue Administration
+    ✓ Valid: 111,976 bytes
+
+  --- SM13 ---
+    URL: https://nwrhel9.techlabhome.in/sap/bc/gui/sap/its/webgui/?sap-client=100&sap-language=en&~transaction=SM13
+    → Navigating via URL reload fallback
+    Performing SM13 interaction (Execute)...
+    ✓ Clicked 'Execute' in frame ''
+    Waiting for SM13 results...
+    SM13 interaction complete.
+    Page title: Update Requests
+    ✓ Valid: 40,953 bytes
+
+  --- SMICM ---
+    URL: https://nwrhel9.techlabhome.in/sap/bc/gui/sap/its/webgui/?sap-client=100&sap-language=en&~transaction=SMICM
+    → Navigating via URL reload fallback
+INFO:     127.0.0.1:50918 - "GET /api/status HTTP/1.1" 200 OK
+    Performing SMICM specific interaction...
+      ✓ Captured SMICM initial screen
+INFO:     127.0.0.1:50918 - "GET /api/status HTTP/1.1" 200 OK
+      ✓ Captured ICM Services screen
+      ✓ Service: HTTP port 80 | Active=True
+      ✓ Service: HTTPS port 443 | Active=True
+      ✓ Service: SMTP port 26 | Active=False
+      ✓ Service: SMTP port 25 | Active=True
+      ✓ SMICM services scan complete. Anomalies: 1
+    SMICM interaction complete.
+    Page title: ICM Monitor - Service Display
+    ✓ Valid: 59,820 bytes
+
+  --- SM37 ---
+    URL: https://nwrhel9.techlabhome.in/sap/bc/gui/sap/its/webgui/?sap-client=100&sap-language=en&~transaction=SM37
+    → Navigating via URL reload fallback
+INFO:     127.0.0.1:50918 - "GET /api/status HTTP/1.1" 200 OK
+    Performing SM37 interaction (Cancelled jobs, last 24h)...
+      From: 21.05.2026  To: 22.05.2026
+      Found 8 text inputs in frame 0 ('')
+      ✓ Job Name: '*' → '*'
+      ✓ User Name: 'DDIC' → '*'
+      ✓ From Date: '22.05.2026' → '21.05.2026'
+      ✓ To Date: '22.05.2026' → '22.05.2026'
+      === CHECKBOX HANDLING ===
+      Found 6 role='checkbox' elements
+        ☐ Sched. (aria-checked=false)
+        ☑ Released (aria-checked=true)
+        ☑ Ready (aria-checked=true)
+        ☑ Active (aria-checked=true)
+        ☑ Finished (aria-checked=true)
+        ☑ Canceled (aria-checked=true)
+      ○ Sched.: already unchecked, no change needed
+      ✓ Released: UNCHECKED (was checked)
+INFO:     127.0.0.1:50918 - "GET /api/status HTTP/1.1" 200 OK
+      ✓ Ready: UNCHECKED (was checked)
+      ✓ Active: UNCHECKED (was checked)
+INFO:     127.0.0.1:50918 - "GET /api/status HTTP/1.1" 200 OK
+      ✓ Finished: UNCHECKED (was checked)
+      ○ Canceled: already checked, no change needed
+      Final checkbox state:
+        ☐ Sched.
+        ☐ Released
+        ☐ Ready
+        ☐ Active
+        ☐ Finished
+        ☑ Canceled
+    Clicking Execute...
+    ✓ Clicked 'Execute' in frame ''
+    Waiting for SM37 results...
+INFO:     127.0.0.1:50918 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50918 - "GET /api/status HTTP/1.1" 200 OK
+    SM37 interaction complete.
+    ✓ SM37: 10 lines captured
+    Page title: Job Overview
+    ✓ Valid: 195,057 bytes
+
+  --- ST22 ---
+    URL: https://nwrhel9.techlabhome.in/sap/bc/gui/sap/its/webgui/?sap-client=100&sap-language=en&~transaction=ST22
+    → Navigating via URL reload fallback
+INFO:     127.0.0.1:50918 - "GET /api/status HTTP/1.1" 200 OK
+    Performing ST22 interaction (Today + Yesterday dumps)...
+      Clicking 'Today'...
+      ✓ Clicked 'Today' in frame ''
+INFO:     127.0.0.1:50918 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50918 - "GET /api/status HTTP/1.1" 200 OK
+      Screenshot: /Users/giri/Antigravity/sap_monitoring/backend/screenshots/ST22_Today_20260522_204956.png (301,071 bytes)
+      Going back to ST22 initial screen...
+INFO:     127.0.0.1:50918 - "GET /api/status HTTP/1.1" 200 OK
+      Clicking 'Yesterday'...
+      ✓ Clicked 'Yesterday' in frame ''
+INFO:     127.0.0.1:50918 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50918 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50918 - "GET /api/status HTTP/1.1" 200 OK
+      Screenshot: /Users/giri/Antigravity/sap_monitoring/backend/screenshots/ST22_Yesterday_20260522_205004.png (272,979 bytes)
+    ✓ ST22: 2 pages, 86 lines captured
+    ST22 interaction complete.
+    Page title: List of Selected Runtime Errors
+    ST22 already captured via Today/Yesterday handler
+
+  --- SM58 ---
+    URL: https://nwrhel9.techlabhome.in/sap/bc/gui/sap/its/webgui/?sap-client=100&sap-language=en&~transaction=SM58
+    → Navigating via URL reload fallback
+    Performing SM58 interaction (Execute)...
+    ✓ Clicked 'Execute' in frame ''
+    Waiting for SM58 results...
+    SM58 interaction complete.
+    Page title: Transactional RFC
+    ✓ Valid: 24,821 bytes
+
+  --- WE02 ---
+    URL: https://nwrhel9.techlabhome.in/sap/bc/gui/sap/its/webgui/?sap-client=100&sap-language=en&~transaction=WE02
+    → Navigating via URL reload fallback
+    Performing WE02 interaction (Execute)...
+    ✓ Clicked 'Execute' in frame ''
+    Waiting for WE02 results...
+INFO:     127.0.0.1:50951 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50951 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50951 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50951 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50951 - "GET /api/status HTTP/1.1" 200 OK
+    WE02 interaction complete.
+    Page title: SAP
+    ✓ Valid: 38,429 bytes
+
+  --- SMQ1 ---
+    URL: https://nwrhel9.techlabhome.in/sap/bc/gui/sap/its/webgui/?sap-client=100&sap-language=en&~transaction=SMQ1
+    → Navigating via URL reload fallback
+INFO:     127.0.0.1:50951 - "GET /api/status HTTP/1.1" 200 OK
+    Performing SMQ1 interaction (Execute)...
+    ✓ Clicked 'Execute' in frame ''
+    Waiting for SMQ1 results...
+INFO:     127.0.0.1:50951 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50951 - "GET /api/status HTTP/1.1" 200 OK
+    SMQ1 interaction complete.
+    Page title: qRFC Monitor (Outbound Queue)
+    ✓ Valid: 45,183 bytes
+
+  --- SMQ2 ---
+    URL: https://nwrhel9.techlabhome.in/sap/bc/gui/sap/its/webgui/?sap-client=100&sap-language=en&~transaction=SMQ2
+    → Navigating via URL reload fallback
+INFO:     127.0.0.1:50951 - "GET /api/status HTTP/1.1" 200 OK
+    Performing SMQ2 interaction (Execute)...
+    ✓ Clicked 'Execute' in frame ''
+    Waiting for SMQ2 results...
+INFO:     127.0.0.1:50951 - "GET /api/status HTTP/1.1" 200 OK
+    SMQ2 interaction complete.
+    Page title: qRFC Monitor (Inbound Queue)
+    ✓ Valid: 46,094 bytes
+
+  --- SOST ---
+    URL: https://nwrhel9.techlabhome.in/sap/bc/gui/sap/its/webgui/?sap-client=100&sap-language=en&~transaction=SOST
+    → Navigating via URL reload fallback
+INFO:     127.0.0.1:50951 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50951 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50951 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50951 - "GET /api/status HTTP/1.1" 200 OK
+    Page title: SAPconnect: Send Requests from 21.05.2026 to 22.05.2026
+    ✓ Valid: 79,841 bytes
+
+  --- STRUST ---
+    URL: https://nwrhel9.techlabhome.in/sap/bc/gui/sap/its/webgui/?sap-client=100&sap-language=en&~transaction=STRUST
+    → Navigating via URL reload fallback
+INFO:     127.0.0.1:50951 - "GET /api/status HTTP/1.1" 200 OK
+    → Handled popup: Continue
+INFO:     127.0.0.1:50951 - "GET /api/status HTTP/1.1" 200 OK
+    Performing STRUST specific interaction...
+      ✓ Captured STRUST initial screen
+      ✓ Found 4 Active PSEs.
+      Checking PSE: System PSE
+INFO:     127.0.0.1:50951 - "GET /api/status HTTP/1.1" 200 OK
+      ⚠ Anomaly Found: STRUST: PSE 'System PSE' Certificate 'CN=DigiCert Global Root G2, OU=www.digicert.com, O=DigiCert Inc, C=US' is expired or expiring soon (Valid To: 01.08.2013)
+      ⚠ Anomaly Found: STRUST: PSE 'System PSE' Certificate 'CN=DigiCert Global Root CA, OU=www.digicert.com, O=DigiCert Inc, C=US' is expired or expiring soon (Valid To: 10.11.2006)
+      ⚠ Anomaly Found: STRUST: PSE 'System PSE' Certificate 'CN=DigiCert High Assurance EV Root CA, OU=www.digicert.com, O=DigiCert Inc, C=US' is expired or expiring soon (Valid To: 10.11.2006)
+      Checking PSE: SSL server Standard
+INFO:     127.0.0.1:50951 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50951 - "GET /api/status HTTP/1.1" 200 OK
+      Checking PSE: SSL client SSL Client (Anonymous)
+INFO:     127.0.0.1:50951 - "GET /api/status HTTP/1.1" 200 OK
+      ⚠ Anomaly Found: STRUST: PSE 'SSL client SSL Client (Anonymous)' Certificate 'CN=DigiCert Global Root G2, OU=www.digicert.com, O=DigiCert Inc, C=US' is expired or expiring soon (Valid To: 01.08.2013)
+      ⚠ Anomaly Found: STRUST: PSE 'SSL client SSL Client (Anonymous)' Certificate 'CN=DigiCert Global Root CA, OU=www.digicert.com, O=DigiCert Inc, C=US' is expired or expiring soon (Valid To: 10.11.2006)
+      ⚠ Anomaly Found: STRUST: PSE 'SSL client SSL Client (Anonymous)' Certificate 'CN=DigiCert High Assurance EV Root CA, OU=www.digicert.com, O=DigiCert Inc, C=US' is expired or expiring soon (Valid To: 10.11.2006)
+      Checking PSE: SSL client SSL Client (Standard)
+INFO:     127.0.0.1:50951 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50951 - "GET /api/status HTTP/1.1" 200 OK
+    STRUST interaction complete.
+    Page title: Trust Manager: Display
+    STRUST already captured via STRUST handler
+
+============================================================
+Screenshot Summary: 38/23 valid captures
+============================================================
+
+DEBUG: Screenshot Map populated with 38 images: ['SM50', 'SM51', 'ST06', 'SM66', 'SM21', 'SM21_pages', 'SM21_log_text', 'DB02', 'DB02_pages', 'DB02_log_text', 'DB12', 'ST03N', 'ST03N_pages', 'SCC4', 'SCC4_pages', 'SCC4_anomalies', 'SMLG', 'SMLG_pages', 'SMGW', 'SMGW_pages', 'AL08', 'SM12', 'SM13', 'SMICM_anomalies', 'SMICM', 'SM37_log_text', 'SM37', 'ST22', 'ST22_pages', 'ST22_log_text', 'SM58', 'WE02', 'SMQ1', 'SMQ2', 'SOST', 'STRUST', 'STRUST_pages', 'STRUST_anomalies']
+Extracting data for SM50 - Work Process Status...
+DEBUG: SM50 Data Keys: ['WP_NO', 'WP_ITYPE', 'WP_TYP', 'WP_PID', 'WP_ISTATUS', 'WP_STATUS', 'WP_IWAIT', 'WP_WAITING', 'WP_SEM', 'WP_IRESTRT', 'WP_RESTART', 'WP_DUMPS', 'WP_CPU', 'WP_ELTIME', 'WP_MANDT', 'WP_BNAME', 'WP_REPORT', 'WP_IACTION', 'WP_ACTION', 'WP_TABLE', 'WP_SERVER', 'WP_WAITINF', 'WP_WAITTIM', 'WP_SEMSTAT', 'WP_INDEX', 'WP_SEM1', 'WP_SEM2', 'WP_SEM3', 'WP_SEM4', 'WP_SEM5', 'WP_SEM_LOCKING', 'WP_MTX', 'WP_MTX_EXCL', 'WP_MTX_SHRD']
+Extracting data for SM51 - Active Servers...
+Extracting data for ST06 - OS Monitor...
+Extracting data for SM66 - Global Work Process...
+Extracting data for SM21 - System Logs...
+Extracting data for DB02 - Database Performance...
+Extracting data for DB12 - Backup Status...
+Extracting data for ST03N - Workload Analysis...
+Extracting data for SCC4 - Client Administration...
+Extracting data for SMLG - Logon Groups...
+Extracting data for SMGW - Gateway Monitor...
+Extracting data for AL08 - Logged On Users...
+Extracting data for SM12 - Lock Entries...
+Extracting data for SM13 - Update Requests...
+Extracting data for SMICM - ICM Monitor...
+Extracting data for SM37 - Background Jobs...
+Extracting data for ST22 - ABAP Dumps...
+Extracting data for SM58 - Transactional RFC...
+Extracting data for WE02 - IDoc List...
+Extracting data for SMQ1 - qRFC Outbound...
+Extracting data for SMQ2 - qRFC Inbound...
+Extracting data for SOST - SAPconnect...
+Extracting data for STRUST - Trust Manager...
+Running External Checks...
+Running external checks (OS & URLs)...
+  Auto-discovering servers via SM51...
+  Total targets for SSH analysis: ['nwrhel9']
+  SSH: Connecting to nwrhel9...
+  ✓ SSH: Got 12 entries from nwrhel9
+  RFC connected for filesystem check...
+  SXPG_COMMAND_EXECUTE failed (expected if not configured in SM69): 5 (rc=5): key=COMMAND_NOT_FOUND, message= Number:000 [MSG: class=, type=, number=000, v1-4:=;;;]
+  ✓ Got SAP release info via TH_SAPREL2
+  ✓ Got server info via RFC_SYSTEM_INFO (SXPG not available)
+  ✓ Got 5 entries via RFC RFC_SYSTEM_INFO
+DEBUG WORD: Embedded screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SM50_20260522_204623.png (170971 bytes)
+DEBUG WORD: Embedded screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SM51_20260522_204627.png (52128 bytes)
+DEBUG WORD: Embedded screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/ST06_20260522_204631.png (199797 bytes)
+DEBUG WORD: Embedded screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SM66_20260522_204635.png (181037 bytes)
+DEBUG WORD: SM21 page 1 embedded (364569 bytes)
+DEBUG WORD: SM21 page 2 embedded (361758 bytes)
+DEBUG WORD: SM21 page 3 embedded (372567 bytes)
+DEBUG WORD: SM21 page 4 embedded (362587 bytes)
+DEBUG WORD: SM21 page 5 embedded (371203 bytes)
+DEBUG WORD: SM21 page 6 embedded (362878 bytes)
+DEBUG WORD: SM21 page 7 embedded (367511 bytes)
+DEBUG WORD: SM21 page 8 embedded (364017 bytes)
+DEBUG WORD: SM21 page 9 embedded (354480 bytes)
+DEBUG WORD: SM21 page 10 embedded (369101 bytes)
+DEBUG WORD: SM21 page 11 embedded (360117 bytes)
+DEBUG WORD: SM21 page 12 embedded (371714 bytes)
+DEBUG WORD: SM21 page 13 embedded (410330 bytes)
+DEBUG WORD: SM21 page 14 embedded (370808 bytes)
+DEBUG WORD: SM21 page 15 embedded (366942 bytes)
+DEBUG WORD: SM21 page 16 embedded (366516 bytes)
+DEBUG WORD: SM21 page 17 embedded (366466 bytes)
+DEBUG WORD: SM21 page 18 embedded (366528 bytes)
+DEBUG WORD: SM21 page 19 embedded (366578 bytes)
+DEBUG WORD: SM21 page 20 embedded (366614 bytes)
+DEBUG WORD: SM21 page 21 embedded (366467 bytes)
+DEBUG WORD: SM21 page 22 embedded (365617 bytes)
+DEBUG WORD: SM21 page 23 embedded (364204 bytes)
+DEBUG WORD: SM21 page 24 embedded (364359 bytes)
+DEBUG WORD: SM21 page 25 embedded (364242 bytes)
+DEBUG WORD: Embedded screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/DB02_20260522_204804.png (131125 bytes)
+DEBUG WORD: DB02 Overview embedded (186015 bytes)
+DEBUG WORD: DB02 Performance Graph embedded (64297 bytes)
+DEBUG WORD: Embedded screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/DB12_20260522_204824.png (182466 bytes)
+DEBUG WORD: Embedded screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/ST03N_20260522_204827.png (75472 bytes)
+DEBUG WORD: ST03N Workload Overview embedded (195815 bytes)
+DEBUG WORD: ST03N Transaction Profile embedded (247457 bytes)
+DEBUG WORD: ST03N Time Profile embedded (142902 bytes)
+DEBUG WORD: ST03N Response Time Distribution embedded (179733 bytes)
+DEBUG WORD: Embedded screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SCC4_Overview_20260522_204901.png (51705 bytes)
+DEBUG WORD: SCC4 Client 1 embedded (99822 bytes)
+DEBUG WORD: SCC4 Client 2 embedded (98335 bytes)
+DEBUG WORD: Embedded screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SMLG_Overview_20260522_204911.png (41054 bytes)
+DEBUG WORD: SMLG Load Distribution embedded (46214 bytes)
+DEBUG WORD: Embedded screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SMGW_Overview_20260522_204916.png (108682 bytes)
+DEBUG WORD: Embedded screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/AL08_20260522_204924.png (228064 bytes)
+DEBUG WORD: Embedded screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SM12_20260522_204929.png (111976 bytes)
+DEBUG WORD: Embedded screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SM13_20260522_204934.png (40953 bytes)
+DEBUG WORD: Embedded screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SMICM_20260522_204939.png (59820 bytes)
+DEBUG WORD: Embedded screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SM37_20260522_204950.png (195057 bytes)
+DEBUG WORD: ST22 Today embedded (301071 bytes)
+DEBUG WORD: ST22 Yesterday embedded (272979 bytes)
+DEBUG WORD: Embedded screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SM58_20260522_205009.png (24821 bytes)
+DEBUG WORD: Embedded screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/WE02_20260522_205022.png (38429 bytes)
+DEBUG WORD: Embedded screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SMQ1_20260522_205028.png (45183 bytes)
+DEBUG WORD: Embedded screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SMQ2_20260522_205033.png (46094 bytes)
+DEBUG WORD: Embedded screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SOST_20260522_205041.png (79841 bytes)
+DEBUG WORD: Embedded screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/STRUST_Overview_20260522_205044.png (139625 bytes)
+DEBUG PDF: Embedding screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SM50_20260522_204623.png (170971 bytes)
+DEBUG PDF: Embedding screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SM51_20260522_204627.png (52128 bytes)
+DEBUG PDF: Embedding screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/ST06_20260522_204631.png (199797 bytes)
+DEBUG PDF: Embedding screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SM66_20260522_204635.png (181037 bytes)
+DEBUG PDF: SM21 page 1 embedded (364569 bytes)
+DEBUG PDF: SM21 page 2 embedded (361758 bytes)
+DEBUG PDF: SM21 page 3 embedded (372567 bytes)
+DEBUG PDF: SM21 page 4 embedded (362587 bytes)
+DEBUG PDF: SM21 page 5 embedded (371203 bytes)
+DEBUG PDF: SM21 page 6 embedded (362878 bytes)
+DEBUG PDF: SM21 page 7 embedded (367511 bytes)
+DEBUG PDF: SM21 page 8 embedded (364017 bytes)
+DEBUG PDF: SM21 page 9 embedded (354480 bytes)
+DEBUG PDF: SM21 page 10 embedded (369101 bytes)
+DEBUG PDF: SM21 page 11 embedded (360117 bytes)
+DEBUG PDF: SM21 page 12 embedded (371714 bytes)
+DEBUG PDF: SM21 page 13 embedded (410330 bytes)
+DEBUG PDF: SM21 page 14 embedded (370808 bytes)
+DEBUG PDF: SM21 page 15 embedded (366942 bytes)
+DEBUG PDF: SM21 page 16 embedded (366516 bytes)
+DEBUG PDF: SM21 page 17 embedded (366466 bytes)
+DEBUG PDF: SM21 page 18 embedded (366528 bytes)
+DEBUG PDF: SM21 page 19 embedded (366578 bytes)
+DEBUG PDF: SM21 page 20 embedded (366614 bytes)
+DEBUG PDF: SM21 page 21 embedded (366467 bytes)
+DEBUG PDF: SM21 page 22 embedded (365617 bytes)
+DEBUG PDF: SM21 page 23 embedded (364204 bytes)
+DEBUG PDF: SM21 page 24 embedded (364359 bytes)
+DEBUG PDF: SM21 page 25 embedded (364242 bytes)
+DEBUG PDF: Embedding screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/DB02_20260522_204804.png (131125 bytes)
+DEBUG PDF: DB02 Overview embedded (186015 bytes)
+DEBUG PDF: DB02 Performance Graph embedded (64297 bytes)
+DEBUG PDF: Embedding screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/DB12_20260522_204824.png (182466 bytes)
+DEBUG PDF: Embedding screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/ST03N_20260522_204827.png (75472 bytes)
+DEBUG PDF: ST03N Workload Overview embedded (195815 bytes)
+DEBUG PDF: ST03N Transaction Profile embedded (247457 bytes)
+DEBUG PDF: ST03N Time Profile embedded (142902 bytes)
+DEBUG PDF: ST03N Response Time Distribution embedded (179733 bytes)
+DEBUG PDF: Embedding screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SCC4_Overview_20260522_204901.png (51705 bytes)
+DEBUG PDF: SCC4 Client 1 embedded (99822 bytes)
+DEBUG PDF: SCC4 Client 2 embedded (98335 bytes)
+DEBUG PDF: Embedding screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SMLG_Overview_20260522_204911.png (41054 bytes)
+DEBUG PDF: SMLG Load Distribution embedded (46214 bytes)
+DEBUG PDF: Embedding screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SMGW_Overview_20260522_204916.png (108682 bytes)
+DEBUG PDF: Embedding screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/AL08_20260522_204924.png (228064 bytes)
+DEBUG PDF: Embedding screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SM12_20260522_204929.png (111976 bytes)
+DEBUG PDF: Embedding screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SM13_20260522_204934.png (40953 bytes)
+DEBUG PDF: Embedding screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SMICM_20260522_204939.png (59820 bytes)
+DEBUG PDF: Embedding screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SM37_20260522_204950.png (195057 bytes)
+DEBUG PDF: ST22 Today embedded (301071 bytes)
+DEBUG PDF: ST22 Yesterday embedded (272979 bytes)
+DEBUG PDF: Embedding screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SM58_20260522_205009.png (24821 bytes)
+DEBUG PDF: Embedding screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/WE02_20260522_205022.png (38429 bytes)
+DEBUG PDF: Embedding screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SMQ1_20260522_205028.png (45183 bytes)
+DEBUG PDF: Embedding screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SMQ2_20260522_205033.png (46094 bytes)
+DEBUG PDF: Embedding screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SOST_20260522_205041.png (79841 bytes)
+DEBUG PDF: Embedding screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/STRUST_Overview_20260522_205044.png (139625 bytes)
+INFO:     127.0.0.1:50951 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50951 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50980 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50984 - "GET /api/download/pdf HTTP/1.1" 200 OK
