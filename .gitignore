@@ -24,3 +24,10 @@ node_modules/
 # OS Files
 .DS_Store
 Thumbs.db
+
+# Ignore logs and local DB
+*.log
+*.db
+backend/batch_reports/
+backend/reports_test/
+

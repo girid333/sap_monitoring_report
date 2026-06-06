@@ -1,52 +1,214 @@
-INFO:     Started server process [25845]
+INFO:     Started server process [33103]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
 INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
-INFO:     127.0.0.1:52100 - "GET /api/status HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52100 - "GET /api/status HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52100 - "GET /api/status HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52100 - "GET /api/status HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52100 - "GET /api/status HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52100 - "GET /api/status HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52100 - "GET /api/status HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52100 - "GET /api/status HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52100 - "GET /api/status HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52100 - "GET /api/status HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52100 - "GET /api/status HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52100 - "GET /api/status HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52100 - "GET /api/status HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52100 - "GET /api/status HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52100 - "GET /api/status HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52100 - "GET /api/status HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52100 - "GET /api/status HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52100 - "GET /api/status HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52100 - "GET /api/status HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52100 - "GET /api/status HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52100 - "OPTIONS /api/run HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52100 - "POST /api/run HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52986 - "GET /api/systems HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52986 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52986 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52986 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52986 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52986 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52986 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52986 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52986 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52986 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52986 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52986 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52986 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52986 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52986 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52986 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52986 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52986 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52986 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52986 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52986 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52986 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52986 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52986 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52986 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52986 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52986 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52986 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52986 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52986 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52986 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52986 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52986 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52986 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52986 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52986 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52986 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52986 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52986 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52986 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52986 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52986 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52986 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52986 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52986 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52986 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52986 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52986 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52986 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52986 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52986 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52986 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52986 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52986 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52986 - "OPTIONS /api/systems HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52986 - "POST /api/systems HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52986 - "GET /api/systems HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52986 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52986 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52986 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52986 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52986 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52986 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52986 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52986 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52986 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52986 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52986 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52986 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52986 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52986 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52986 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52986 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52986 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52986 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52986 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52986 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52986 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52986 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52986 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52986 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52986 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52986 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52986 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52986 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52986 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52986 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "OPTIONS /api/run/bulk HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "POST /api/run/bulk HTTP/1.1" 200 OK
 Running SAP Checks...
-INFO:     127.0.0.1:52100 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
 
 ============================================================
 SAP WebGUI Screenshot Engine
-URL: https://nwrhel9.techlabhome.in/sap/bc/gui/sap/its/webgui/?sap-client=100&sap-language=en#
+URL: https://nwrhel9.techlabhome.in/sap/bc/gui/sap/its/webgui/?sap-client=100&sap-language=en
 ============================================================
 
 [Step 1] Navigating to WebGUI URL...
-INFO:     127.0.0.1:52100 - "GET /api/status HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52100 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
 
 [Step 2] Logging in via JavaScript (bypassing CSS visibility)...
   Login form fill result: {'success': True, 'userName': 'sap-user', 'passName': 'sap-password'}
 
 [Step 3] Submitting login form...
   Waiting for login to complete...
-INFO:     127.0.0.1:52100 - "GET /api/status HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52100 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
   Post-login URL: https://nwrhel9.techlabhome.in/sap/bc/gui/sap/its/webgui/?sap-client=100&sap-language=EN#
   Post-login title: SAP Easy Access
-INFO:     127.0.0.1:52100 - "GET /api/status HTTP/1.1" 200 OK
-  Post-login screenshot: 1892933 bytes (real content)
+  Post-login screenshot: 1890623 bytes (real content)
 
 [Step 4] Verifying login...
   ✓ LOGIN VERIFIED - command field 'ToolbarOkCode' in frame ''
@@ -56,41 +218,43 @@ INFO:     127.0.0.1:52100 - "GET /api/status HTTP/1.1" 200 OK
   --- SM50 ---
     URL: https://nwrhel9.techlabhome.in/sap/bc/gui/sap/its/webgui/?sap-client=100&sap-language=en&~transaction=SM50
     → Navigating via URL reload fallback
-INFO:     127.0.0.1:52100 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
     Page title: Work Processes of AS Instance nwrhel9_F4H_00
-    ✓ Valid: 169,730 bytes
+    ✓ Valid: 174,289 bytes
 
   --- SM51 ---
     URL: https://nwrhel9.techlabhome.in/sap/bc/gui/sap/its/webgui/?sap-client=100&sap-language=en&~transaction=SM51
     → Navigating via URL reload fallback
-INFO:     127.0.0.1:52100 - "GET /api/status HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52100 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
     Page title: AS Instances of SAP System F4H
     ✓ Valid: 52,128 bytes
 
   --- ST06 ---
     URL: https://nwrhel9.techlabhome.in/sap/bc/gui/sap/its/webgui/?sap-client=100&sap-language=en&~transaction=ST06
     → Navigating via URL reload fallback
-INFO:     127.0.0.1:52100 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
     Page title: F4H nwrhel9_F4H_00 Linux nwrhel9 5.14.0-427.37.1.el9_4.x86_64 #1 SMP
-    ✓ Valid: 199,831 bytes
+    ✓ Valid: 200,216 bytes
 
   --- SM66 ---
     URL: https://nwrhel9.techlabhome.in/sap/bc/gui/sap/its/webgui/?sap-client=100&sap-language=en&~transaction=SM66
     → Navigating via URL reload fallback
-INFO:     127.0.0.1:52100 - "GET /api/status HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52100 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
     Page title: Work Processes of All AS Instances of System F4H
-    ✓ Valid: 177,700 bytes
+    ✓ Valid: 180,930 bytes
 
   --- SM21 ---
     URL: https://nwrhel9.techlabhome.in/sap/bc/gui/sap/its/webgui/?sap-client=100&sap-language=en&~transaction=SM21
     → Navigating via URL reload fallback
-INFO:     127.0.0.1:52100 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
     Performing SM21 interaction (Last 24h)...
     Frame 0 (''): 28 inputs
-      [0] id=M0:46:::1:34 val='22.05.2026'
-      [1] id=M0:46:::1:51 val='19:00:00'
+      [0] id=M0:46:::1:34 val='02.06.2026'
+      [1] id=M0:46:::1:51 val='08:00:00'
       [2] id=M0:46:::2:34 val=''
       [3] id=M0:46:::2:51 val='00:00:00'
       [4] id=M0:46:::3:34 val=''
@@ -100,97 +264,63 @@ INFO:     127.0.0.1:52100 - "GET /api/status HTTP/1.1" 200 OK
       [8] id=M0:46:::5:34 val=''
       [9] id=M0:46:::5:59 val=''
     ✓ Target frame: '' (28 inputs)
-      From Date: clicking [id="M0:46:::1:34"], typing '21.05.2026'
+      From Date: clicking [id="M0:46:::1:34"], typing '01.06.2026'
       ✓ From Date filled
-      From Time: clicking [id="M0:46:::1:51"], typing '21:21:19'
+      From Time: clicking [id="M0:46:::1:51"], typing '09:33:58'
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
       ✓ From Time filled
-      To Date: clicking [id="M0:46:::2:34"], typing '22.05.2026'
+      To Date: clicking [id="M0:46:::2:34"], typing '02.06.2026'
       ✓ To Date filled
-      To Time: clicking [id="M0:46:::2:51"], typing '21:21:19'
-INFO:     127.0.0.1:52100 - "GET /api/status HTTP/1.1" 200 OK
+      To Time: clicking [id="M0:46:::2:51"], typing '09:33:58'
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
       ✓ To Time filled
       Clearing Instance: [id="M0:46:::9:34"] (was 'nwrhel9_F4H_00')
       ✓ Instance field cleared
-    Diagnostic screenshot: 83904 bytes
+    Diagnostic screenshot: 84415 bytes
     Clicking Execute...
     ✓ Clicked 'Execute' text in frame ''
     Waiting for SM21 results...
-INFO:     127.0.0.1:52100 - "GET /api/status HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52100 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
     Scrolling through SM21 results...
       Found log table in frame '' (219 rows)
-INFO:     127.0.0.1:52100 - "GET /api/status HTTP/1.1" 200 OK
-      Page 1: 368,170 bytes
-        (101 new log lines extracted)
-INFO:     127.0.0.1:52100 - "GET /api/status HTTP/1.1" 200 OK
-      Page 2: 369,261 bytes
+      Page 1: 344,203 bytes
+        (98 new log lines extracted)
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+      Page 2: 357,747 bytes
         (32 new log lines extracted)
-INFO:     127.0.0.1:52100 - "GET /api/status HTTP/1.1" 200 OK
-      Page 3: 361,595 bytes
-        (31 new log lines extracted)
-INFO:     127.0.0.1:52100 - "GET /api/status HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52100 - "GET /api/status HTTP/1.1" 200 OK
-      Page 4: 369,251 bytes
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+      Page 3: 361,118 bytes
         (32 new log lines extracted)
-INFO:     127.0.0.1:52100 - "GET /api/status HTTP/1.1" 200 OK
-      Page 5: 366,957 bytes
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+      Page 4: 353,342 bytes
+        (27 new log lines extracted)
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+      Page 5: 360,549 bytes
         (0 new log lines extracted)
-INFO:     127.0.0.1:52100 - "GET /api/status HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52100 - "GET /api/status HTTP/1.1" 200 OK
-      Page 6: 365,754 bytes
-        (32 new log lines extracted)
-INFO:     127.0.0.1:52100 - "GET /api/status HTTP/1.1" 200 OK
-      Page 7: 364,954 bytes
-        (30 new log lines extracted)
-INFO:     127.0.0.1:52100 - "GET /api/status HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52100 - "GET /api/status HTTP/1.1" 200 OK
-      Page 8: 357,052 bytes
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+      Page 6: 354,389 bytes
         (34 new log lines extracted)
-INFO:     127.0.0.1:52100 - "GET /api/status HTTP/1.1" 200 OK
-      Page 9: 365,773 bytes
-        (32 new log lines extracted)
-INFO:     127.0.0.1:52100 - "GET /api/status HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52100 - "GET /api/status HTTP/1.1" 200 OK
-      Page 10: 360,075 bytes
-        (32 new log lines extracted)
-INFO:     127.0.0.1:52100 - "GET /api/status HTTP/1.1" 200 OK
-      Page 11: 372,217 bytes
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+      Page 7: 373,079 bytes
         (30 new log lines extracted)
-INFO:     127.0.0.1:52100 - "GET /api/status HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52100 - "GET /api/status HTTP/1.1" 200 OK
-      Page 12: 397,540 bytes
-        (18 new log lines extracted)
-INFO:     127.0.0.1:52100 - "GET /api/status HTTP/1.1" 200 OK
-      Page 13: 382,830 bytes
-        (4 new log lines extracted)
-INFO:     127.0.0.1:52100 - "GET /api/status HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52100 - "GET /api/status HTTP/1.1" 200 OK
-      Page 14: 368,645 bytes
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+      Page 8: 392,213 bytes
         (0 new log lines extracted)
-      Page 15: 366,494 bytes
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+      Page 9: 392,475 bytes
         (0 new log lines extracted)
-      Page 16: 366,560 bytes
-        (1 new log lines extracted)
-      Page 17: 366,622 bytes
-        (0 new log lines extracted)
-      Page 18: 366,474 bytes
-        (1 new log lines extracted)
-      Page 19: 366,559 bytes
-        (2 new log lines extracted)
-      Page 20: 366,460 bytes
-        (2 new log lines extracted)
-      Page 21: 366,389 bytes
-        (0 new log lines extracted)
-      Page 22: 364,275 bytes
-        (1 new log lines extracted)
-      Page 23: 364,255 bytes
-        (0 new log lines extracted)
-INFO:     127.0.0.1:52158 - "GET /api/status HTTP/1.1" 200 OK
-      Page 24: 364,204 bytes
-        (1 new log lines extracted)
-      Page 25: 364,225 bytes
-        (2 new log lines extracted)
-    ✓ SM21: 25 pages, 418 log lines captured
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+      Page 10: 392,475 bytes
+      No change in page text detected. Waiting 2s for late render retry...
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+      Scroll position unchanged on page 10 — reached end of results
+    ✓ SM21: 9 pages, 253 log lines captured
     SM21 interaction complete.
     Page title: Syslog messages
     SM21 already captured via scroll handler
@@ -198,58 +328,85 @@ INFO:     127.0.0.1:52158 - "GET /api/status HTTP/1.1" 200 OK
   --- DB02 ---
     URL: https://nwrhel9.techlabhome.in/sap/bc/gui/sap/its/webgui/?sap-client=100&sap-language=en&~transaction=DB02
     → Navigating via URL reload fallback
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
     Performing DB02 tree interaction & screenshots...
       ✓ Captured initial DB02 screen (Missing Indexes)
       Found DB02 tree in frame: 
       ✓ Clicked 'Current Status' expand: expand_dispatched
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
       ✓ Double-clicked 'Overview': dblclick_dispatched
       Waiting for Overview pane to load...
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
       ✓ Captured Overview Initial screenshot
       --- DB02 SQL Editor Graph ---
       ✓ Expanded 'Diagnostics': expand_dispatched
       ✓ Double-clicked 'SQL Editor': dblclick_dispatched
       Waiting for SQL Editor pane to load...
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
       Inputting SQL query...
       ✓ Filled SQL query in textarea in frame ''
       Clicking Execute...
       ✓ Clicked Execute button in frame ''
       Waiting for SQL execution to complete...
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
       Extracting result data...
-      ✓ Found 206 rows in frame ''
-      Parsed 206 data points. Generating graph...
-      ✓ Saved graph to /Users/giri/Antigravity/sap_monitoring/backend/screenshots/DB02_Performance_Graph_20260522_212246.png
+      ✓ Found 176 rows in frame ''
+      Parsed 176 data points. Generating graph...
+      ✓ Saved graph to /Users/giri/Antigravity/sap_monitoring/backend/screenshots/DB02_Performance_Graph_20260602_093440.png
 
   --- DB12 ---
     URL: https://nwrhel9.techlabhome.in/sap/bc/gui/sap/its/webgui/?sap-client=100&sap-language=en&~transaction=DB12
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
     → Navigating via URL reload fallback
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
     Page title: Backup Catalog
-    ✓ Valid: 182,516 bytes
+    ✓ Valid: 183,239 bytes
 
   --- ST03N ---
     URL: https://nwrhel9.techlabhome.in/sap/bc/gui/sap/its/webgui/?sap-client=100&sap-language=en&~transaction=ST03N
     → Navigating via URL reload fallback
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
     Performing ST03N tree interaction & screenshots...
       ✓ Captured initial ST03N screen
       Found ST03N tree frame.
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
       ✓ Double-clicked date: 17.10.2025
       Checking for calculation popup...
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
       ✓ Clicked 'Dialog' to calculate data. Waiting dynamically for processing to finish...
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
       ✓ Calculation finished. Popup disappeared.
       Waiting for Workload Overview to load...
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
       Sorting Response Time (ms) column descending...
-INFO:     127.0.0.1:52185 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
       ✓ Captured Workload Overview (Sorted)
-INFO:     127.0.0.1:52185 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
       ✓ Double-clicked 'Standard' transaction profile
       Waiting for Transaction Profile to load...
-INFO:     127.0.0.1:52185 - "GET /api/status HTTP/1.1" 200 OK
       ✓ Captured Transaction Profile
       ✓ Double-clicked 'Time Profile'
       Waiting for Time Profile to load...
-INFO:     127.0.0.1:52185 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
       ✓ Captured Time Profile
       ✓ Double-clicked 'Response Time Distribution'
       Waiting for Response Time Distribution to load...
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
       ✓ Captured Response Time Distribution
     ST03N interaction complete.
     Page title: Workload in System F4H
@@ -258,27 +415,27 @@ INFO:     127.0.0.1:52185 - "GET /api/status HTTP/1.1" 200 OK
   --- SCC4 ---
     URL: https://nwrhel9.techlabhome.in/sap/bc/gui/sap/its/webgui/?sap-client=100&sap-language=en&~transaction=SCC4
     → Navigating via URL reload fallback
-INFO:     127.0.0.1:52185 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
     Performing SCC4 specific interaction...
       ✓ Captured initial SCC4 screen
       ✓ Double-clicked first client row in frame: 
       Waiting for Details screen to load...
-INFO:     127.0.0.1:52185 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
       ✓ Extracted Client 000:
         Changes: No changes allowed
         Cross-Client: Changes to repository and cross-client customizing allowed
         Protection: Protection level 1: No overwriting
         eCATT: eCATT and CATT Not Allowed
       ✓ Clicked 'Next Entry'
-INFO:     127.0.0.1:52185 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
       ✓ Extracted Client 100:
         Changes: Changes without automatic recording
         Cross-Client: Changes to repository and cross-client customizing allowed
         Protection: Protection level 0: No restriction
         eCATT: eCATT and CATT Allowed
       ✓ Clicked 'Next Entry'
-INFO:     127.0.0.1:52185 - "GET /api/status HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52185 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
       Reached end of clients list (Client number stopped changing).
     SCC4 interaction complete.
     Page title: Display View "Clients": Details
@@ -287,12 +444,12 @@ INFO:     127.0.0.1:52185 - "GET /api/status HTTP/1.1" 200 OK
   --- SMLG ---
     URL: https://nwrhel9.techlabhome.in/sap/bc/gui/sap/its/webgui/?sap-client=100&sap-language=en&~transaction=SMLG
     → Navigating via URL reload fallback
-INFO:     127.0.0.1:52185 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
     Performing SMLG specific interaction...
       ✓ Captured initial SMLG screen
       ✓ Clicked 'Load distribution'
       ✓ Captured Load distribution screen
-      ✓ Parsed SMLG Server: nwrhel9_F4H_00 | Response Time: 9ms
+      ✓ Parsed SMLG Server: nwrhel9_F4H_00 | Response Time: 0ms
       ✓ Completed SMLG Load Distribution parsing
     SMLG interaction complete.
     Page title: CCMS: Load Distribution
@@ -301,12 +458,13 @@ INFO:     127.0.0.1:52185 - "GET /api/status HTTP/1.1" 200 OK
   --- SMGW ---
     URL: https://nwrhel9.techlabhome.in/sap/bc/gui/sap/its/webgui/?sap-client=100&sap-language=en&~transaction=SMGW
     → Navigating via URL reload fallback
-INFO:     127.0.0.1:52185 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
     Performing SMGW specific interaction...
       ✓ Captured SMGW Active Connections screen
-INFO:     127.0.0.1:52185 - "GET /api/status HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52185 - "GET /api/status HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52185 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
       ✓ Captured SMGW Logged on Clients screen
       ✓ SMGW connection scan complete. Anomalies found: 0
     SMGW interaction complete.
@@ -316,14 +474,14 @@ INFO:     127.0.0.1:52185 - "GET /api/status HTTP/1.1" 200 OK
   --- AL08 ---
     URL: https://nwrhel9.techlabhome.in/sap/bc/gui/sap/its/webgui/?sap-client=100&sap-language=en&~transaction=AL08
     → Navigating via URL reload fallback
-INFO:     127.0.0.1:52185 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
     Page title: System-Wide List of User Sessions in SAP System F4H
-    ✓ Valid: 194,104 bytes
+    ✓ Valid: 193,058 bytes
 
   --- SM12 ---
     URL: https://nwrhel9.techlabhome.in/sap/bc/gui/sap/its/webgui/?sap-client=100&sap-language=en&~transaction=SM12
     → Navigating via URL reload fallback
-INFO:     127.0.0.1:52185 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
     Performing SM12 interaction (Search all lock entries)...
       Found SM12 in frame 0 ('') — 5 visible inputs:
         [1] id='M0:46:1::1:23' val='100' type=text w=40
@@ -337,31 +495,32 @@ INFO:     127.0.0.1:52185 - "GET /api/status HTTP/1.1" 200 OK
     Clicking Search...
     ✓ Clicked 'Search' in frame ''
     Waiting for SM12 results...
-INFO:     127.0.0.1:52185 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
     SM12 interaction complete.
     Page title: Enqueue Administration
-    ✓ Valid: 111,569 bytes
+    ✓ Valid: 111,905 bytes
 
   --- SM13 ---
     URL: https://nwrhel9.techlabhome.in/sap/bc/gui/sap/its/webgui/?sap-client=100&sap-language=en&~transaction=SM13
     → Navigating via URL reload fallback
-INFO:     127.0.0.1:52185 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
     Performing SM13 interaction (Execute)...
     ✓ Clicked 'Execute' in frame ''
     Waiting for SM13 results...
-INFO:     127.0.0.1:52185 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
     SM13 interaction complete.
     Page title: Update Requests
-INFO:     127.0.0.1:52185 - "GET /api/status HTTP/1.1" 200 OK
     ✓ Valid: 40,953 bytes
 
   --- SMICM ---
     URL: https://nwrhel9.techlabhome.in/sap/bc/gui/sap/its/webgui/?sap-client=100&sap-language=en&~transaction=SMICM
     → Navigating via URL reload fallback
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
     Performing SMICM specific interaction...
       ✓ Captured SMICM initial screen
-INFO:     127.0.0.1:52185 - "GET /api/status HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52185 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
       ✓ Captured ICM Services screen
       ✓ Service: HTTP port 80 | Active=True
       ✓ Service: HTTPS port 443 | Active=True
@@ -375,13 +534,14 @@ INFO:     127.0.0.1:52185 - "GET /api/status HTTP/1.1" 200 OK
   --- SM37 ---
     URL: https://nwrhel9.techlabhome.in/sap/bc/gui/sap/its/webgui/?sap-client=100&sap-language=en&~transaction=SM37
     → Navigating via URL reload fallback
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
     Performing SM37 interaction (Cancelled jobs, last 24h)...
-      From: 21.05.2026  To: 22.05.2026
+      From: 01.06.2026  To: 02.06.2026
       Found 8 text inputs in frame 0 ('')
       ✓ Job Name: '*' → '*'
       ✓ User Name: 'DDIC' → '*'
-      ✓ From Date: '22.05.2026' → '21.05.2026'
-      ✓ To Date: '22.05.2026' → '22.05.2026'
+      ✓ From Date: '02.06.2026' → '01.06.2026'
+      ✓ To Date: '02.06.2026' → '02.06.2026'
       === CHECKBOX HANDLING ===
       Found 6 role='checkbox' elements
         ☐ Sched. (aria-checked=false)
@@ -391,11 +551,11 @@ INFO:     127.0.0.1:52185 - "GET /api/status HTTP/1.1" 200 OK
         ☑ Finished (aria-checked=true)
         ☑ Canceled (aria-checked=true)
       ○ Sched.: already unchecked, no change needed
-INFO:     127.0.0.1:52185 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
       ✓ Released: UNCHECKED (was checked)
       ✓ Ready: UNCHECKED (was checked)
       ✓ Active: UNCHECKED (was checked)
-INFO:     127.0.0.1:52185 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
       ✓ Finished: UNCHECKED (was checked)
       ○ Canceled: already checked, no change needed
       Final checkbox state:
@@ -405,35 +565,35 @@ INFO:     127.0.0.1:52185 - "GET /api/status HTTP/1.1" 200 OK
         ☐ Active
         ☐ Finished
         ☑ Canceled
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
     Clicking Execute...
     ✓ Clicked 'Execute' in frame ''
     Waiting for SM37 results...
-INFO:     127.0.0.1:52185 - "GET /api/status HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52185 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
     SM37 interaction complete.
     ✓ SM37: 10 lines captured
     Page title: Job Overview
-    ✓ Valid: 195,057 bytes
+    ✓ Valid: 185,288 bytes
 
   --- ST22 ---
     URL: https://nwrhel9.techlabhome.in/sap/bc/gui/sap/its/webgui/?sap-client=100&sap-language=en&~transaction=ST22
     → Navigating via URL reload fallback
-INFO:     127.0.0.1:52185 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
     Performing ST22 interaction (Today + Yesterday dumps)...
       Clicking 'Today'...
       ✓ Clicked 'Today' in frame ''
-INFO:     127.0.0.1:52185 - "GET /api/status HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52185 - "GET /api/status HTTP/1.1" 200 OK
-      Screenshot: /Users/giri/Antigravity/sap_monitoring/backend/screenshots/ST22_Today_20260522_212440.png (312,227 bytes)
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+      Screenshot: /Users/giri/Antigravity/sap_monitoring/backend/screenshots/ST22_Today_20260602_093635.png (87,755 bytes)
       Going back to ST22 initial screen...
-INFO:     127.0.0.1:52185 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
       Clicking 'Yesterday'...
       ✓ Clicked 'Yesterday' in frame ''
-INFO:     127.0.0.1:52185 - "GET /api/status HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52185 - "GET /api/status HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52185 - "GET /api/status HTTP/1.1" 200 OK
-      Screenshot: /Users/giri/Antigravity/sap_monitoring/backend/screenshots/ST22_Yesterday_20260522_212448.png (272,979 bytes)
-    ✓ ST22: 2 pages, 87 lines captured
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+      Screenshot: /Users/giri/Antigravity/sap_monitoring/backend/screenshots/ST22_Yesterday_20260602_093642.png (97,794 bytes)
+    ✓ ST22: 2 pages, 53 lines captured
     ST22 interaction complete.
     Page title: List of Selected Runtime Errors
     ST22 already captured via Today/Yesterday handler
@@ -441,11 +601,12 @@ INFO:     127.0.0.1:52185 - "GET /api/status HTTP/1.1" 200 OK
   --- SM58 ---
     URL: https://nwrhel9.techlabhome.in/sap/bc/gui/sap/its/webgui/?sap-client=100&sap-language=en&~transaction=SM58
     → Navigating via URL reload fallback
-INFO:     127.0.0.1:52185 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
     Performing SM58 interaction (Execute)...
     ✓ Clicked 'Execute' in frame ''
     Waiting for SM58 results...
-INFO:     127.0.0.1:52185 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
     SM58 interaction complete.
     Page title: Transactional RFC
     ✓ Valid: 24,821 bytes
@@ -453,15 +614,15 @@ INFO:     127.0.0.1:52185 - "GET /api/status HTTP/1.1" 200 OK
   --- WE02 ---
     URL: https://nwrhel9.techlabhome.in/sap/bc/gui/sap/its/webgui/?sap-client=100&sap-language=en&~transaction=WE02
     → Navigating via URL reload fallback
-INFO:     127.0.0.1:52185 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
     Performing WE02 interaction (Execute)...
     ✓ Clicked 'Execute' in frame ''
     Waiting for WE02 results...
-INFO:     127.0.0.1:52185 - "GET /api/status HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52185 - "GET /api/status HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52185 - "GET /api/status HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52185 - "GET /api/status HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52185 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
     WE02 interaction complete.
     Page title: SAP
     ✓ Valid: 38,429 bytes
@@ -469,11 +630,12 @@ INFO:     127.0.0.1:52185 - "GET /api/status HTTP/1.1" 200 OK
   --- SMQ1 ---
     URL: https://nwrhel9.techlabhome.in/sap/bc/gui/sap/its/webgui/?sap-client=100&sap-language=en&~transaction=SMQ1
     → Navigating via URL reload fallback
-INFO:     127.0.0.1:52185 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
     Performing SMQ1 interaction (Execute)...
     ✓ Clicked 'Execute' in frame ''
     Waiting for SMQ1 results...
-INFO:     127.0.0.1:52185 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
     SMQ1 interaction complete.
     Page title: qRFC Monitor (Outbound Queue)
     ✓ Valid: 45,183 bytes
@@ -481,11 +643,11 @@ INFO:     127.0.0.1:52185 - "GET /api/status HTTP/1.1" 200 OK
   --- SMQ2 ---
     URL: https://nwrhel9.techlabhome.in/sap/bc/gui/sap/its/webgui/?sap-client=100&sap-language=en&~transaction=SMQ2
     → Navigating via URL reload fallback
-INFO:     127.0.0.1:52185 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
     Performing SMQ2 interaction (Execute)...
     ✓ Clicked 'Execute' in frame ''
     Waiting for SMQ2 results...
-INFO:     127.0.0.1:52185 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
     SMQ2 interaction complete.
     Page title: qRFC Monitor (Inbound Queue)
     ✓ Valid: 46,094 bytes
@@ -493,36 +655,38 @@ INFO:     127.0.0.1:52185 - "GET /api/status HTTP/1.1" 200 OK
   --- SOST ---
     URL: https://nwrhel9.techlabhome.in/sap/bc/gui/sap/its/webgui/?sap-client=100&sap-language=en&~transaction=SOST
     → Navigating via URL reload fallback
-INFO:     127.0.0.1:52185 - "GET /api/status HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52185 - "GET /api/status HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52185 - "GET /api/status HTTP/1.1" 200 OK
-    Page title: SAPconnect: Send Requests from 21.05.2026 to 22.05.2026
-    ✓ Valid: 79,841 bytes
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+    Page title: SAPconnect: Send Requests from 01.06.2026 to 02.06.2026
+    ✓ Valid: 78,934 bytes
 
   --- STRUST ---
     URL: https://nwrhel9.techlabhome.in/sap/bc/gui/sap/its/webgui/?sap-client=100&sap-language=en&~transaction=STRUST
     → Navigating via URL reload fallback
-INFO:     127.0.0.1:52185 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
     → Handled popup: Continue
-INFO:     127.0.0.1:52185 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
     Performing STRUST specific interaction...
       ✓ Captured STRUST initial screen
       ✓ Found 4 Active PSEs.
       Checking PSE: System PSE
-INFO:     127.0.0.1:52185 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
       ⚠ Anomaly Found: STRUST: PSE 'System PSE' Certificate 'CN=DigiCert Global Root G2, OU=www.digicert.com, O=DigiCert Inc, C=US' is expired or expiring soon (Valid To: 01.08.2013)
       ⚠ Anomaly Found: STRUST: PSE 'System PSE' Certificate 'CN=DigiCert Global Root CA, OU=www.digicert.com, O=DigiCert Inc, C=US' is expired or expiring soon (Valid To: 10.11.2006)
       ⚠ Anomaly Found: STRUST: PSE 'System PSE' Certificate 'CN=DigiCert High Assurance EV Root CA, OU=www.digicert.com, O=DigiCert Inc, C=US' is expired or expiring soon (Valid To: 10.11.2006)
       Checking PSE: SSL server Standard
-INFO:     127.0.0.1:52185 - "GET /api/status HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52185 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
       Checking PSE: SSL client SSL Client (Anonymous)
-INFO:     127.0.0.1:52185 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
       ⚠ Anomaly Found: STRUST: PSE 'SSL client SSL Client (Anonymous)' Certificate 'CN=DigiCert Global Root G2, OU=www.digicert.com, O=DigiCert Inc, C=US' is expired or expiring soon (Valid To: 01.08.2013)
       ⚠ Anomaly Found: STRUST: PSE 'SSL client SSL Client (Anonymous)' Certificate 'CN=DigiCert Global Root CA, OU=www.digicert.com, O=DigiCert Inc, C=US' is expired or expiring soon (Valid To: 10.11.2006)
       ⚠ Anomaly Found: STRUST: PSE 'SSL client SSL Client (Anonymous)' Certificate 'CN=DigiCert High Assurance EV Root CA, OU=www.digicert.com, O=DigiCert Inc, C=US' is expired or expiring soon (Valid To: 10.11.2006)
       Checking PSE: SSL client SSL Client (Standard)
-INFO:     127.0.0.1:52185 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
     STRUST interaction complete.
     Page title: Trust Manager: Display
     STRUST already captured via STRUST handler
@@ -560,125 +724,1997 @@ Running External Checks...
 Running external checks (OS & URLs)...
   Auto-discovering servers via SM51...
   Total targets for SSH analysis: ['nwrhel9']
-  SSH: Connecting to nwrhel9...
+  SSH: Connecting to nwrhel9 (Method: password)...
   ✓ SSH: Got 12 entries from nwrhel9
   RFC connected for filesystem check...
   SXPG_COMMAND_EXECUTE failed (expected if not configured in SM69): 5 (rc=5): key=COMMAND_NOT_FOUND, message= Number:000 [MSG: class=, type=, number=000, v1-4:=;;;]
   ✓ Got SAP release info via TH_SAPREL2
   ✓ Got server info via RFC_SYSTEM_INFO (SXPG not available)
   ✓ Got 5 entries via RFC RFC_SYSTEM_INFO
-DEBUG WORD: Embedded screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SM50_20260522_212105.png (169730 bytes)
-DEBUG WORD: Embedded screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SM51_20260522_212109.png (52128 bytes)
-DEBUG WORD: Embedded screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/ST06_20260522_212113.png (199831 bytes)
-DEBUG WORD: Embedded screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SM66_20260522_212117.png (177700 bytes)
-DEBUG WORD: SM21 page 1 embedded (368170 bytes)
-DEBUG WORD: SM21 page 2 embedded (369261 bytes)
-DEBUG WORD: SM21 page 3 embedded (361595 bytes)
-DEBUG WORD: SM21 page 4 embedded (369251 bytes)
-DEBUG WORD: SM21 page 5 embedded (366957 bytes)
-DEBUG WORD: SM21 page 6 embedded (365754 bytes)
-DEBUG WORD: SM21 page 7 embedded (364954 bytes)
-DEBUG WORD: SM21 page 8 embedded (357052 bytes)
-DEBUG WORD: SM21 page 9 embedded (365773 bytes)
-DEBUG WORD: SM21 page 10 embedded (360075 bytes)
-DEBUG WORD: SM21 page 11 embedded (372217 bytes)
-DEBUG WORD: SM21 page 12 embedded (397540 bytes)
-DEBUG WORD: SM21 page 13 embedded (382830 bytes)
-DEBUG WORD: SM21 page 14 embedded (368645 bytes)
-DEBUG WORD: SM21 page 15 embedded (366494 bytes)
-DEBUG WORD: SM21 page 16 embedded (366560 bytes)
-DEBUG WORD: SM21 page 17 embedded (366622 bytes)
-DEBUG WORD: SM21 page 18 embedded (366474 bytes)
-DEBUG WORD: SM21 page 19 embedded (366559 bytes)
-DEBUG WORD: SM21 page 20 embedded (366460 bytes)
-DEBUG WORD: SM21 page 21 embedded (366389 bytes)
-DEBUG WORD: SM21 page 22 embedded (364275 bytes)
-DEBUG WORD: SM21 page 23 embedded (364255 bytes)
-DEBUG WORD: SM21 page 24 embedded (364204 bytes)
-DEBUG WORD: SM21 page 25 embedded (364225 bytes)
-DEBUG WORD: Embedded screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/DB02_20260522_212246.png (130701 bytes)
-DEBUG WORD: DB02 Overview embedded (185868 bytes)
-DEBUG WORD: DB02 Performance Graph embedded (69256 bytes)
-DEBUG WORD: Embedded screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/DB12_20260522_212308.png (182516 bytes)
-DEBUG WORD: Embedded screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/ST03N_20260522_212311.png (75472 bytes)
+DEBUG WORD: Embedded screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SM50_20260602_093344.png (174289 bytes)
+DEBUG WORD: Embedded screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SM51_20260602_093348.png (52128 bytes)
+DEBUG WORD: Embedded screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/ST06_20260602_093352.png (200216 bytes)
+DEBUG WORD: Embedded screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SM66_20260602_093356.png (180930 bytes)
+DEBUG WORD: SM21 page 1 embedded (344203 bytes)
+DEBUG WORD: SM21 page 2 embedded (357747 bytes)
+DEBUG WORD: SM21 page 3 embedded (361118 bytes)
+DEBUG WORD: SM21 page 4 embedded (353342 bytes)
+DEBUG WORD: SM21 page 5 embedded (360549 bytes)
+DEBUG WORD: SM21 page 6 embedded (354389 bytes)
+DEBUG WORD: SM21 page 7 embedded (373079 bytes)
+DEBUG WORD: SM21 page 8 embedded (392213 bytes)
+DEBUG WORD: SM21 page 9 embedded (392475 bytes)
+DEBUG WORD: Embedded screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/DB02_20260602_093440.png (131487 bytes)
+DEBUG WORD: DB02 Overview embedded (186451 bytes)
+DEBUG WORD: DB02 Performance Graph embedded (56264 bytes)
+DEBUG WORD: Embedded screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/DB12_20260602_093502.png (183239 bytes)
+DEBUG WORD: Embedded screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/ST03N_20260602_093505.png (75472 bytes)
 DEBUG WORD: ST03N Workload Overview embedded (195815 bytes)
 DEBUG WORD: ST03N Transaction Profile embedded (247457 bytes)
 DEBUG WORD: ST03N Time Profile embedded (142902 bytes)
 DEBUG WORD: ST03N Response Time Distribution embedded (179733 bytes)
-DEBUG WORD: Embedded screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SCC4_Overview_20260522_212345.png (51705 bytes)
+DEBUG WORD: Embedded screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SCC4_Overview_20260602_093540.png (51705 bytes)
 DEBUG WORD: SCC4 Client 1 embedded (99822 bytes)
 DEBUG WORD: SCC4 Client 2 embedded (98335 bytes)
-DEBUG WORD: Embedded screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SMLG_Overview_20260522_212355.png (41054 bytes)
-DEBUG WORD: SMLG Load Distribution embedded (45897 bytes)
-DEBUG WORD: Embedded screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SMGW_Overview_20260522_212400.png (110206 bytes)
-DEBUG WORD: Embedded screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/AL08_20260522_212408.png (194104 bytes)
-DEBUG WORD: Embedded screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SM12_20260522_212413.png (111569 bytes)
-DEBUG WORD: Embedded screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SM13_20260522_212419.png (40953 bytes)
-DEBUG WORD: Embedded screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SMICM_20260522_212424.png (59820 bytes)
-DEBUG WORD: Embedded screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SM37_20260522_212434.png (195057 bytes)
-DEBUG WORD: ST22 Today embedded (312227 bytes)
-DEBUG WORD: ST22 Yesterday embedded (272979 bytes)
-DEBUG WORD: Embedded screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SM58_20260522_212453.png (24821 bytes)
-DEBUG WORD: Embedded screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/WE02_20260522_212506.png (38429 bytes)
-DEBUG WORD: Embedded screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SMQ1_20260522_212511.png (45183 bytes)
-DEBUG WORD: Embedded screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SMQ2_20260522_212517.png (46094 bytes)
-DEBUG WORD: Embedded screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SOST_20260522_212524.png (79841 bytes)
-DEBUG WORD: Embedded screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/STRUST_Overview_20260522_212528.png (139625 bytes)
-DEBUG PDF: Embedding screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SM50_20260522_212105.png (169730 bytes)
-DEBUG PDF: Embedding screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SM51_20260522_212109.png (52128 bytes)
-DEBUG PDF: Embedding screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/ST06_20260522_212113.png (199831 bytes)
-DEBUG PDF: Embedding screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SM66_20260522_212117.png (177700 bytes)
-DEBUG PDF: SM21 page 1 embedded (368170 bytes)
-DEBUG PDF: SM21 page 2 embedded (369261 bytes)
-DEBUG PDF: SM21 page 3 embedded (361595 bytes)
-DEBUG PDF: SM21 page 4 embedded (369251 bytes)
-DEBUG PDF: SM21 page 5 embedded (366957 bytes)
-DEBUG PDF: SM21 page 6 embedded (365754 bytes)
-DEBUG PDF: SM21 page 7 embedded (364954 bytes)
-DEBUG PDF: SM21 page 8 embedded (357052 bytes)
-DEBUG PDF: SM21 page 9 embedded (365773 bytes)
-DEBUG PDF: SM21 page 10 embedded (360075 bytes)
-DEBUG PDF: SM21 page 11 embedded (372217 bytes)
-DEBUG PDF: SM21 page 12 embedded (397540 bytes)
-DEBUG PDF: SM21 page 13 embedded (382830 bytes)
-DEBUG PDF: SM21 page 14 embedded (368645 bytes)
-DEBUG PDF: SM21 page 15 embedded (366494 bytes)
-DEBUG PDF: SM21 page 16 embedded (366560 bytes)
-DEBUG PDF: SM21 page 17 embedded (366622 bytes)
-DEBUG PDF: SM21 page 18 embedded (366474 bytes)
-DEBUG PDF: SM21 page 19 embedded (366559 bytes)
-DEBUG PDF: SM21 page 20 embedded (366460 bytes)
-DEBUG PDF: SM21 page 21 embedded (366389 bytes)
-DEBUG PDF: SM21 page 22 embedded (364275 bytes)
-DEBUG PDF: SM21 page 23 embedded (364255 bytes)
-DEBUG PDF: SM21 page 24 embedded (364204 bytes)
-DEBUG PDF: SM21 page 25 embedded (364225 bytes)
-DEBUG PDF: Embedding screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/DB02_20260522_212246.png (130701 bytes)
-DEBUG PDF: DB02 Overview embedded (185868 bytes)
-DEBUG PDF: DB02 Performance Graph embedded (69256 bytes)
-DEBUG PDF: Embedding screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/DB12_20260522_212308.png (182516 bytes)
-DEBUG PDF: Embedding screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/ST03N_20260522_212311.png (75472 bytes)
+DEBUG WORD: Embedded screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SMLG_Overview_20260602_093549.png (41054 bytes)
+DEBUG WORD: SMLG Load Distribution embedded (45728 bytes)
+DEBUG WORD: Embedded screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SMGW_Overview_20260602_093555.png (109241 bytes)
+DEBUG WORD: Embedded screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/AL08_20260602_093603.png (193058 bytes)
+DEBUG WORD: Embedded screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SM12_20260602_093608.png (111905 bytes)
+DEBUG WORD: Embedded screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SM13_20260602_093613.png (40953 bytes)
+DEBUG WORD: Embedded screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SMICM_20260602_093618.png (59820 bytes)
+DEBUG WORD: Embedded screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SM37_20260602_093628.png (185288 bytes)
+DEBUG WORD: ST22 Today embedded (87755 bytes)
+DEBUG WORD: ST22 Yesterday embedded (97794 bytes)
+DEBUG WORD: Embedded screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SM58_20260602_093647.png (24821 bytes)
+DEBUG WORD: Embedded screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/WE02_20260602_093700.png (38429 bytes)
+DEBUG WORD: Embedded screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SMQ1_20260602_093706.png (45183 bytes)
+DEBUG WORD: Embedded screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SMQ2_20260602_093711.png (46094 bytes)
+DEBUG WORD: Embedded screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SOST_20260602_093718.png (78934 bytes)
+DEBUG WORD: Embedded screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/STRUST_Overview_20260602_093722.png (139625 bytes)
+DEBUG PDF: Embedding screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SM50_20260602_093344.png (174289 bytes)
+DEBUG PDF: Embedding screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SM51_20260602_093348.png (52128 bytes)
+DEBUG PDF: Embedding screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/ST06_20260602_093352.png (200216 bytes)
+DEBUG PDF: Embedding screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SM66_20260602_093356.png (180930 bytes)
+DEBUG PDF: SM21 page 1 embedded (344203 bytes)
+DEBUG PDF: SM21 page 2 embedded (357747 bytes)
+DEBUG PDF: SM21 page 3 embedded (361118 bytes)
+DEBUG PDF: SM21 page 4 embedded (353342 bytes)
+DEBUG PDF: SM21 page 5 embedded (360549 bytes)
+DEBUG PDF: SM21 page 6 embedded (354389 bytes)
+DEBUG PDF: SM21 page 7 embedded (373079 bytes)
+DEBUG PDF: SM21 page 8 embedded (392213 bytes)
+DEBUG PDF: SM21 page 9 embedded (392475 bytes)
+DEBUG PDF: Embedding screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/DB02_20260602_093440.png (131487 bytes)
+DEBUG PDF: DB02 Overview embedded (186451 bytes)
+DEBUG PDF: DB02 Performance Graph embedded (56264 bytes)
+DEBUG PDF: Embedding screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/DB12_20260602_093502.png (183239 bytes)
+DEBUG PDF: Embedding screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/ST03N_20260602_093505.png (75472 bytes)
 DEBUG PDF: ST03N Workload Overview embedded (195815 bytes)
 DEBUG PDF: ST03N Transaction Profile embedded (247457 bytes)
 DEBUG PDF: ST03N Time Profile embedded (142902 bytes)
 DEBUG PDF: ST03N Response Time Distribution embedded (179733 bytes)
-DEBUG PDF: Embedding screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SCC4_Overview_20260522_212345.png (51705 bytes)
+DEBUG PDF: Embedding screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SCC4_Overview_20260602_093540.png (51705 bytes)
 DEBUG PDF: SCC4 Client 1 embedded (99822 bytes)
 DEBUG PDF: SCC4 Client 2 embedded (98335 bytes)
-DEBUG PDF: Embedding screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SMLG_Overview_20260522_212355.png (41054 bytes)
-DEBUG PDF: SMLG Load Distribution embedded (45897 bytes)
-DEBUG PDF: Embedding screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SMGW_Overview_20260522_212400.png (110206 bytes)
-DEBUG PDF: Embedding screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/AL08_20260522_212408.png (194104 bytes)
-DEBUG PDF: Embedding screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SM12_20260522_212413.png (111569 bytes)
-DEBUG PDF: Embedding screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SM13_20260522_212419.png (40953 bytes)
-DEBUG PDF: Embedding screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SMICM_20260522_212424.png (59820 bytes)
-DEBUG PDF: Embedding screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SM37_20260522_212434.png (195057 bytes)
-DEBUG PDF: ST22 Today embedded (312227 bytes)
-DEBUG PDF: ST22 Yesterday embedded (272979 bytes)
-DEBUG PDF: Embedding screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SM58_20260522_212453.png (24821 bytes)
-DEBUG PDF: Embedding screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/WE02_20260522_212506.png (38429 bytes)
-DEBUG PDF: Embedding screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SMQ1_20260522_212511.png (45183 bytes)
-DEBUG PDF: Embedding screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SMQ2_20260522_212517.png (46094 bytes)
-DEBUG PDF: Embedding screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SOST_20260522_212524.png (79841 bytes)
-DEBUG PDF: Embedding screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/STRUST_Overview_20260522_212528.png (139625 bytes)
-INFO:     127.0.0.1:52233 - "GET /api/status HTTP/1.1" 200 OK
+DEBUG PDF: Embedding screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SMLG_Overview_20260602_093549.png (41054 bytes)
+DEBUG PDF: SMLG Load Distribution embedded (45728 bytes)
+DEBUG PDF: Embedding screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SMGW_Overview_20260602_093555.png (109241 bytes)
+DEBUG PDF: Embedding screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/AL08_20260602_093603.png (193058 bytes)
+DEBUG PDF: Embedding screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SM12_20260602_093608.png (111905 bytes)
+DEBUG PDF: Embedding screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SM13_20260602_093613.png (40953 bytes)
+DEBUG PDF: Embedding screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SMICM_20260602_093618.png (59820 bytes)
+DEBUG PDF: Embedding screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SM37_20260602_093628.png (185288 bytes)
+DEBUG PDF: ST22 Today embedded (87755 bytes)
+DEBUG PDF: ST22 Yesterday embedded (97794 bytes)
+DEBUG PDF: Embedding screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SM58_20260602_093647.png (24821 bytes)
+DEBUG PDF: Embedding screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/WE02_20260602_093700.png (38429 bytes)
+DEBUG PDF: Embedding screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SMQ1_20260602_093706.png (45183 bytes)
+DEBUG PDF: Embedding screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SMQ2_20260602_093711.png (46094 bytes)
+DEBUG PDF: Embedding screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SOST_20260602_093718.png (78934 bytes)
+DEBUG PDF: Embedding screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/STRUST_Overview_20260602_093722.png (139625 bytes)
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53340 - "GET /api/download/zip HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/systems HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "POST /api/run/bulk HTTP/1.1" 200 OK
+Running SAP Checks...
+
+============================================================
+SAP WebGUI Screenshot Engine
+URL: https://nwrhel9.techlabhome.in/sap/bc/gui/sap/its/webgui/?sap-client=100&sap-language=en
+============================================================
+
+[Step 1] Navigating to WebGUI URL...
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+
+[Step 2] Logging in via JavaScript (bypassing CSS visibility)...
+  Login form fill result: {'success': True, 'userName': 'sap-user', 'passName': 'sap-password'}
+
+[Step 3] Submitting login form...
+  Waiting for login to complete...
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+  Post-login URL: https://nwrhel9.techlabhome.in/sap/bc/gui/sap/its/webgui/?sap-client=100&sap-language=EN#
+  Post-login title: SAP Easy Access
+  Post-login screenshot: 1892933 bytes (real content)
+
+[Step 4] Verifying login...
+  ✓ LOGIN VERIFIED - command field 'ToolbarOkCode' in frame ''
+
+[Step 5] Capturing 23 T-code screenshots via URL navigation...
+
+  --- SM50 ---
+    URL: https://nwrhel9.techlabhome.in/sap/bc/gui/sap/its/webgui/?sap-client=100&sap-language=en&~transaction=SM50
+    → Navigating via URL reload fallback
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+    Page title: Work Processes of AS Instance nwrhel9_F4H_00
+    ✓ Valid: 174,226 bytes
+
+  --- SM51 ---
+    URL: https://nwrhel9.techlabhome.in/sap/bc/gui/sap/its/webgui/?sap-client=100&sap-language=en&~transaction=SM51
+    → Navigating via URL reload fallback
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+    Page title: AS Instances of SAP System F4H
+    ✓ Valid: 52,128 bytes
+
+  --- ST06 ---
+    URL: https://nwrhel9.techlabhome.in/sap/bc/gui/sap/its/webgui/?sap-client=100&sap-language=en&~transaction=ST06
+    → Navigating via URL reload fallback
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+    Page title: F4H nwrhel9_F4H_00 Linux nwrhel9 5.14.0-427.37.1.el9_4.x86_64 #1 SMP
+    ✓ Valid: 200,011 bytes
+
+  --- SM66 ---
+    URL: https://nwrhel9.techlabhome.in/sap/bc/gui/sap/its/webgui/?sap-client=100&sap-language=en&~transaction=SM66
+    → Navigating via URL reload fallback
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+    Page title: Work Processes of All AS Instances of System F4H
+    ✓ Valid: 180,700 bytes
+
+  --- SM21 ---
+    URL: https://nwrhel9.techlabhome.in/sap/bc/gui/sap/its/webgui/?sap-client=100&sap-language=en&~transaction=SM21
+    → Navigating via URL reload fallback
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+    Performing SM21 interaction (Last 24h)...
+    Frame 0 (''): 28 inputs
+      [0] id=M0:46:::1:34 val='02.06.2026'
+      [1] id=M0:46:::1:51 val='08:00:00'
+      [2] id=M0:46:::2:34 val=''
+      [3] id=M0:46:::2:51 val='00:00:00'
+      [4] id=M0:46:::3:34 val=''
+      [5] id=M0:46:::3:59 val=''
+      [6] id=M0:46:::4:34 val=''
+      [7] id=M0:46:::4:59 val=''
+      [8] id=M0:46:::5:34 val=''
+      [9] id=M0:46:::5:59 val=''
+    ✓ Target frame: '' (28 inputs)
+      From Date: clicking [id="M0:46:::1:34"], typing '01.06.2026'
+      ✓ From Date filled
+      From Time: clicking [id="M0:46:::1:51"], typing '09:42:15'
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+      ✓ From Time filled
+      To Date: clicking [id="M0:46:::2:34"], typing '02.06.2026'
+      ✓ To Date filled
+      To Time: clicking [id="M0:46:::2:51"], typing '09:42:15'
+      ✓ To Time filled
+      Clearing Instance: [id="M0:46:::9:34"] (was 'nwrhel9_F4H_00')
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+      ✓ Instance field cleared
+    Diagnostic screenshot: 83877 bytes
+    Clicking Execute...
+    ✓ Clicked 'Execute' text in frame ''
+    Waiting for SM21 results...
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+    Scrolling through SM21 results...
+      Found log table in frame '' (219 rows)
+      Page 1: 344,203 bytes
+        (98 new log lines extracted)
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+      Page 2: 357,748 bytes
+        (32 new log lines extracted)
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+      Page 3: 361,118 bytes
+        (32 new log lines extracted)
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+      Page 4: 353,370 bytes
+        (25 new log lines extracted)
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+      Page 5: 360,549 bytes
+        (0 new log lines extracted)
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+      Page 6: 354,312 bytes
+        (34 new log lines extracted)
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+      Page 7: 373,184 bytes
+        (33 new log lines extracted)
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+      Page 8: 396,360 bytes
+        (0 new log lines extracted)
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+      Page 9: 399,822 bytes
+        (0 new log lines extracted)
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+      Page 10: 399,746 bytes
+        (0 new log lines extracted)
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+      Page 11: 399,746 bytes
+      No change in page text detected. Waiting 2s for late render retry...
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+      Scroll position unchanged on page 11 — reached end of results
+    ✓ SM21: 10 pages, 254 log lines captured
+    SM21 interaction complete.
+    Page title: Syslog messages
+    SM21 already captured via scroll handler
+
+  --- DB02 ---
+    URL: https://nwrhel9.techlabhome.in/sap/bc/gui/sap/its/webgui/?sap-client=100&sap-language=en&~transaction=DB02
+    → Navigating via URL reload fallback
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+    Performing DB02 tree interaction & screenshots...
+      ✓ Captured initial DB02 screen (Missing Indexes)
+      Found DB02 tree in frame: 
+      ✓ Clicked 'Current Status' expand: expand_dispatched
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+      ✓ Double-clicked 'Overview': dblclick_dispatched
+      Waiting for Overview pane to load...
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+      ✓ Captured Overview Initial screenshot
+      --- DB02 SQL Editor Graph ---
+      ✓ Expanded 'Diagnostics': expand_dispatched
+      ✓ Double-clicked 'SQL Editor': dblclick_dispatched
+      Waiting for SQL Editor pane to load...
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+      Inputting SQL query...
+      ✓ Filled SQL query in textarea in frame ''
+      Clicking Execute...
+      ✓ Clicked Execute button in frame ''
+      Waiting for SQL execution to complete...
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+      Extracting result data...
+      ✓ Found 185 rows in frame ''
+      Parsed 185 data points. Generating graph...
+      ✓ Saved graph to /Users/giri/Antigravity/sap_monitoring/backend/screenshots/DB02_Performance_Graph_20260602_094259.png
+
+  --- DB12 ---
+    URL: https://nwrhel9.techlabhome.in/sap/bc/gui/sap/its/webgui/?sap-client=100&sap-language=en&~transaction=DB12
+    → Navigating via URL reload fallback
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+    Page title: Backup Catalog
+    ✓ Valid: 183,084 bytes
+
+  --- ST03N ---
+    URL: https://nwrhel9.techlabhome.in/sap/bc/gui/sap/its/webgui/?sap-client=100&sap-language=en&~transaction=ST03N
+    → Navigating via URL reload fallback
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+    Performing ST03N tree interaction & screenshots...
+      ✓ Captured initial ST03N screen
+      Found ST03N tree frame.
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+      ✓ Double-clicked date: 17.10.2025
+      Checking for calculation popup...
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+      ✓ Clicked 'Dialog' to calculate data. Waiting dynamically for processing to finish...
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+      ✓ Calculation finished. Popup disappeared.
+      Waiting for Workload Overview to load...
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+      Sorting Response Time (ms) column descending...
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+      ✓ Captured Workload Overview (Sorted)
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+      ✓ Double-clicked 'Standard' transaction profile
+      Waiting for Transaction Profile to load...
+      ✓ Captured Transaction Profile
+      ✓ Double-clicked 'Time Profile'
+      Waiting for Time Profile to load...
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+      ✓ Captured Time Profile
+      ✓ Double-clicked 'Response Time Distribution'
+      Waiting for Response Time Distribution to load...
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+      ✓ Captured Response Time Distribution
+    ST03N interaction complete.
+    Page title: Workload in System F4H
+    ST03N already captured via ST03N handler
+
+  --- SCC4 ---
+    URL: https://nwrhel9.techlabhome.in/sap/bc/gui/sap/its/webgui/?sap-client=100&sap-language=en&~transaction=SCC4
+    → Navigating via URL reload fallback
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+    Performing SCC4 specific interaction...
+      ✓ Captured initial SCC4 screen
+      ✓ Double-clicked first client row in frame: 
+      Waiting for Details screen to load...
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+      ✓ Extracted Client 000:
+        Changes: No changes allowed
+        Cross-Client: Changes to repository and cross-client customizing allowed
+        Protection: Protection level 1: No overwriting
+        eCATT: eCATT and CATT Not Allowed
+      ✓ Clicked 'Next Entry'
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+      ✓ Extracted Client 100:
+        Changes: Changes without automatic recording
+        Cross-Client: Changes to repository and cross-client customizing allowed
+        Protection: Protection level 0: No restriction
+        eCATT: eCATT and CATT Allowed
+      ✓ Clicked 'Next Entry'
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+      Reached end of clients list (Client number stopped changing).
+    SCC4 interaction complete.
+    Page title: Display View "Clients": Details
+    SCC4 already captured via SCC4 handler
+
+  --- SMLG ---
+    URL: https://nwrhel9.techlabhome.in/sap/bc/gui/sap/its/webgui/?sap-client=100&sap-language=en&~transaction=SMLG
+    → Navigating via URL reload fallback
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+    Performing SMLG specific interaction...
+      ✓ Captured initial SMLG screen
+      ✓ Clicked 'Load distribution'
+      ✓ Captured Load distribution screen
+      ✓ Parsed SMLG Server: nwrhel9_F4H_00 | Response Time: 82ms
+      ✓ Completed SMLG Load Distribution parsing
+    SMLG interaction complete.
+    Page title: CCMS: Load Distribution
+    SMLG already captured via SMLG handler
+
+  --- SMGW ---
+    URL: https://nwrhel9.techlabhome.in/sap/bc/gui/sap/its/webgui/?sap-client=100&sap-language=en&~transaction=SMGW
+    → Navigating via URL reload fallback
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+    Performing SMGW specific interaction...
+      ✓ Captured SMGW Active Connections screen
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+      ✓ Captured SMGW Logged on Clients screen
+      ✓ SMGW connection scan complete. Anomalies found: 0
+    SMGW interaction complete.
+    Page title: Gateway Monitor for nwrhel9_F4H_00 / Active Connections
+    SMGW already captured via SMGW handler
+
+  --- AL08 ---
+    URL: https://nwrhel9.techlabhome.in/sap/bc/gui/sap/its/webgui/?sap-client=100&sap-language=en&~transaction=AL08
+    → Navigating via URL reload fallback
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+    Page title: System-Wide List of User Sessions in SAP System F4H
+    ✓ Valid: 245,211 bytes
+
+  --- SM12 ---
+    URL: https://nwrhel9.techlabhome.in/sap/bc/gui/sap/its/webgui/?sap-client=100&sap-language=en&~transaction=SM12
+    → Navigating via URL reload fallback
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+    Performing SM12 interaction (Search all lock entries)...
+      Found SM12 in frame 0 ('') — 5 visible inputs:
+        [1] id='M0:46:1::1:23' val='100' type=text w=40
+        [2] id='M0:46:1::2:23' val='DDIC' type=text w=130
+        [3] id='M0:46:1::3:23' val='' type=text w=310
+        [4] id='M0:46:1::4:23' val='' type=text w=510
+        [5] id='M0:46:1::5:23' val='1.000' type=text w=90
+      JS fill [0] '100' → '*' (id=M0:46:1::1:23)
+      JS fill [1] 'DDIC' → '*' (id=M0:46:1::2:23)
+      Debug screenshot: /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SM12_debug_filled.png
+    Clicking Search...
+    ✓ Clicked 'Search' in frame ''
+    Waiting for SM12 results...
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+    SM12 interaction complete.
+    Page title: Enqueue Administration
+    ✓ Valid: 112,296 bytes
+
+  --- SM13 ---
+    URL: https://nwrhel9.techlabhome.in/sap/bc/gui/sap/its/webgui/?sap-client=100&sap-language=en&~transaction=SM13
+    → Navigating via URL reload fallback
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+    Performing SM13 interaction (Execute)...
+    ✓ Clicked 'Execute' in frame ''
+    Waiting for SM13 results...
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+    SM13 interaction complete.
+    Page title: Update Requests
+    ✓ Valid: 40,953 bytes
+
+  --- SMICM ---
+    URL: https://nwrhel9.techlabhome.in/sap/bc/gui/sap/its/webgui/?sap-client=100&sap-language=en&~transaction=SMICM
+    → Navigating via URL reload fallback
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+    Performing SMICM specific interaction...
+      ✓ Captured SMICM initial screen
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+      ✓ Captured ICM Services screen
+      ✓ Service: HTTP port 80 | Active=True
+      ✓ Service: HTTPS port 443 | Active=True
+      ✓ Service: SMTP port 26 | Active=False
+      ✓ Service: SMTP port 25 | Active=True
+      ✓ SMICM services scan complete. Anomalies: 1
+    SMICM interaction complete.
+    Page title: ICM Monitor - Service Display
+    ✓ Valid: 59,820 bytes
+
+  --- SM37 ---
+    URL: https://nwrhel9.techlabhome.in/sap/bc/gui/sap/its/webgui/?sap-client=100&sap-language=en&~transaction=SM37
+    → Navigating via URL reload fallback
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+    Performing SM37 interaction (Cancelled jobs, last 24h)...
+      From: 01.06.2026  To: 02.06.2026
+      Found 8 text inputs in frame 0 ('')
+      ✓ Job Name: '*' → '*'
+      ✓ User Name: 'DDIC' → '*'
+      ✓ From Date: '02.06.2026' → '01.06.2026'
+      ✓ To Date: '02.06.2026' → '02.06.2026'
+      === CHECKBOX HANDLING ===
+      Found 6 role='checkbox' elements
+        ☐ Sched. (aria-checked=false)
+        ☑ Released (aria-checked=true)
+        ☑ Ready (aria-checked=true)
+        ☑ Active (aria-checked=true)
+        ☑ Finished (aria-checked=true)
+        ☑ Canceled (aria-checked=true)
+      ○ Sched.: already unchecked, no change needed
+      ✓ Released: UNCHECKED (was checked)
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+      ✓ Ready: UNCHECKED (was checked)
+      ✓ Active: UNCHECKED (was checked)
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+      ✓ Finished: UNCHECKED (was checked)
+      ○ Canceled: already checked, no change needed
+      Final checkbox state:
+        ☐ Sched.
+        ☐ Released
+        ☐ Ready
+        ☐ Active
+        ☐ Finished
+        ☑ Canceled
+    Clicking Execute...
+    ✓ Clicked 'Execute' in frame ''
+    Waiting for SM37 results...
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+    SM37 interaction complete.
+    ✓ SM37: 10 lines captured
+    Page title: Job Overview
+    ✓ Valid: 185,288 bytes
+
+  --- ST22 ---
+    URL: https://nwrhel9.techlabhome.in/sap/bc/gui/sap/its/webgui/?sap-client=100&sap-language=en&~transaction=ST22
+    → Navigating via URL reload fallback
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+    Performing ST22 interaction (Today + Yesterday dumps)...
+      Clicking 'Today'...
+      ✓ Clicked 'Today' in frame ''
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+      Screenshot: /Users/giri/Antigravity/sap_monitoring/backend/screenshots/ST22_Today_20260602_094450.png (87,755 bytes)
+      Going back to ST22 initial screen...
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+      Clicking 'Yesterday'...
+      ✓ Clicked 'Yesterday' in frame ''
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+      Screenshot: /Users/giri/Antigravity/sap_monitoring/backend/screenshots/ST22_Yesterday_20260602_094457.png (97,794 bytes)
+    ✓ ST22: 2 pages, 53 lines captured
+    ST22 interaction complete.
+    Page title: List of Selected Runtime Errors
+    ST22 already captured via Today/Yesterday handler
+
+  --- SM58 ---
+    URL: https://nwrhel9.techlabhome.in/sap/bc/gui/sap/its/webgui/?sap-client=100&sap-language=en&~transaction=SM58
+    → Navigating via URL reload fallback
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+    Performing SM58 interaction (Execute)...
+    ✓ Clicked 'Execute' in frame ''
+    Waiting for SM58 results...
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+    SM58 interaction complete.
+    Page title: Transactional RFC
+    ✓ Valid: 24,821 bytes
+
+  --- WE02 ---
+    URL: https://nwrhel9.techlabhome.in/sap/bc/gui/sap/its/webgui/?sap-client=100&sap-language=en&~transaction=WE02
+    → Navigating via URL reload fallback
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+    Performing WE02 interaction (Execute)...
+    ✓ Clicked 'Execute' in frame ''
+    Waiting for WE02 results...
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+    WE02 interaction complete.
+    Page title: SAP
+    ✓ Valid: 38,429 bytes
+
+  --- SMQ1 ---
+    URL: https://nwrhel9.techlabhome.in/sap/bc/gui/sap/its/webgui/?sap-client=100&sap-language=en&~transaction=SMQ1
+    → Navigating via URL reload fallback
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+    Performing SMQ1 interaction (Execute)...
+    ✓ Clicked 'Execute' in frame ''
+    Waiting for SMQ1 results...
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+    SMQ1 interaction complete.
+    Page title: qRFC Monitor (Outbound Queue)
+    ✓ Valid: 45,183 bytes
+
+  --- SMQ2 ---
+    URL: https://nwrhel9.techlabhome.in/sap/bc/gui/sap/its/webgui/?sap-client=100&sap-language=en&~transaction=SMQ2
+    → Navigating via URL reload fallback
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+    Performing SMQ2 interaction (Execute)...
+    ✓ Clicked 'Execute' in frame ''
+    Waiting for SMQ2 results...
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+    SMQ2 interaction complete.
+    Page title: qRFC Monitor (Inbound Queue)
+    ✓ Valid: 46,094 bytes
+
+  --- SOST ---
+    URL: https://nwrhel9.techlabhome.in/sap/bc/gui/sap/its/webgui/?sap-client=100&sap-language=en&~transaction=SOST
+    → Navigating via URL reload fallback
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+    Page title: SAPconnect: Send Requests from 01.06.2026 to 02.06.2026
+    ✓ Valid: 78,934 bytes
+
+  --- STRUST ---
+    URL: https://nwrhel9.techlabhome.in/sap/bc/gui/sap/its/webgui/?sap-client=100&sap-language=en&~transaction=STRUST
+    → Navigating via URL reload fallback
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+    → Handled popup: Continue
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+    Performing STRUST specific interaction...
+      ✓ Captured STRUST initial screen
+      ✓ Found 4 Active PSEs.
+      Checking PSE: System PSE
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+      ⚠ Anomaly Found: STRUST: PSE 'System PSE' Certificate 'CN=DigiCert Global Root G2, OU=www.digicert.com, O=DigiCert Inc, C=US' is expired or expiring soon (Valid To: 01.08.2013)
+      ⚠ Anomaly Found: STRUST: PSE 'System PSE' Certificate 'CN=DigiCert Global Root CA, OU=www.digicert.com, O=DigiCert Inc, C=US' is expired or expiring soon (Valid To: 10.11.2006)
+      ⚠ Anomaly Found: STRUST: PSE 'System PSE' Certificate 'CN=DigiCert High Assurance EV Root CA, OU=www.digicert.com, O=DigiCert Inc, C=US' is expired or expiring soon (Valid To: 10.11.2006)
+      Checking PSE: SSL server Standard
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+      Checking PSE: SSL client SSL Client (Anonymous)
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+      ⚠ Anomaly Found: STRUST: PSE 'SSL client SSL Client (Anonymous)' Certificate 'CN=DigiCert Global Root G2, OU=www.digicert.com, O=DigiCert Inc, C=US' is expired or expiring soon (Valid To: 01.08.2013)
+      ⚠ Anomaly Found: STRUST: PSE 'SSL client SSL Client (Anonymous)' Certificate 'CN=DigiCert Global Root CA, OU=www.digicert.com, O=DigiCert Inc, C=US' is expired or expiring soon (Valid To: 10.11.2006)
+      ⚠ Anomaly Found: STRUST: PSE 'SSL client SSL Client (Anonymous)' Certificate 'CN=DigiCert High Assurance EV Root CA, OU=www.digicert.com, O=DigiCert Inc, C=US' is expired or expiring soon (Valid To: 10.11.2006)
+      Checking PSE: SSL client SSL Client (Standard)
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+    STRUST interaction complete.
+    Page title: Trust Manager: Display
+    STRUST already captured via STRUST handler
+
+============================================================
+Screenshot Summary: 38/23 valid captures
+============================================================
+
+DEBUG: Screenshot Map populated with 38 images: ['SM50', 'SM51', 'ST06', 'SM66', 'SM21', 'SM21_pages', 'SM21_log_text', 'DB02', 'DB02_pages', 'DB02_log_text', 'DB12', 'ST03N', 'ST03N_pages', 'SCC4', 'SCC4_pages', 'SCC4_anomalies', 'SMLG', 'SMLG_pages', 'SMGW', 'SMGW_pages', 'AL08', 'SM12', 'SM13', 'SMICM_anomalies', 'SMICM', 'SM37_log_text', 'SM37', 'ST22', 'ST22_pages', 'ST22_log_text', 'SM58', 'WE02', 'SMQ1', 'SMQ2', 'SOST', 'STRUST', 'STRUST_pages', 'STRUST_anomalies']
+Extracting data for SM50 - Work Process Status...
+DEBUG: SM50 Data Keys: ['WP_NO', 'WP_ITYPE', 'WP_TYP', 'WP_PID', 'WP_ISTATUS', 'WP_STATUS', 'WP_IWAIT', 'WP_WAITING', 'WP_SEM', 'WP_IRESTRT', 'WP_RESTART', 'WP_DUMPS', 'WP_CPU', 'WP_ELTIME', 'WP_MANDT', 'WP_BNAME', 'WP_REPORT', 'WP_IACTION', 'WP_ACTION', 'WP_TABLE', 'WP_SERVER', 'WP_WAITINF', 'WP_WAITTIM', 'WP_SEMSTAT', 'WP_INDEX', 'WP_SEM1', 'WP_SEM2', 'WP_SEM3', 'WP_SEM4', 'WP_SEM5', 'WP_SEM_LOCKING', 'WP_MTX', 'WP_MTX_EXCL', 'WP_MTX_SHRD']
+Extracting data for SM51 - Active Servers...
+Extracting data for ST06 - OS Monitor...
+Extracting data for SM66 - Global Work Process...
+Extracting data for SM21 - System Logs...
+Extracting data for DB02 - Database Performance...
+Extracting data for DB12 - Backup Status...
+Extracting data for ST03N - Workload Analysis...
+Extracting data for SCC4 - Client Administration...
+Extracting data for SMLG - Logon Groups...
+Extracting data for SMGW - Gateway Monitor...
+Extracting data for AL08 - Logged On Users...
+Extracting data for SM12 - Lock Entries...
+Extracting data for SM13 - Update Requests...
+Extracting data for SMICM - ICM Monitor...
+Extracting data for SM37 - Background Jobs...
+Extracting data for ST22 - ABAP Dumps...
+Extracting data for SM58 - Transactional RFC...
+Extracting data for WE02 - IDoc List...
+Extracting data for SMQ1 - qRFC Outbound...
+Extracting data for SMQ2 - qRFC Inbound...
+Extracting data for SOST - SAPconnect...
+Extracting data for STRUST - Trust Manager...
+Running External Checks...
+Running external checks (OS & URLs)...
+  Auto-discovering servers via SM51...
+  Total targets for SSH analysis: ['nwrhel9']
+  SSH: Connecting to nwrhel9 (Method: password)...
+  ✓ SSH: Got 12 entries from nwrhel9
+  RFC connected for filesystem check...
+  SXPG_COMMAND_EXECUTE failed (expected if not configured in SM69): 5 (rc=5): key=COMMAND_NOT_FOUND, message= Number:000 [MSG: class=, type=, number=000, v1-4:=;;;]
+  ✓ Got SAP release info via TH_SAPREL2
+  ✓ Got server info via RFC_SYSTEM_INFO (SXPG not available)
+  ✓ Got 5 entries via RFC RFC_SYSTEM_INFO
+DEBUG WORD: Embedded screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SM50_20260602_094201.png (174226 bytes)
+DEBUG WORD: Embedded screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SM51_20260602_094205.png (52128 bytes)
+DEBUG WORD: Embedded screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/ST06_20260602_094209.png (200011 bytes)
+DEBUG WORD: Embedded screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SM66_20260602_094213.png (180700 bytes)
+DEBUG WORD: SM21 page 1 embedded (344203 bytes)
+DEBUG WORD: SM21 page 2 embedded (357748 bytes)
+DEBUG WORD: SM21 page 3 embedded (361118 bytes)
+DEBUG WORD: SM21 page 4 embedded (353370 bytes)
+DEBUG WORD: SM21 page 5 embedded (360549 bytes)
+DEBUG WORD: SM21 page 6 embedded (354312 bytes)
+DEBUG WORD: SM21 page 7 embedded (373184 bytes)
+DEBUG WORD: SM21 page 8 embedded (396360 bytes)
+DEBUG WORD: SM21 page 9 embedded (399822 bytes)
+DEBUG WORD: SM21 page 10 embedded (399746 bytes)
+DEBUG WORD: Embedded screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/DB02_20260602_094259.png (131300 bytes)
+DEBUG WORD: DB02 Overview embedded (186273 bytes)
+DEBUG WORD: DB02 Performance Graph embedded (57147 bytes)
+DEBUG WORD: Embedded screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/DB12_20260602_094318.png (183084 bytes)
+DEBUG WORD: Embedded screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/ST03N_20260602_094321.png (75472 bytes)
+DEBUG WORD: ST03N Workload Overview embedded (195815 bytes)
+DEBUG WORD: ST03N Transaction Profile embedded (247457 bytes)
+DEBUG WORD: ST03N Time Profile embedded (142902 bytes)
+DEBUG WORD: ST03N Response Time Distribution embedded (179733 bytes)
+DEBUG WORD: Embedded screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SCC4_Overview_20260602_094355.png (51705 bytes)
+DEBUG WORD: SCC4 Client 1 embedded (99822 bytes)
+DEBUG WORD: SCC4 Client 2 embedded (98335 bytes)
+DEBUG WORD: Embedded screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SMLG_Overview_20260602_094404.png (41054 bytes)
+DEBUG WORD: SMLG Load Distribution embedded (45832 bytes)
+DEBUG WORD: Embedded screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SMGW_Overview_20260602_094410.png (151103 bytes)
+DEBUG WORD: Embedded screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/AL08_20260602_094418.png (245211 bytes)
+DEBUG WORD: Embedded screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SM12_20260602_094423.png (112296 bytes)
+DEBUG WORD: Embedded screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SM13_20260602_094428.png (40953 bytes)
+DEBUG WORD: Embedded screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SMICM_20260602_094433.png (59820 bytes)
+DEBUG WORD: Embedded screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SM37_20260602_094443.png (185288 bytes)
+DEBUG WORD: ST22 Today embedded (87755 bytes)
+DEBUG WORD: ST22 Yesterday embedded (97794 bytes)
+DEBUG WORD: Embedded screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SM58_20260602_094503.png (24821 bytes)
+DEBUG WORD: Embedded screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/WE02_20260602_094516.png (38429 bytes)
+DEBUG WORD: Embedded screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SMQ1_20260602_094521.png (45183 bytes)
+DEBUG WORD: Embedded screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SMQ2_20260602_094526.png (46094 bytes)
+DEBUG WORD: Embedded screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SOST_20260602_094533.png (78934 bytes)
+DEBUG WORD: Embedded screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/STRUST_Overview_20260602_094537.png (139625 bytes)
+DEBUG PDF: Embedding screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SM50_20260602_094201.png (174226 bytes)
+DEBUG PDF: Embedding screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SM51_20260602_094205.png (52128 bytes)
+DEBUG PDF: Embedding screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/ST06_20260602_094209.png (200011 bytes)
+DEBUG PDF: Embedding screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SM66_20260602_094213.png (180700 bytes)
+DEBUG PDF: SM21 page 1 embedded (344203 bytes)
+DEBUG PDF: SM21 page 2 embedded (357748 bytes)
+DEBUG PDF: SM21 page 3 embedded (361118 bytes)
+DEBUG PDF: SM21 page 4 embedded (353370 bytes)
+DEBUG PDF: SM21 page 5 embedded (360549 bytes)
+DEBUG PDF: SM21 page 6 embedded (354312 bytes)
+DEBUG PDF: SM21 page 7 embedded (373184 bytes)
+DEBUG PDF: SM21 page 8 embedded (396360 bytes)
+DEBUG PDF: SM21 page 9 embedded (399822 bytes)
+DEBUG PDF: SM21 page 10 embedded (399746 bytes)
+DEBUG PDF: Embedding screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/DB02_20260602_094259.png (131300 bytes)
+DEBUG PDF: DB02 Overview embedded (186273 bytes)
+DEBUG PDF: DB02 Performance Graph embedded (57147 bytes)
+DEBUG PDF: Embedding screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/DB12_20260602_094318.png (183084 bytes)
+DEBUG PDF: Embedding screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/ST03N_20260602_094321.png (75472 bytes)
+DEBUG PDF: ST03N Workload Overview embedded (195815 bytes)
+DEBUG PDF: ST03N Transaction Profile embedded (247457 bytes)
+DEBUG PDF: ST03N Time Profile embedded (142902 bytes)
+DEBUG PDF: ST03N Response Time Distribution embedded (179733 bytes)
+DEBUG PDF: Embedding screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SCC4_Overview_20260602_094355.png (51705 bytes)
+DEBUG PDF: SCC4 Client 1 embedded (99822 bytes)
+DEBUG PDF: SCC4 Client 2 embedded (98335 bytes)
+DEBUG PDF: Embedding screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SMLG_Overview_20260602_094404.png (41054 bytes)
+DEBUG PDF: SMLG Load Distribution embedded (45832 bytes)
+DEBUG PDF: Embedding screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SMGW_Overview_20260602_094410.png (151103 bytes)
+DEBUG PDF: Embedding screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/AL08_20260602_094418.png (245211 bytes)
+DEBUG PDF: Embedding screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SM12_20260602_094423.png (112296 bytes)
+DEBUG PDF: Embedding screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SM13_20260602_094428.png (40953 bytes)
+DEBUG PDF: Embedding screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SMICM_20260602_094433.png (59820 bytes)
+DEBUG PDF: Embedding screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SM37_20260602_094443.png (185288 bytes)
+DEBUG PDF: ST22 Today embedded (87755 bytes)
+DEBUG PDF: ST22 Yesterday embedded (97794 bytes)
+DEBUG PDF: Embedding screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SM58_20260602_094503.png (24821 bytes)
+DEBUG PDF: Embedding screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/WE02_20260602_094516.png (38429 bytes)
+DEBUG PDF: Embedding screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SMQ1_20260602_094521.png (45183 bytes)
+DEBUG PDF: Embedding screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SMQ2_20260602_094526.png (46094 bytes)
+DEBUG PDF: Embedding screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SOST_20260602_094533.png (78934 bytes)
+DEBUG PDF: Embedding screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/STRUST_Overview_20260602_094537.png (139625 bytes)
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/systems HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/systems HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "OPTIONS /api/run/bulk HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "POST /api/run/bulk HTTP/1.1" 200 OK
+Running SAP Checks...
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+
+============================================================
+SAP WebGUI Screenshot Engine
+URL: https://nwrhel9.techlabhome.in/sap/bc/gui/sap/its/webgui/?sap-client=100&sap-language=en
+============================================================
+
+[Step 1] Navigating to WebGUI URL...
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+
+[Step 2] Logging in via JavaScript (bypassing CSS visibility)...
+  Login form fill result: {'success': True, 'userName': 'sap-user', 'passName': 'sap-password'}
+
+[Step 3] Submitting login form...
+  Waiting for login to complete...
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+  Post-login URL: https://nwrhel9.techlabhome.in/sap/bc/gui/sap/its/webgui/?sap-client=100&sap-language=EN#
+  Post-login title: SAP Easy Access
+  Post-login screenshot: 1890623 bytes (real content)
+
+[Step 4] Verifying login...
+  ✓ LOGIN VERIFIED - command field 'ToolbarOkCode' in frame ''
+
+[Step 5] Capturing 23 T-code screenshots via URL navigation...
+
+  --- SM50 ---
+    URL: https://nwrhel9.techlabhome.in/sap/bc/gui/sap/its/webgui/?sap-client=100&sap-language=en&~transaction=SM50
+    → Navigating via URL reload fallback
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+    Page title: Work Processes of AS Instance nwrhel9_F4H_00
+    ✓ Valid: 173,471 bytes
+
+  --- SM51 ---
+    URL: https://nwrhel9.techlabhome.in/sap/bc/gui/sap/its/webgui/?sap-client=100&sap-language=en&~transaction=SM51
+    → Navigating via URL reload fallback
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+    Page title: AS Instances of SAP System F4H
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+    ✓ Valid: 52,128 bytes
+
+  --- ST06 ---
+    URL: https://nwrhel9.techlabhome.in/sap/bc/gui/sap/its/webgui/?sap-client=100&sap-language=en&~transaction=ST06
+    → Navigating via URL reload fallback
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+    Page title: F4H nwrhel9_F4H_00 Linux nwrhel9 5.14.0-427.37.1.el9_4.x86_64 #1 SMP
+    ✓ Valid: 200,262 bytes
+
+  --- SM66 ---
+    URL: https://nwrhel9.techlabhome.in/sap/bc/gui/sap/its/webgui/?sap-client=100&sap-language=en&~transaction=SM66
+    → Navigating via URL reload fallback
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+    Page title: Work Processes of All AS Instances of System F4H
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+    ✓ Valid: 180,889 bytes
+
+  --- SM21 ---
+    URL: https://nwrhel9.techlabhome.in/sap/bc/gui/sap/its/webgui/?sap-client=100&sap-language=en&~transaction=SM21
+    → Navigating via URL reload fallback
+    Performing SM21 interaction (Last 24h)...
+    Frame 0 (''): 28 inputs
+      [0] id=M0:46:::1:34 val='02.06.2026'
+      [1] id=M0:46:::1:51 val='08:00:00'
+      [2] id=M0:46:::2:34 val=''
+      [3] id=M0:46:::2:51 val='00:00:00'
+      [4] id=M0:46:::3:34 val=''
+      [5] id=M0:46:::3:59 val=''
+      [6] id=M0:46:::4:34 val=''
+      [7] id=M0:46:::4:59 val=''
+      [8] id=M0:46:::5:34 val=''
+      [9] id=M0:46:::5:59 val=''
+    ✓ Target frame: '' (28 inputs)
+      From Date: clicking [id="M0:46:::1:34"], typing '01.06.2026'
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+      ✓ From Date filled
+      From Time: clicking [id="M0:46:::1:51"], typing '09:48:06'
+      ✓ From Time filled
+      To Date: clicking [id="M0:46:::2:34"], typing '02.06.2026'
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+      ✓ To Date filled
+      To Time: clicking [id="M0:46:::2:51"], typing '09:48:06'
+      ✓ To Time filled
+      Clearing Instance: [id="M0:46:::9:34"] (was 'nwrhel9_F4H_00')
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+      ✓ Instance field cleared
+    Diagnostic screenshot: 84358 bytes
+    Clicking Execute...
+    ✓ Clicked 'Execute' text in frame ''
+    Waiting for SM21 results...
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+    Scrolling through SM21 results...
+      Found log table in frame '' (219 rows)
+      Page 1: 344,203 bytes
+        (98 new log lines extracted)
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+      Page 2: 357,748 bytes
+        (32 new log lines extracted)
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+      Page 3: 361,118 bytes
+        (32 new log lines extracted)
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+      Page 4: 353,370 bytes
+        (26 new log lines extracted)
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+      Page 5: 360,575 bytes
+        (0 new log lines extracted)
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+      Page 6: 354,275 bytes
+        (34 new log lines extracted)
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+      Page 7: 373,187 bytes
+        (34 new log lines extracted)
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+      Page 8: 396,180 bytes
+        (4 new log lines extracted)
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+      Page 9: 405,254 bytes
+        (0 new log lines extracted)
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+      Page 10: 405,258 bytes
+        (0 new log lines extracted)
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+      Page 11: 405,258 bytes
+      No change in page text detected. Waiting 2s for late render retry...
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+      Scroll position unchanged on page 11 — reached end of results
+    ✓ SM21: 10 pages, 260 log lines captured
+    SM21 interaction complete.
+    Page title: Syslog messages
+    SM21 already captured via scroll handler
+
+  --- DB02 ---
+    URL: https://nwrhel9.techlabhome.in/sap/bc/gui/sap/its/webgui/?sap-client=100&sap-language=en&~transaction=DB02
+    → Navigating via URL reload fallback
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+    Performing DB02 tree interaction & screenshots...
+      ✓ Captured initial DB02 screen (Missing Indexes)
+      Found DB02 tree in frame: 
+      ✓ Clicked 'Current Status' expand: expand_dispatched
+      ✓ Double-clicked 'Overview': dblclick_dispatched
+      Waiting for Overview pane to load...
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+      ✓ Captured Overview Initial screenshot
+      --- DB02 SQL Editor Graph ---
+      ✓ Expanded 'Diagnostics': expand_dispatched
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+      ✓ Double-clicked 'SQL Editor': dblclick_dispatched
+      Waiting for SQL Editor pane to load...
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+      Inputting SQL query...
+      ✓ Filled SQL query in textarea in frame ''
+      Clicking Execute...
+      ✓ Clicked Execute button in frame ''
+      Waiting for SQL execution to complete...
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+      Extracting result data...
+      ✓ Found 190 rows in frame ''
+      Parsed 190 data points. Generating graph...
+      ✓ Saved graph to /Users/giri/Antigravity/sap_monitoring/backend/screenshots/DB02_Performance_Graph_20260602_094850.png
+
+  --- DB12 ---
+    URL: https://nwrhel9.techlabhome.in/sap/bc/gui/sap/its/webgui/?sap-client=100&sap-language=en&~transaction=DB12
+    → Navigating via URL reload fallback
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+    Page title: Backup Catalog
+    ✓ Valid: 183,041 bytes
+
+  --- ST03N ---
+    URL: https://nwrhel9.techlabhome.in/sap/bc/gui/sap/its/webgui/?sap-client=100&sap-language=en&~transaction=ST03N
+    → Navigating via URL reload fallback
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+    Performing ST03N tree interaction & screenshots...
+      ✓ Captured initial ST03N screen
+      Found ST03N tree frame.
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+      ✓ Double-clicked date: 17.10.2025
+      Checking for calculation popup...
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+      ✓ Clicked 'Dialog' to calculate data. Waiting dynamically for processing to finish...
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+      ✓ Calculation finished. Popup disappeared.
+      Waiting for Workload Overview to load...
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+      Sorting Response Time (ms) column descending...
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+      ✓ Captured Workload Overview (Sorted)
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+      ✓ Double-clicked 'Standard' transaction profile
+      Waiting for Transaction Profile to load...
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+      ✓ Captured Transaction Profile
+      ✓ Double-clicked 'Time Profile'
+      Waiting for Time Profile to load...
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+      ✓ Captured Time Profile
+      ✓ Double-clicked 'Response Time Distribution'
+      Waiting for Response Time Distribution to load...
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+      ✓ Captured Response Time Distribution
+    ST03N interaction complete.
+    Page title: Workload in System F4H
+    ST03N already captured via ST03N handler
+
+  --- SCC4 ---
+    URL: https://nwrhel9.techlabhome.in/sap/bc/gui/sap/its/webgui/?sap-client=100&sap-language=en&~transaction=SCC4
+    → Navigating via URL reload fallback
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+    Performing SCC4 specific interaction...
+      ✓ Captured initial SCC4 screen
+      ✓ Double-clicked first client row in frame: 
+      Waiting for Details screen to load...
+      ✓ Extracted Client 000:
+        Changes: No changes allowed
+        Cross-Client: Changes to repository and cross-client customizing allowed
+        Protection: Protection level 1: No overwriting
+        eCATT: eCATT and CATT Not Allowed
+      ✓ Clicked 'Next Entry'
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+      ✓ Extracted Client 100:
+        Changes: Changes without automatic recording
+        Cross-Client: Changes to repository and cross-client customizing allowed
+        Protection: Protection level 0: No restriction
+        eCATT: eCATT and CATT Allowed
+      ✓ Clicked 'Next Entry'
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+      Reached end of clients list (Client number stopped changing).
+    SCC4 interaction complete.
+    Page title: Display View "Clients": Details
+    SCC4 already captured via SCC4 handler
+
+  --- SMLG ---
+    URL: https://nwrhel9.techlabhome.in/sap/bc/gui/sap/its/webgui/?sap-client=100&sap-language=en&~transaction=SMLG
+    → Navigating via URL reload fallback
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+    Performing SMLG specific interaction...
+      ✓ Captured initial SMLG screen
+      ✓ Clicked 'Load distribution'
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+      ✓ Captured Load distribution screen
+      ✓ Parsed SMLG Server: nwrhel9_F4H_00 | Response Time: 65ms
+      ✓ Completed SMLG Load Distribution parsing
+    SMLG interaction complete.
+    Page title: CCMS: Load Distribution
+    SMLG already captured via SMLG handler
+
+  --- SMGW ---
+    URL: https://nwrhel9.techlabhome.in/sap/bc/gui/sap/its/webgui/?sap-client=100&sap-language=en&~transaction=SMGW
+    → Navigating via URL reload fallback
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+    Performing SMGW specific interaction...
+      ✓ Captured SMGW Active Connections screen
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+      ✓ Captured SMGW Logged on Clients screen
+      ✓ SMGW connection scan complete. Anomalies found: 0
+    SMGW interaction complete.
+    Page title: Gateway Monitor for nwrhel9_F4H_00 / Active Connections
+    SMGW already captured via SMGW handler
+
+  --- AL08 ---
+    URL: https://nwrhel9.techlabhome.in/sap/bc/gui/sap/its/webgui/?sap-client=100&sap-language=en&~transaction=AL08
+    → Navigating via URL reload fallback
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+    Page title: System-Wide List of User Sessions in SAP System F4H
+    ✓ Valid: 296,256 bytes
+
+  --- SM12 ---
+    URL: https://nwrhel9.techlabhome.in/sap/bc/gui/sap/its/webgui/?sap-client=100&sap-language=en&~transaction=SM12
+    → Navigating via URL reload fallback
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+    Performing SM12 interaction (Search all lock entries)...
+      Found SM12 in frame 0 ('') — 5 visible inputs:
+        [1] id='M0:46:1::1:23' val='100' type=text w=40
+        [2] id='M0:46:1::2:23' val='DDIC' type=text w=130
+        [3] id='M0:46:1::3:23' val='' type=text w=310
+        [4] id='M0:46:1::4:23' val='' type=text w=510
+        [5] id='M0:46:1::5:23' val='1.000' type=text w=90
+      JS fill [0] '100' → '*' (id=M0:46:1::1:23)
+      JS fill [1] 'DDIC' → '*' (id=M0:46:1::2:23)
+      Debug screenshot: /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SM12_debug_filled.png
+    Clicking Search...
+    ✓ Clicked 'Search' in frame ''
+    Waiting for SM12 results...
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+    SM12 interaction complete.
+    Page title: Enqueue Administration
+    ✓ Valid: 111,849 bytes
+
+  --- SM13 ---
+    URL: https://nwrhel9.techlabhome.in/sap/bc/gui/sap/its/webgui/?sap-client=100&sap-language=en&~transaction=SM13
+    → Navigating via URL reload fallback
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+    Performing SM13 interaction (Execute)...
+    ✓ Clicked 'Execute' in frame ''
+    Waiting for SM13 results...
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+    SM13 interaction complete.
+    Page title: Update Requests
+    ✓ Valid: 40,953 bytes
+
+  --- SMICM ---
+    URL: https://nwrhel9.techlabhome.in/sap/bc/gui/sap/its/webgui/?sap-client=100&sap-language=en&~transaction=SMICM
+    → Navigating via URL reload fallback
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+    Performing SMICM specific interaction...
+      ✓ Captured SMICM initial screen
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+      ✓ Captured ICM Services screen
+      ✓ Service: HTTP port 80 | Active=True
+      ✓ Service: HTTPS port 443 | Active=True
+      ✓ Service: SMTP port 26 | Active=False
+      ✓ Service: SMTP port 25 | Active=True
+      ✓ SMICM services scan complete. Anomalies: 1
+    SMICM interaction complete.
+    Page title: ICM Monitor - Service Display
+    ✓ Valid: 59,820 bytes
+
+  --- SM37 ---
+    URL: https://nwrhel9.techlabhome.in/sap/bc/gui/sap/its/webgui/?sap-client=100&sap-language=en&~transaction=SM37
+    → Navigating via URL reload fallback
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+    Performing SM37 interaction (Cancelled jobs, last 24h)...
+      From: 01.06.2026  To: 02.06.2026
+      Found 8 text inputs in frame 0 ('')
+      ✓ Job Name: '*' → '*'
+      ✓ User Name: 'DDIC' → '*'
+      ✓ From Date: '02.06.2026' → '01.06.2026'
+      ✓ To Date: '02.06.2026' → '02.06.2026'
+      === CHECKBOX HANDLING ===
+      Found 6 role='checkbox' elements
+        ☐ Sched. (aria-checked=false)
+        ☑ Released (aria-checked=true)
+        ☑ Ready (aria-checked=true)
+        ☑ Active (aria-checked=true)
+        ☑ Finished (aria-checked=true)
+        ☑ Canceled (aria-checked=true)
+      ○ Sched.: already unchecked, no change needed
+      ✓ Released: UNCHECKED (was checked)
+      ✓ Ready: UNCHECKED (was checked)
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+      ✓ Active: UNCHECKED (was checked)
+      ✓ Finished: UNCHECKED (was checked)
+      ○ Canceled: already checked, no change needed
+      Final checkbox state:
+        ☐ Sched.
+        ☐ Released
+        ☐ Ready
+        ☐ Active
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+        ☐ Finished
+        ☑ Canceled
+    Clicking Execute...
+    ✓ Clicked 'Execute' in frame ''
+    Waiting for SM37 results...
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+    SM37 interaction complete.
+    ✓ SM37: 10 lines captured
+    Page title: Job Overview
+    ✓ Valid: 185,280 bytes
+
+  --- ST22 ---
+    URL: https://nwrhel9.techlabhome.in/sap/bc/gui/sap/its/webgui/?sap-client=100&sap-language=en&~transaction=ST22
+    → Navigating via URL reload fallback
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+    Performing ST22 interaction (Today + Yesterday dumps)...
+      Clicking 'Today'...
+      ✓ Clicked 'Today' in frame ''
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+      Screenshot: /Users/giri/Antigravity/sap_monitoring/backend/screenshots/ST22_Today_20260602_095040.png (87,755 bytes)
+      Going back to ST22 initial screen...
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+      Clicking 'Yesterday'...
+      ✓ Clicked 'Yesterday' in frame ''
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+      Screenshot: /Users/giri/Antigravity/sap_monitoring/backend/screenshots/ST22_Yesterday_20260602_095048.png (97,794 bytes)
+    ✓ ST22: 2 pages, 53 lines captured
+    ST22 interaction complete.
+    Page title: List of Selected Runtime Errors
+    ST22 already captured via Today/Yesterday handler
+
+  --- SM58 ---
+    URL: https://nwrhel9.techlabhome.in/sap/bc/gui/sap/its/webgui/?sap-client=100&sap-language=en&~transaction=SM58
+    → Navigating via URL reload fallback
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+    Performing SM58 interaction (Execute)...
+    ✓ Clicked 'Execute' in frame ''
+    Waiting for SM58 results...
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+    SM58 interaction complete.
+    Page title: Transactional RFC
+    ✓ Valid: 24,821 bytes
+
+  --- WE02 ---
+    URL: https://nwrhel9.techlabhome.in/sap/bc/gui/sap/its/webgui/?sap-client=100&sap-language=en&~transaction=WE02
+    → Navigating via URL reload fallback
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+    Performing WE02 interaction (Execute)...
+    ✓ Clicked 'Execute' in frame ''
+    Waiting for WE02 results...
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+    WE02 interaction complete.
+    Page title: SAP
+    ✓ Valid: 38,429 bytes
+
+  --- SMQ1 ---
+    URL: https://nwrhel9.techlabhome.in/sap/bc/gui/sap/its/webgui/?sap-client=100&sap-language=en&~transaction=SMQ1
+    → Navigating via URL reload fallback
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+    Performing SMQ1 interaction (Execute)...
+    ✓ Clicked 'Execute' in frame ''
+    Waiting for SMQ1 results...
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+    SMQ1 interaction complete.
+    Page title: qRFC Monitor (Outbound Queue)
+    ✓ Valid: 45,183 bytes
+
+  --- SMQ2 ---
+    URL: https://nwrhel9.techlabhome.in/sap/bc/gui/sap/its/webgui/?sap-client=100&sap-language=en&~transaction=SMQ2
+    → Navigating via URL reload fallback
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+    Performing SMQ2 interaction (Execute)...
+    ✓ Clicked 'Execute' in frame ''
+    Waiting for SMQ2 results...
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+    SMQ2 interaction complete.
+    Page title: qRFC Monitor (Inbound Queue)
+    ✓ Valid: 46,094 bytes
+
+  --- SOST ---
+    URL: https://nwrhel9.techlabhome.in/sap/bc/gui/sap/its/webgui/?sap-client=100&sap-language=en&~transaction=SOST
+    → Navigating via URL reload fallback
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+    Page title: SAPconnect: Send Requests from 01.06.2026 to 02.06.2026
+    ✓ Valid: 78,934 bytes
+
+  --- STRUST ---
+    URL: https://nwrhel9.techlabhome.in/sap/bc/gui/sap/its/webgui/?sap-client=100&sap-language=en&~transaction=STRUST
+    → Navigating via URL reload fallback
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+    → Handled popup: Continue
+    Performing STRUST specific interaction...
+      ✓ Captured STRUST initial screen
+      ✓ Found 4 Active PSEs.
+      Checking PSE: System PSE
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+      ⚠ Anomaly Found: STRUST: PSE 'System PSE' Certificate 'CN=DigiCert Global Root G2, OU=www.digicert.com, O=DigiCert Inc, C=US' is expired or expiring soon (Valid To: 01.08.2013)
+      ⚠ Anomaly Found: STRUST: PSE 'System PSE' Certificate 'CN=DigiCert Global Root CA, OU=www.digicert.com, O=DigiCert Inc, C=US' is expired or expiring soon (Valid To: 10.11.2006)
+      ⚠ Anomaly Found: STRUST: PSE 'System PSE' Certificate 'CN=DigiCert High Assurance EV Root CA, OU=www.digicert.com, O=DigiCert Inc, C=US' is expired or expiring soon (Valid To: 10.11.2006)
+      Checking PSE: SSL server Standard
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+      Checking PSE: SSL client SSL Client (Anonymous)
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+      ⚠ Anomaly Found: STRUST: PSE 'SSL client SSL Client (Anonymous)' Certificate 'CN=DigiCert Global Root G2, OU=www.digicert.com, O=DigiCert Inc, C=US' is expired or expiring soon (Valid To: 01.08.2013)
+      ⚠ Anomaly Found: STRUST: PSE 'SSL client SSL Client (Anonymous)' Certificate 'CN=DigiCert Global Root CA, OU=www.digicert.com, O=DigiCert Inc, C=US' is expired or expiring soon (Valid To: 10.11.2006)
+      ⚠ Anomaly Found: STRUST: PSE 'SSL client SSL Client (Anonymous)' Certificate 'CN=DigiCert High Assurance EV Root CA, OU=www.digicert.com, O=DigiCert Inc, C=US' is expired or expiring soon (Valid To: 10.11.2006)
+      Checking PSE: SSL client SSL Client (Standard)
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+    STRUST interaction complete.
+    Page title: Trust Manager: Display
+    STRUST already captured via STRUST handler
+
+============================================================
+Screenshot Summary: 38/23 valid captures
+============================================================
+
+DEBUG: Screenshot Map populated with 38 images: ['SM50', 'SM51', 'ST06', 'SM66', 'SM21', 'SM21_pages', 'SM21_log_text', 'DB02', 'DB02_pages', 'DB02_log_text', 'DB12', 'ST03N', 'ST03N_pages', 'SCC4', 'SCC4_pages', 'SCC4_anomalies', 'SMLG', 'SMLG_pages', 'SMGW', 'SMGW_pages', 'AL08', 'SM12', 'SM13', 'SMICM_anomalies', 'SMICM', 'SM37_log_text', 'SM37', 'ST22', 'ST22_pages', 'ST22_log_text', 'SM58', 'WE02', 'SMQ1', 'SMQ2', 'SOST', 'STRUST', 'STRUST_pages', 'STRUST_anomalies']
+Extracting data for SM50 - Work Process Status...
+DEBUG: SM50 Data Keys: ['WP_NO', 'WP_ITYPE', 'WP_TYP', 'WP_PID', 'WP_ISTATUS', 'WP_STATUS', 'WP_IWAIT', 'WP_WAITING', 'WP_SEM', 'WP_IRESTRT', 'WP_RESTART', 'WP_DUMPS', 'WP_CPU', 'WP_ELTIME', 'WP_MANDT', 'WP_BNAME', 'WP_REPORT', 'WP_IACTION', 'WP_ACTION', 'WP_TABLE', 'WP_SERVER', 'WP_WAITINF', 'WP_WAITTIM', 'WP_SEMSTAT', 'WP_INDEX', 'WP_SEM1', 'WP_SEM2', 'WP_SEM3', 'WP_SEM4', 'WP_SEM5', 'WP_SEM_LOCKING', 'WP_MTX', 'WP_MTX_EXCL', 'WP_MTX_SHRD']
+Extracting data for SM51 - Active Servers...
+Extracting data for ST06 - OS Monitor...
+Extracting data for SM66 - Global Work Process...
+Extracting data for SM21 - System Logs...
+Extracting data for DB02 - Database Performance...
+Extracting data for DB12 - Backup Status...
+Extracting data for ST03N - Workload Analysis...
+Extracting data for SCC4 - Client Administration...
+Extracting data for SMLG - Logon Groups...
+Extracting data for SMGW - Gateway Monitor...
+Extracting data for AL08 - Logged On Users...
+Extracting data for SM12 - Lock Entries...
+Extracting data for SM13 - Update Requests...
+Extracting data for SMICM - ICM Monitor...
+Extracting data for SM37 - Background Jobs...
+Extracting data for ST22 - ABAP Dumps...
+Extracting data for SM58 - Transactional RFC...
+Extracting data for WE02 - IDoc List...
+Extracting data for SMQ1 - qRFC Outbound...
+Extracting data for SMQ2 - qRFC Inbound...
+Extracting data for SOST - SAPconnect...
+Extracting data for STRUST - Trust Manager...
+Running External Checks...
+Running external checks (OS & URLs)...
+  Auto-discovering servers via SM51...
+  Total targets for SSH analysis: ['nwrhel9']
+  SSH: Connecting to nwrhel9 (Method: password)...
+  ✓ SSH: Got 12 entries from nwrhel9
+  RFC connected for filesystem check...
+  SXPG_COMMAND_EXECUTE failed (expected if not configured in SM69): 5 (rc=5): key=COMMAND_NOT_FOUND, message= Number:000 [MSG: class=, type=, number=000, v1-4:=;;;]
+  ✓ Got SAP release info via TH_SAPREL2
+  ✓ Got server info via RFC_SYSTEM_INFO (SXPG not available)
+  ✓ Got 5 entries via RFC RFC_SYSTEM_INFO
+DEBUG WORD: Embedded screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SM50_20260602_094752.png (173471 bytes)
+DEBUG WORD: Embedded screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SM51_20260602_094756.png (52128 bytes)
+DEBUG WORD: Embedded screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/ST06_20260602_094800.png (200262 bytes)
+DEBUG WORD: Embedded screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SM66_20260602_094804.png (180889 bytes)
+DEBUG WORD: SM21 page 1 embedded (344203 bytes)
+DEBUG WORD: SM21 page 2 embedded (357748 bytes)
+DEBUG WORD: SM21 page 3 embedded (361118 bytes)
+DEBUG WORD: SM21 page 4 embedded (353370 bytes)
+DEBUG WORD: SM21 page 5 embedded (360575 bytes)
+DEBUG WORD: SM21 page 6 embedded (354275 bytes)
+DEBUG WORD: SM21 page 7 embedded (373187 bytes)
+DEBUG WORD: SM21 page 8 embedded (396180 bytes)
+DEBUG WORD: SM21 page 9 embedded (405254 bytes)
+DEBUG WORD: SM21 page 10 embedded (405258 bytes)
+DEBUG WORD: Embedded screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/DB02_20260602_094850.png (131235 bytes)
+DEBUG WORD: DB02 Overview embedded (186416 bytes)
+DEBUG WORD: DB02 Performance Graph embedded (58809 bytes)
+DEBUG WORD: Embedded screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/DB12_20260602_094909.png (183041 bytes)
+DEBUG WORD: Embedded screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/ST03N_20260602_094911.png (75472 bytes)
+DEBUG WORD: ST03N Workload Overview embedded (195815 bytes)
+DEBUG WORD: ST03N Transaction Profile embedded (247457 bytes)
+DEBUG WORD: ST03N Time Profile embedded (142902 bytes)
+DEBUG WORD: ST03N Response Time Distribution embedded (179733 bytes)
+DEBUG WORD: Embedded screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SCC4_Overview_20260602_094946.png (51705 bytes)
+DEBUG WORD: SCC4 Client 1 embedded (99822 bytes)
+DEBUG WORD: SCC4 Client 2 embedded (98335 bytes)
+DEBUG WORD: Embedded screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SMLG_Overview_20260602_094955.png (41054 bytes)
+DEBUG WORD: SMLG Load Distribution embedded (46129 bytes)
+DEBUG WORD: Embedded screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SMGW_Overview_20260602_095001.png (190056 bytes)
+DEBUG WORD: Embedded screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/AL08_20260602_095008.png (296256 bytes)
+DEBUG WORD: Embedded screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SM12_20260602_095014.png (111849 bytes)
+DEBUG WORD: Embedded screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SM13_20260602_095019.png (40953 bytes)
+DEBUG WORD: Embedded screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SMICM_20260602_095024.png (59820 bytes)
+DEBUG WORD: Embedded screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SM37_20260602_095034.png (185280 bytes)
+DEBUG WORD: ST22 Today embedded (87755 bytes)
+DEBUG WORD: ST22 Yesterday embedded (97794 bytes)
+DEBUG WORD: Embedded screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SM58_20260602_095053.png (24821 bytes)
+DEBUG WORD: Embedded screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/WE02_20260602_095106.png (38429 bytes)
+DEBUG WORD: Embedded screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SMQ1_20260602_095111.png (45183 bytes)
+DEBUG WORD: Embedded screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SMQ2_20260602_095116.png (46094 bytes)
+DEBUG WORD: Embedded screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SOST_20260602_095124.png (78934 bytes)
+DEBUG WORD: Embedded screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/STRUST_Overview_20260602_095128.png (139625 bytes)
+DEBUG PDF: Embedding screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SM50_20260602_094752.png (173471 bytes)
+DEBUG PDF: Embedding screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SM51_20260602_094756.png (52128 bytes)
+DEBUG PDF: Embedding screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/ST06_20260602_094800.png (200262 bytes)
+DEBUG PDF: Embedding screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SM66_20260602_094804.png (180889 bytes)
+DEBUG PDF: SM21 page 1 embedded (344203 bytes)
+DEBUG PDF: SM21 page 2 embedded (357748 bytes)
+DEBUG PDF: SM21 page 3 embedded (361118 bytes)
+DEBUG PDF: SM21 page 4 embedded (353370 bytes)
+DEBUG PDF: SM21 page 5 embedded (360575 bytes)
+DEBUG PDF: SM21 page 6 embedded (354275 bytes)
+DEBUG PDF: SM21 page 7 embedded (373187 bytes)
+DEBUG PDF: SM21 page 8 embedded (396180 bytes)
+DEBUG PDF: SM21 page 9 embedded (405254 bytes)
+DEBUG PDF: SM21 page 10 embedded (405258 bytes)
+DEBUG PDF: Embedding screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/DB02_20260602_094850.png (131235 bytes)
+DEBUG PDF: DB02 Overview embedded (186416 bytes)
+DEBUG PDF: DB02 Performance Graph embedded (58809 bytes)
+DEBUG PDF: Embedding screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/DB12_20260602_094909.png (183041 bytes)
+DEBUG PDF: Embedding screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/ST03N_20260602_094911.png (75472 bytes)
+DEBUG PDF: ST03N Workload Overview embedded (195815 bytes)
+DEBUG PDF: ST03N Transaction Profile embedded (247457 bytes)
+DEBUG PDF: ST03N Time Profile embedded (142902 bytes)
+DEBUG PDF: ST03N Response Time Distribution embedded (179733 bytes)
+DEBUG PDF: Embedding screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SCC4_Overview_20260602_094946.png (51705 bytes)
+DEBUG PDF: SCC4 Client 1 embedded (99822 bytes)
+DEBUG PDF: SCC4 Client 2 embedded (98335 bytes)
+DEBUG PDF: Embedding screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SMLG_Overview_20260602_094955.png (41054 bytes)
+DEBUG PDF: SMLG Load Distribution embedded (46129 bytes)
+DEBUG PDF: Embedding screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SMGW_Overview_20260602_095001.png (190056 bytes)
+DEBUG PDF: Embedding screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/AL08_20260602_095008.png (296256 bytes)
+DEBUG PDF: Embedding screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SM12_20260602_095014.png (111849 bytes)
+DEBUG PDF: Embedding screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SM13_20260602_095019.png (40953 bytes)
+DEBUG PDF: Embedding screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SMICM_20260602_095024.png (59820 bytes)
+DEBUG PDF: Embedding screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SM37_20260602_095034.png (185280 bytes)
+DEBUG PDF: ST22 Today embedded (87755 bytes)
+DEBUG PDF: ST22 Yesterday embedded (97794 bytes)
+DEBUG PDF: Embedding screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SM58_20260602_095053.png (24821 bytes)
+DEBUG PDF: Embedding screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/WE02_20260602_095106.png (38429 bytes)
+DEBUG PDF: Embedding screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SMQ1_20260602_095111.png (45183 bytes)
+DEBUG PDF: Embedding screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SMQ2_20260602_095116.png (46094 bytes)
+DEBUG PDF: Embedding screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/SOST_20260602_095124.png (78934 bytes)
+DEBUG PDF: Embedding screenshot /Users/giri/Antigravity/sap_monitoring/backend/screenshots/STRUST_Overview_20260602_095128.png (139625 bytes)
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53789 - "GET /api/download/zip HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54039 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54068 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54088 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54104 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54122 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54165 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54185 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54199 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54210 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54223 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54272 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54288 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54317 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54323 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54338 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54384 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54411 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54425 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54438 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54444 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54456 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54481 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54506 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54510 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54531 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54551 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54578 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54650 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54692 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54699 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54705 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54732 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54752 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54761 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54783 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54804 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54851 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54864 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54877 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54896 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54908 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54932 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54948 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54956 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54964 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54982 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55010 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55025 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55041 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55047 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55067 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55107 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55125 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55131 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55139 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55160 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55206 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55257 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55285 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55319 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55342 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55353 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55396 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55412 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55438 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55444 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55469 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55518 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55538 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55558 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55580 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55626 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55718 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55755 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55763 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55784 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55818 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55872 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55895 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55962 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55993 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56005 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56044 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56060 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56124 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56144 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56177 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56281 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56301 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56337 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56346 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56377 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56423 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56437 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56445 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56477 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56501 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56510 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56549 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56575 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56590 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56614 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56645 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56704 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56737 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56773 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56795 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56808 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56861 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56878 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56916 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56933 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56955 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57005 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57045 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57063 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57077 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57121 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57161 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57178 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57188 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57235 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57265 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57326 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57336 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57354 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57363 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57376 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57394 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57442 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57450 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57468 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57483 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57504 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57551 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57560 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57584 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57661 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57705 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57740 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57756 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57772 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57794 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57812 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57858 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57887 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57916 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57949 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57966 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58009 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58060 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58105 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58145 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58159 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58199 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58230 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58241 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58270 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58287 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58346 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58378 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58397 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58413 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58419 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58432 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58496 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58527 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58540 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58556 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58561 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58607 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58635 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58660 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58701 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58736 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58796 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58831 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58866 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58891 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58897 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58937 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58963 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59006 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59019 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59044 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59105 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59127 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59166 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59180 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59207 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59263 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59292 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59315 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59327 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59337 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59372 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59379 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59408 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59422 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59433 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59453 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59493 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59504 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59529 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59589 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59621 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59702 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59720 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59745 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59779 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59814 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59886 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59917 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59927 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59937 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59957 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60006 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60033 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60076 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60120 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60142 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60197 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60281 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60302 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60314 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60335 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60389 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60429 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60449 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60476 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60525 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60603 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60619 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60642 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60681 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60691 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60749 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60814 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60826 - "GET /api/status HTTP/1.1" 200 OK

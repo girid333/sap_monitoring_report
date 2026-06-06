@@ -1,13 +1,13 @@
 import os
 from datetime import datetime
 from docx import Document
-from docx.shared import Inches, Pt
+from docx.shared import Inches, Pt, RGBColor
 from docx.enum.text import WD_ALIGN_PARAGRAPH
 from docx.enum.section import WD_ORIENT
 from reportlab.lib.pagesizes import A3, landscape
 from reportlab.lib import colors
 from reportlab.lib.units import inch
-from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Image, Table, TableStyle
+from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Image, Table, TableStyle, PageBreak
 from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 
 class ReportGenerator:
@@ -27,32 +27,64 @@ class ReportGenerator:
         section.page_width = Inches(16.5)
         section.page_height = Inches(11.7)
         
+        # Set Default Styles (Gold/Orange for H1, Blue-Grey for H2)
+        gold_orange = RGBColor(230, 159, 0)
+        blue_grey = RGBColor(60, 123, 153)
+        try:
+            style1 = doc.styles['Heading 1']
+            style1.font.color.rgb = gold_orange
+            style2 = doc.styles['Heading 2']
+            style2.font.color.rgb = blue_grey
+        except KeyError:
+            pass
+
         # Title
         title = doc.add_heading('SAP BASIS Premium Diagnostic Report v2.0', 0)
         title.alignment = WD_ALIGN_PARAGRAPH.CENTER
+        title.runs[0].font.color.rgb = gold_orange
         
         doc.add_paragraph(f"Report Generated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}").alignment = WD_ALIGN_PARAGRAPH.CENTER
         doc.add_paragraph("_" * 100).alignment = WD_ALIGN_PARAGRAPH.CENTER
         
-        # Summary of Anomalies - grouped by T-code
+        # Add Cover Image
+        cover_image_path = "/Users/giri/.gemini/antigravity/brain/fb63ad3e-2330-449d-93f7-efd8134a405d/cover_image_1780331933563.png"
+        if os.path.exists(cover_image_path):
+            doc.add_picture(cover_image_path, width=Inches(10.0))
+        
+        doc.add_page_break()
+        
+        # Summary of Anomalies
         doc.add_heading('1. Executive Summary', level=1)
-        if not self.results["anomalies"]:
+        total_anomalies = len(self.results.get("anomalies", []))
+        if total_anomalies == 0:
             doc.add_paragraph("No anomalies detected in the last 24 hours. All monitored systems are operating normally.")
         else:
-            # Group anomalies by T-code section
-            anomaly_groups = {}
-            for tcode_result in self.results.get("tcodes", []):
-                tc = tcode_result["tcode"]
-                tc_name = tcode_result["name"]
-                tc_anomalies = tcode_result.get("anomalies", [])
-                if tc_anomalies:
-                    anomaly_groups[tc] = {"name": tc_name, "count": len(tc_anomalies)}
+            doc.add_paragraph(f"A total of {total_anomalies} anomalies were detected. Please review the relevant sections below for detailed findings.")
             
-            total = len(self.results["anomalies"])
-            doc.add_paragraph(f"A total of {total} anomalies were detected across {len(anomaly_groups)} monitored area(s). Please review the relevant sections below for detailed findings.")
-            for tc, info in anomaly_groups.items():
-                doc.add_paragraph(f"{tc} ({info['name']}): {info['count']} anomalies detected — refer to Section 3 for details.", style='List Bullet')
+            # Anomaly Summary Table
+            table = doc.add_table(rows=1, cols=3)
+            # Use 'Grid Table 4 Accent 4' which natively has a gold/orange header in standard Word templates
+            # If not available, we use standard shading and manually color it (we'll stick to a robust standard style)
+            table.style = 'Medium Shading 1 Accent 4'
+            hdr_cells = table.rows[0].cells
+            hdr_cells[0].text = 'Component'
+            hdr_cells[1].text = 'Anomaly Count'
+            hdr_cells[2].text = 'Status'
+            
+            for tc_result in self.results.get("tcodes", []):
+                tc = tc_result["tcode"]
+                tc_name = tc_result["name"]
+                tc_anomalies = tc_result.get("anomalies", [])
+                
+                if tc_anomalies:
+                    row_cells = table.add_row().cells
+                    row_cells[0].text = f"{tc} ({tc_name})"
+                    row_cells[1].text = str(len(tc_anomalies))
+                    row_cells[2].text = "Action Required"
+            
+            doc.add_paragraph()
 
+        doc.add_page_break()
         # External Checks
         doc.add_heading('2. Infrastructure & Server Health', level=1)
         for check in self.results.get("external_checks", []):
@@ -68,7 +100,7 @@ class ReportGenerator:
                 
                 keys = list(check_data[0].keys())
                 table = doc.add_table(rows=1, cols=len(keys))
-                table.style = 'Medium Shading 1 Accent 1'
+                table.style = 'Medium Shading 1 Accent 4'
                 hdr_cells = table.rows[0].cells
                 for i, key in enumerate(keys):
                     hdr_cells[i].text = str(key)
@@ -133,8 +165,11 @@ class ReportGenerator:
         
 
         # Detailed Data
+        doc.add_page_break()
         doc.add_heading('3. Detailed Status (RFC Data)', level=1)
-        for tcode_result in self.results.get("tcodes", []):
+        for i, tcode_result in enumerate(self.results.get("tcodes", [])):
+            if i > 0:
+                doc.add_page_break()
             doc.add_heading(f"{tcode_result['tcode']} - {tcode_result['name']}", level=2)
             
             # Add Analysis Summary
@@ -357,34 +392,73 @@ class ReportGenerator:
         doc = SimpleDocTemplate(filepath, pagesize=landscape(A3))
         styles = getSampleStyleSheet()
         elements = []
+        
+        gold_orange = colors.HexColor("#E69F00")
+        blue_grey = colors.HexColor("#3C7B99")
+        
+        # Custom Heading Styles
+        h1_style = ParagraphStyle(
+            'StylishHeading1',
+            parent=styles['Heading1'],
+            textColor=gold_orange,
+            fontSize=22,
+            spaceAfter=12
+        )
+        h2_style = ParagraphStyle(
+            'StylishHeading2',
+            parent=styles['Heading2'],
+            textColor=blue_grey,
+            fontSize=16,
+            spaceAfter=10
+        )
 
         # Title
-        title_style = styles['Title']
+        title_style = ParagraphStyle('CoverTitle', parent=styles['Title'], textColor=gold_orange, fontSize=28)
         elements.append(Paragraph("SAP BASIS Premium Diagnostic Report v2.0", title_style))
         elements.append(Paragraph(f"Report Generated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}", styles['Normal']))
         elements.append(Spacer(1, 20))
+        
+        # Add Cover Image
+        cover_image_path = "/Users/giri/.gemini/antigravity/brain/fb63ad3e-2330-449d-93f7-efd8134a405d/cover_image_1780331933563.png"
+        if os.path.exists(cover_image_path):
+            elements.append(Image(cover_image_path, width=8*inch, height=4*inch))
+            
+        elements.append(PageBreak())
 
         # Summary - grouped by T-code
-        elements.append(Paragraph("1. Executive Summary", styles['Heading1']))
-        if not self.results["anomalies"]:
+        elements.append(Paragraph("1. Executive Summary", h1_style))
+        total_anomalies = len(self.results.get("anomalies", []))
+        if total_anomalies == 0:
             elements.append(Paragraph("No anomalies detected in the last 24 hours. All monitored systems are operating normally.", styles['Normal']))
         else:
-            anomaly_groups = {}
+            elements.append(Paragraph(f"A total of {total_anomalies} anomalies were detected. Please review the relevant sections below for detailed findings.", styles['Normal']))
+            elements.append(Spacer(1, 10))
+            
+            table_data = [["Component", "Anomaly Count", "Status"]]
             for tcode_result in self.results.get("tcodes", []):
                 tc = tcode_result["tcode"]
                 tc_name = tcode_result["name"]
                 tc_anomalies = tcode_result.get("anomalies", [])
                 if tc_anomalies:
-                    anomaly_groups[tc] = {"name": tc_name, "count": len(tc_anomalies)}
+                    table_data.append([f"{tc} ({tc_name})", str(len(tc_anomalies)), "Action Required"])
             
-            total = len(self.results["anomalies"])
-            elements.append(Paragraph(f"A total of {total} anomalies were detected across {len(anomaly_groups)} monitored area(s). Please review the relevant sections below for detailed findings.", styles['Normal']))
-            for tc, info in anomaly_groups.items():
-                elements.append(Paragraph(f"• {tc} ({info['name']}): {info['count']} anomalies detected — refer to Section 3 for details.", styles['Normal']))
-        elements.append(Spacer(1, 20))
+            if len(table_data) > 1:
+                t = Table(table_data)
+                t.setStyle(TableStyle([
+                    ('BACKGROUND', (0,0), (-1,0), gold_orange),
+                    ('TEXTCOLOR', (0,0), (-1,0), colors.black),
+                    ('ALIGN', (0,0), (-1,-1), 'CENTER'),
+                    ('FONTNAME', (0,0), (-1,0), 'Helvetica-Bold'),
+                    ('BOTTOMPADDING', (0,0), (-1,0), 8),
+                    ('BACKGROUND', (0,1), (-1,-1), colors.HexColor('#FFFFFF')),
+                    ('GRID', (0,0), (-1,-1), 1, colors.black),
+                ]))
+                elements.append(t)
+        
+        elements.append(PageBreak())
 
         # External Checks
-        elements.append(Paragraph("2. Infrastructure & Server Health", styles['Heading1']))
+        elements.append(Paragraph("2. Infrastructure & Server Health", h1_style))
         
         for check in self.results.get("external_checks", []):
             check_type = check.get("type", "")
@@ -404,10 +478,13 @@ class ReportGenerator:
                 
                 t = Table(table_data)
                 t.setStyle(TableStyle([
-                    ('BACKGROUND', (0,0), (-1,0), colors.HexColor('#2C3E50')),
-                    ('TEXTCOLOR', (0,0), (-1,0), colors.whitesmoke),
-                    ('ALIGN', (0,0), (-1,-1), 'LEFT'),
+                    ('BACKGROUND', (0,0), (-1,0), colors.HexColor('#E69F00')),
+                    ('TEXTCOLOR', (0,0), (-1,0), colors.black),
+                    ('ALIGN', (0,0), (-1,-1), 'CENTER'),
                     ('FONTNAME', (0,0), (-1,0), 'Helvetica-Bold'),
+                    ('BOTTOMPADDING', (0,0), (-1,0), 6),
+                    ('BACKGROUND', (0,1), (-1,-1), colors.HexColor('#FFFFFF')),
+                    ('GRID', (0,0), (-1,-1), 1, colors.black),
                     ('FONTSIZE', (0,0), (-1,0), 8),
                     ('FONTSIZE', (0,1), (-1,-1), 7),
                     ('BOTTOMPADDING', (0,0), (-1,0), 8),
@@ -467,10 +544,13 @@ class ReportGenerator:
         elements.append(Spacer(1, 20))
 
 
-        # RFC Data
-        elements.append(Paragraph("3. Detailed Status", styles['Heading1']))
-        for tcode_result in self.results.get("tcodes", []):
-            elements.append(Paragraph(f"{tcode_result['tcode']} - {tcode_result['name']}", styles['Heading2']))
+        # Detailed Data
+        elements.append(PageBreak())
+        elements.append(Paragraph("3. Detailed Status", h1_style))
+        for i, tcode_result in enumerate(self.results.get("tcodes", [])):
+            if i > 0:
+                elements.append(PageBreak())
+            elements.append(Paragraph(f"{tcode_result['tcode']} - {tcode_result['name']}", h2_style))
             
             # Add Analysis Summary
             analysis = tcode_result.get("analysis_summary", "Analysis completed.")

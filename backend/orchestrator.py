@@ -571,18 +571,16 @@ class ReportOrchestrator:
 
     async def run_ssh_filesystem_checks(self):
         """Connects via SSH to servers to get real filesystem snapshots."""
-        ssh_user = self.config.get("ssh_username")
-        ssh_pwd = self.config.get("ssh_password")
+        global_ssh_user = self.config.get("ssh_username")
+        global_ssh_pwd = self.config.get("ssh_password")
+        global_auth_method = self.config.get("ssh_auth_method", "password")
+        global_key_path = self.config.get("ssh_key_path", "")
         db_host = self.config.get("db_host") or self.config.get("hostname")
         
-        if not ssh_user or not ssh_pwd:
-            print("  SSH credentials missing. Skipping SSH filesystem checks.")
-            return
-
         import paramiko
         
-        # Targets: Start with DB Host
-        targets = [db_host]
+        # Targets: Start with DB Host using global credentials
+        targets = [{"host": db_host, "auth": {"method": global_auth_method, "user": global_ssh_user, "pwd": global_ssh_pwd, "key": global_key_path}}]
         
         # Auto-discovery: Get all application servers from SAP via RFC
         try:
@@ -602,8 +600,8 @@ class ReportOrchestrator:
                     for srv in server_list:
                         # Extract hostname from NAME field (e.g. nwrhel9_F4H_00)
                         srv_name = srv.get("NAME", "").split("_")[0]
-                        if srv_name and srv_name not in targets:
-                            targets.append(srv_name)
+                        if srv_name and not any(t["host"] == srv_name for t in targets):
+                            targets.append({"host": srv_name, "auth": {"method": global_auth_method, "user": global_ssh_user, "pwd": global_ssh_pwd, "key": global_key_path}})
                             print(f"  → Discovered App Server: {srv_name}")
                 temp_client.disconnect()
         except Exception as e:
@@ -612,18 +610,51 @@ class ReportOrchestrator:
         # Add any manually entered servers if not already discovered
         if self.config.get("servers"):
             for s in self.config.get("servers"):
-                if s and s not in targets:
-                    targets.append(s)
+                # Handle old string format or new dict format
+                if isinstance(s, str):
+                    if s and not any(t["host"] == s for t in targets):
+                        targets.append({"host": s, "auth": {"method": global_auth_method, "user": global_ssh_user, "pwd": global_ssh_pwd, "key": global_key_path}})
+                elif isinstance(s, dict):
+                    h = s.get("hostname")
+                    if h and not any(t["host"] == h for t in targets):
+                        if s.get("use_custom_auth"):
+                            targets.append({
+                                "host": h,
+                                "auth": {
+                                    "method": s.get("ssh_auth_method", "password"),
+                                    "user": s.get("ssh_username", ""),
+                                    "pwd": s.get("ssh_password", ""),
+                                    "key": s.get("ssh_key_path", "")
+                                }
+                            })
+                        else:
+                            targets.append({"host": h, "auth": {"method": global_auth_method, "user": global_ssh_user, "pwd": global_ssh_pwd, "key": global_key_path}})
             
-        print(f"  Total targets for SSH analysis: {targets}")
+        print(f"  Total targets for SSH analysis: {[t['host'] for t in targets]}")
             
-        for target in targets:
+        for target_dict in targets:
+            target = target_dict["host"]
+            auth = target_dict["auth"]
+            
+            if not auth["user"]:
+                print(f"  SSH credentials missing for {target}. Skipping.")
+                continue
+                
             await self.update_status(f"Connecting via SSH to {target}...")
-            print(f"  SSH: Connecting to {target}...")
+            print(f"  SSH: Connecting to {target} (Method: {auth['method']})...")
             try:
                 ssh = paramiko.SSHClient()
                 ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-                ssh.connect(target, username=ssh_user, password=ssh_pwd, timeout=10)
+                
+                if auth["method"] == "key":
+                    if os.path.exists(auth["key"]):
+                        ssh.connect(target, username=auth["user"], key_filename=auth["key"], timeout=10)
+                    else:
+                        raise Exception(f"SSH Key file not found: {auth['key']}")
+                elif auth["method"] == "mfa":
+                    ssh.connect(target, username=auth["user"], password=auth["pwd"], timeout=15, look_for_keys=False, allow_agent=False)
+                else:
+                    ssh.connect(target, username=auth["user"], password=auth["pwd"], timeout=10)
                 
                 stdin, stdout, stderr = ssh.exec_command("df -h")
                 output = stdout.read().decode('utf-8')
