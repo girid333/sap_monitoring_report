@@ -1,0 +1,202 @@
+.dashboard {
+  display: flex;
+  height: 100vh;
+  background-color: #f4f6f8;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: #333;
+}
+
+.sidebar {
+  width: 250px;
+  background-color: #1a2233;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 0;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+}
+
+.sidebarTitle {
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 0 2rem;
+  margin-bottom: 2rem;
+  color: #e69f00; /* Enterprise gold */
+}
+
+.navItem {
+  padding: 1rem 2rem;
+  cursor: pointer;
+  transition: background 0.2s;
+  font-size: 0.95rem;
+}
+
+.navItem:hover {
+  background-color: #2c3954;
+}
+
+.navItem.active {
+  background-color: #0066cc;
+  border-left: 4px solid #e69f00;
+}
+
+.mainContent {
+  flex: 1;
+  padding: 2rem 3rem;
+  overflow-y: auto;
+}
+
+.header {
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 1rem;
+}
+
+.header h1 {
+  margin: 0 0 0.5rem 0;
+  color: #1a2233;
+}
+
+.header p {
+  margin: 0;
+  color: #666;
+}
+
+/* Cards & Layout */
+.card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* Data Table */
+.dataTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.dataTable th, .dataTable td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+  font-size: 0.9rem;
+}
+
+.dataTable th {
+  background-color: #f9fafc;
+  color: #555;
+  font-weight: 600;
+}
+
+.dataTable tr:hover {
+  background-color: #f1f5f9;
+}
+
+/* Buttons */
+.btn {
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s;
+  font-size: 0.9rem;
+}
+
+.btnPrimary {
+  background-color: #0066cc;
+  color: white;
+}
+
+.btnPrimary:hover {
+  background-color: #0052a3;
+}
+
+.btnDanger {
+  background-color: #dc3545;
+  color: white;
+}
+
+.btnDanger:hover {
+  background-color: #c82333;
+}
+
+.btnSuccess {
+  background-color: #28a745;
+  color: white;
+}
+
+.btnOutline {
+  background-color: transparent;
+  border: 1px solid #ccc;
+  color: #333;
+}
+
+.btnOutline:hover {
+  background-color: #f4f4f4;
+}
+
+/* Forms */
+.formGroup {
+  margin-bottom: 1rem;
+}
+
+.formGroup label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.formControl {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+/* Modal */
+.modalOverlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modalContent {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  width: 600px;
+  max-width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modalActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+/* Status Panel */
+.statusPanel {
+  background: #f8f9fa;
+  border-left: 4px solid #0066cc;
+  padding: 1.5rem;
+  border-radius: 4px;
+}

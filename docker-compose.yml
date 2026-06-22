@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    image: ghcr.io/girid333/sap_monitoring_report/backend:latest
+    container_name: sap-backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - sap-db:/app/systems.db
+    restart: unless-stopped
+    networks:
+      - sap-net
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    image: ghcr.io/girid333/sap_monitoring_report/frontend:latest
+    container_name: sap-frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+    restart: unless-stopped
+    networks:
+      - sap-net
+
+volumes:
+  sap-db:
+    name: sap_backend_data
+
+networks:
+  sap-net:
+    driver: bridge
