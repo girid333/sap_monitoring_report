@@ -35,5 +35,11 @@ COPY . .
 # Expose FastAPI port
 EXPOSE 8000
 
+# Create the data directory for SQLite persistence
+RUN mkdir -p /data
+
+# Point the application at the persistent data directory
+ENV DB_PATH="/data/systems.db"
+
 # Run the backend
 CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]

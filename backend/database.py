@@ -2,7 +2,9 @@ import sqlite3
 import os
 import json
 
-DB_FILE = os.path.join(os.path.dirname(__file__), "systems.db")
+# In Docker the DB lives in /data (a mounted volume).
+# For local dev, fall back to the directory next to this file.
+DB_FILE = os.environ.get("DB_PATH", os.path.join(os.path.dirname(__file__), "systems.db"))
 
 def init_db():
     conn = sqlite3.connect(DB_FILE)

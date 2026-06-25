@@ -10,7 +10,7 @@ services:
     ports:
       - "8000:8000"
     volumes:
-      - sap-db:/app/systems.db
+      - sap-db:/data
     restart: unless-stopped
     networks:
       - sap-net
