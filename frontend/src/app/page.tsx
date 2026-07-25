@@ -7,6 +7,45 @@ export default function Home() {
   const [view, setView] = useState("inventory");
   const [systems, setSystems] = useState<any[]>([]);
   const [selectedSystems, setSelectedSystems] = useState<number[]>([]);
+
+  // === CUSTOM T-CODE STATE (additive, does not touch existing state) ===
+  const [jobs, setJobs] = useState<any[]>([]);
+  const [isJobModalOpen, setIsJobModalOpen] = useState(false);
+  const [editingJobId, setEditingJobId] = useState<number | null>(null);
+  const [jobForm, setJobForm] = useState({ job_name: "", description: "", system_id: "" as any, steps: [] as any[] });
+  const [customStatus, setCustomStatus] = useState<any>({ is_running: false, status: "idle", steps_executed: 0, screenshots: [], report_path: null, error: null });
+  const [runningJobId, setRunningJobId] = useState<number | null>(null);
+  // Step builder step type selector
+  type StepField = { key: string; label: string; placeholder?: string; type?: string; options?: string[] };
+  type StepTypeDef = { value: string; label: string; fields: StepField[] };
+  const STEP_TYPES: StepTypeDef[] = [
+    { value: "navigate_tcode",   label: "🔀 Navigate T-Code",         fields: [{ key: "tcode", label: "T-Code", placeholder: "SE16" }] },
+    { value: "press_fkey",       label: "⌨️ Press Key",               fields: [{ key: "key", label: "Key", type: "select", options: ["Enter","F3","F4","F5","F6","F7","F8","F9","F10","F11","F12"] }] },
+    { value: "fill_by_label",    label: "✏️ Fill by Label",           fields: [{ key: "label", label: "Field Label", placeholder: "Material" }, { key: "value", label: "Value", placeholder: "1000" }] },
+    { value: "fill_by_id",       label: "✏️ Fill by Element ID",      fields: [{ key: "element_id", label: "Element ID", placeholder: "wnd[0]/usr/..." }, { key: "value", label: "Value" }] },
+    { value: "fill_by_position", label: "✏️ Fill by Position",        fields: [{ key: "position", label: "Position (0=first)", placeholder: "0" }, { key: "value", label: "Value" }] },
+    { value: "select_dropdown",  label: "📋 Select Dropdown",         fields: [{ key: "label_or_id", label: "Label/ID" }, { key: "option", label: "Option Value" }] },
+    { value: "clear_field",      label: "🗑️ Clear Field",             fields: [{ key: "label_or_id", label: "Label/ID" }] },
+    { value: "click_button",     label: "🖱️ Click Button",            fields: [{ key: "button_text", label: "Button Text", placeholder: "Execute" }] },
+    { value: "click_menu_path",  label: "📁 Click Menu Path",         fields: [{ key: "path", label: "Menu Path (comma separated)", placeholder: "Edit,Select All" }] },
+    { value: "click_tab",        label: "📑 Click Tab",               fields: [{ key: "tab_text", label: "Tab Text" }] },
+    { value: "click_table_row",  label: "📊 Click Table Row",         fields: [{ key: "row_text", label: "Row contains text" }] },
+    { value: "double_click",     label: "🖱️ Double Click",            fields: [{ key: "target", label: "Target text/ID" }] },
+    { value: "expand_tree_node", label: "🌳 Expand Tree Node",         fields: [{ key: "node_text", label: "Node Text" }] },
+    { value: "click_tree_node",  label: "🌳 Click Tree Node",          fields: [{ key: "node_text", label: "Node Text" }] },
+    { value: "confirm_dialog",   label: "✅ Confirm Dialog (OK/Yes)", fields: [] },
+    { value: "dismiss_dialog",   label: "❌ Dismiss Dialog (Cancel)", fields: [] },
+    { value: "handle_f4_help",   label: "🔍 F4 Value Help",           fields: [{ key: "field_label", label: "Field Label" }, { key: "search_value", label: "Search Value" }] },
+    { value: "scroll_table_down",label: "⬇️ Scroll Table Down",       fields: [{ key: "times", label: "Times", placeholder: "1" }] },
+    { value: "filter_column",    label: "🔍 Filter Column",           fields: [{ key: "column_name", label: "Column Name" }, { key: "filter_value", label: "Filter Value" }] },
+    { value: "wait_seconds",     label: "⏱️ Wait",                    fields: [{ key: "seconds", label: "Seconds", placeholder: "2" }] },
+    { value: "wait_for_element", label: "⏳ Wait For Element",         fields: [{ key: "text", label: "Element Text" }, { key: "timeout", label: "Timeout (s)", placeholder: "10" }] },
+    { value: "scroll_page_down", label: "⬇️ Scroll Page Down",        fields: [] },
+    { value: "screenshot",       label: "📸 Screenshot",              fields: [{ key: "caption", label: "Caption", placeholder: "Overview screen" }] },
+    { value: "screenshot_full_page", label: "📸 Full-Page Screenshot", fields: [{ key: "caption", label: "Caption" }] },
+  ];
+  const [newStepType, setNewStepType] = useState("navigate_tcode");
+
   
   // Modal State
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -24,11 +63,15 @@ export default function Home() {
 
   useEffect(() => {
     fetchSystems();
+    fetchJobs();
     const interval = setInterval(async () => {
       try {
         const res = await fetch(`${apiBase}/api/status`);
         const data = await res.json();
         setStatus(data);
+        const cres = await fetch(`${apiBase}/api/custom/status`);
+        const cdata = await cres.json();
+        setCustomStatus(cdata);
       } catch (e) {}
     }, 2000);
     return () => clearInterval(interval);
@@ -39,10 +82,70 @@ export default function Home() {
       const res = await fetch(`${apiBase}/api/systems`);
       const data = await res.json();
       setSystems(data);
-    } catch (e) {
-      console.error("Failed to fetch systems");
-    }
+    } catch (e) { console.error("Failed to fetch systems"); }
   };
+
+  const fetchJobs = async () => {
+    try {
+      const res = await fetch(`${apiBase}/api/custom/jobs`);
+      const data = await res.json();
+      setJobs(data);
+    } catch (e) { console.error("Failed to fetch jobs"); }
+  };
+
+  const saveJob = async () => {
+    const payload = { ...jobForm, system_id: jobForm.system_id ? Number(jobForm.system_id) : null };
+    try {
+      const method = editingJobId ? "PUT" : "POST";
+      const url = editingJobId ? `${apiBase}/api/custom/jobs/${editingJobId}` : `${apiBase}/api/custom/jobs`;
+      await fetch(url, { method, headers: { "Content-Type": "application/json" }, body: JSON.stringify(payload) });
+      setIsJobModalOpen(false);
+      fetchJobs();
+    } catch (e) { alert("Error saving job"); }
+  };
+
+  const deleteJob = async (id: number) => {
+    if (!confirm("Delete this job?")) return;
+    await fetch(`${apiBase}/api/custom/jobs/${id}`, { method: "DELETE" });
+    fetchJobs();
+  };
+
+  const runJob = async (job: any) => {
+    if (!job.system_id) return alert("Please set a target system for this job before running.");
+    setRunningJobId(job.id);
+    try {
+      await fetch(`${apiBase}/api/custom/jobs/${job.id}/run`, {
+        method: "POST", headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ system_id: job.system_id })
+      });
+    } catch (e) { alert("Error starting job"); setRunningJobId(null); }
+  };
+
+  const addStep = () => {
+    const stepDef = STEP_TYPES.find(s => s.value === newStepType);
+    const newStep: any = { type: newStepType };
+    if (stepDef) stepDef.fields.forEach(f => { newStep[f.key] = f.type === "select" ? f.options![0] : ""; });
+    setJobForm({ ...jobForm, steps: [...jobForm.steps, newStep] });
+  };
+
+  const updateStep = (idx: number, key: string, val: string) => {
+    const steps = [...jobForm.steps];
+    steps[idx] = { ...steps[idx], [key]: val };
+    setJobForm({ ...jobForm, steps });
+  };
+
+  const removeStep = (idx: number) => setJobForm({ ...jobForm, steps: jobForm.steps.filter((_, i) => i !== idx) });
+  const moveStep = (idx: number, dir: -1 | 1) => {
+    const steps = [...jobForm.steps];
+    const to = idx + dir;
+    if (to < 0 || to >= steps.length) return;
+    [steps[idx], steps[to]] = [steps[to], steps[idx]];
+    setJobForm({ ...jobForm, steps });
+  };
+
+  const openNewJob = () => { setEditingJobId(null); setJobForm({ job_name: "", description: "", system_id: "", steps: [] }); setIsJobModalOpen(true); };
+  const openEditJob = (j: any) => { setEditingJobId(j.id); setJobForm({ job_name: j.job_name, description: j.description || "", system_id: j.system_id || "", steps: j.steps || [] }); setIsJobModalOpen(true); };
+
 
   const handleFormChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -149,12 +252,17 @@ export default function Home() {
         <div className={`${styles.navItem} ${view === 'execution' ? styles.active : ''}`} onClick={() => setView('execution')}>
           Batch Execution
         </div>
+        <div style={{borderTop:'1px solid rgba(255,255,255,0.1)', margin:'0.5rem 0'}} />
+        <div style={{padding:'0.4rem 1rem', fontSize:'0.7rem', color:'rgba(255,255,255,0.4)', textTransform:'uppercase', letterSpacing:'0.08em'}}>Custom Recorder</div>
+        <div className={`${styles.navItem} ${view === 'custom' ? styles.active : ''}`} onClick={() => setView('custom')}>
+          Custom T-Codes
+        </div>
       </div>
 
       <div className={styles.mainContent}>
         <div className={styles.header}>
-          <h1>{view === 'inventory' ? 'Connection Management' : 'Execution Dashboard'}</h1>
-          <p>{view === 'inventory' ? 'Manage SAP instances and credentials securely.' : 'Monitor bulk diagnostic executions and download reports.'}</p>
+          <h1>{view === 'inventory' ? 'Connection Management' : view === 'execution' ? 'Execution Dashboard' : 'Custom T-Code Recorder'}</h1>
+          <p>{view === 'inventory' ? 'Manage SAP instances and credentials securely.' : view === 'execution' ? 'Monitor bulk diagnostic executions and download reports.' : 'Define, run and document custom T-code navigation flows for any BASIS or Functional transaction.'}</p>
         </div>
 
         {view === 'inventory' && (
@@ -247,6 +355,146 @@ export default function Home() {
                      </button>
                    </div>
                 )}
+              </div>
+            </div>
+          </div>
+        )}
+        {/* ============================================================
+            CUSTOM T-CODE VIEW — Additive. Existing views untouched.
+            ============================================================ */}
+        {view === 'custom' && (
+          <div className={styles.card}>
+            {/* Live status bar */}
+            {customStatus.is_running && (
+              <div className={styles.ctStatusBar}>
+                <span className={styles.ctSpinner} />
+                <span>{customStatus.status}</span>
+              </div>
+            )}
+            {!customStatus.is_running && customStatus.report_path && (
+              <div className={styles.ctSuccessBanner}>
+                ✅ Recording complete — {customStatus.steps_executed} steps, {customStatus.screenshots?.length} screenshots captured.
+                <a href={`${apiBase}/api/custom/download`} target="_blank" className={`${styles.btn} ${styles.btnSuccess}`} style={{marginLeft:'1rem'}}>⬇ Download Report</a>
+              </div>
+            )}
+            {!customStatus.is_running && customStatus.error && (
+              <div className={styles.ctErrorBanner}>⚠️ {customStatus.error}</div>
+            )}
+
+            <div style={{display:'flex', justifyContent:'space-between', alignItems:'center', marginBottom:'1.5rem'}}>
+              <div style={{fontWeight:600, fontSize:'1.1rem'}}>Job Library</div>
+              <button className={`${styles.btn} ${styles.btnPrimary}`} onClick={openNewJob}>+ New Job</button>
+            </div>
+
+            {jobs.length === 0 && (
+              <div style={{textAlign:'center', padding:'3rem', color:'#999'}}>
+                No custom jobs defined yet.<br />
+                <button className={`${styles.btn} ${styles.btnOutline}`} style={{marginTop:'1rem'}} onClick={openNewJob}>Create your first job →</button>
+              </div>
+            )}
+
+            <div className={styles.ctJobGrid}>
+              {jobs.map(job => {
+                const targetSys = systems.find(s => s.id === job.system_id);
+                return (
+                  <div key={job.id} className={styles.ctJobCard}>
+                    <div className={styles.ctJobHeader}>
+                      <span className={styles.ctJobName}>{job.job_name}</span>
+                      <span className={styles.ctJobSteps}>{job.steps?.length || 0} steps</span>
+                    </div>
+                    {job.description && <p className={styles.ctJobDesc}>{job.description}</p>}
+                    <div className={styles.ctJobMeta}>
+                      🖥️ {targetSys ? `${targetSys.system_name} (${targetSys.sid})` : <span style={{color:'#f59e0b'}}>No system assigned</span>}
+                    </div>
+                    <div className={styles.ctJobActions}>
+                      <button className={`${styles.btn} ${styles.btnOutline}`} style={{fontSize:'0.8rem'}} onClick={() => openEditJob(job)}>✏️ Edit</button>
+                      <button className={`${styles.btn} ${styles.btnDanger}`} style={{fontSize:'0.8rem'}} onClick={() => deleteJob(job.id)}>Delete</button>
+                      <button
+                        className={`${styles.btn} ${styles.btnSuccess}`}
+                        style={{fontSize:'0.8rem', marginLeft:'auto'}}
+                        onClick={() => runJob(job)}
+                        disabled={customStatus.is_running}
+                      >
+                        {customStatus.is_running && runningJobId === job.id ? '⏳ Running…' : '▶ Run'}
+                      </button>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        )}
+
+        {/* ---- Job Editor Modal ---- */}
+        {isJobModalOpen && (
+          <div className={styles.modalOverlay}>
+            <div className={styles.modalContent} style={{maxWidth:'780px', width:'95vw', maxHeight:'92vh', overflow:'auto'}}>
+              <h2 style={{marginTop:0}}>{editingJobId ? 'Edit Job' : 'New Custom T-Code Job'}</h2>
+
+              <div className={styles.formGrid}>
+                <div className={styles.formGroup}>
+                  <label>Job Name *</label>
+                  <input className={styles.formControl} value={jobForm.job_name} onChange={e => setJobForm({...jobForm, job_name: e.target.value})} placeholder="SE16 MARA Table Browse" />
+                </div>
+                <div className={styles.formGroup}>
+                  <label>Target System</label>
+                  <select className={styles.formControl} value={jobForm.system_id} onChange={e => setJobForm({...jobForm, system_id: e.target.value})}>
+                    <option value="">— Select System —</option>
+                    {systems.map(s => <option key={s.id} value={s.id}>{s.system_name} ({s.sid})</option>)}
+                  </select>
+                </div>
+              </div>
+              <div className={styles.formGroup}>
+                <label>Description</label>
+                <input className={styles.formControl} value={jobForm.description} onChange={e => setJobForm({...jobForm, description: e.target.value})} placeholder="Optional notes about this recording" />
+              </div>
+
+              {/* Step Builder */}
+              <div style={{marginTop:'1.5rem'}}>
+                <div style={{fontWeight:600, marginBottom:'0.75rem', fontSize:'1rem'}}>Steps ({jobForm.steps.length})</div>
+
+                {jobForm.steps.map((step, idx) => {
+                  const defn = STEP_TYPES.find(s => s.value === step.type);
+                  return (
+                    <div key={idx} className={styles.ctStepCard}>
+                      <div className={styles.ctStepHeader}>
+                        <span className={styles.ctStepNum}>{idx + 1}</span>
+                        <span style={{fontWeight:600, flexGrow:1}}>{defn?.label || step.type}</span>
+                        <button onClick={() => moveStep(idx, -1)} disabled={idx === 0} style={{background:'none',border:'none',cursor:'pointer',fontSize:'1rem'}}>▲</button>
+                        <button onClick={() => moveStep(idx, 1)} disabled={idx === jobForm.steps.length - 1} style={{background:'none',border:'none',cursor:'pointer',fontSize:'1rem'}}>▼</button>
+                        <button onClick={() => removeStep(idx)} style={{background:'none',border:'none',cursor:'pointer',color:'#ef4444',fontSize:'1rem'}}>✕</button>
+                      </div>
+                      {defn && defn.fields.length > 0 && (
+                        <div className={styles.ctStepFields}>
+                          {defn.fields.map(f => (
+                            <div key={f.key} className={styles.formGroup} style={{marginBottom:'0.5rem'}}>
+                              <label style={{fontSize:'0.8rem'}}>{f.label}</label>
+                              {f.type === 'select' ?
+                                <select className={styles.formControl} style={{fontSize:'0.85rem'}} value={step[f.key] || ''} onChange={e => updateStep(idx, f.key, e.target.value)}>
+                                  {f.options!.map(o => <option key={o} value={o}>{o}</option>)}
+                                </select> :
+                                <input className={styles.formControl} style={{fontSize:'0.85rem'}} value={step[f.key] || ''} placeholder={f.placeholder} onChange={e => updateStep(idx, f.key, e.target.value)} />
+                              }
+                            </div>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
+
+                {/* Add Step Row */}
+                <div className={styles.ctAddStep}>
+                  <select className={styles.formControl} style={{flex:1}} value={newStepType} onChange={e => setNewStepType(e.target.value)}>
+                    {STEP_TYPES.map(s => <option key={s.value} value={s.value}>{s.label}</option>)}
+                  </select>
+                  <button className={`${styles.btn} ${styles.btnPrimary}`} onClick={addStep}>+ Add Step</button>
+                </div>
+              </div>
+
+              <div className={styles.modalActions}>
+                <button className={`${styles.btn} ${styles.btnOutline}`} onClick={() => setIsJobModalOpen(false)}>Cancel</button>
+                <button className={`${styles.btn} ${styles.btnPrimary}`} onClick={saveJob} disabled={!jobForm.job_name}>Save Job</button>
               </div>
             </div>
           </div>

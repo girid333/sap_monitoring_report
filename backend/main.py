@@ -173,6 +173,157 @@ async def test_connection(config: RunConfig):
     else:
         return JSONResponse(status_code=400, content={"success": False, "message": "RFC Login failed."})
 
+
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=8000)
+
+
+# =============================================================================
+# CUSTOM T-CODE RECORDER ROUTES
+# Appended below. Zero changes to any route above this block.
+# =============================================================================
+
+class JobDefinition(BaseModel):
+    job_name: str
+    description: Optional[str] = ""
+    system_id: Optional[int] = None
+    steps: List[Dict[str, Any]] = []
+
+class RunJobRequest(BaseModel):
+    system_id: int
+
+# Track custom job run status separately from basis monitoring
+custom_run_status: Dict[str, Any] = {
+    "is_running": False,
+    "job_id": None,
+    "status": "idle",
+    "steps_executed": 0,
+    "screenshots": [],
+    "report_path": None,
+    "error": None
+}
+
+@app.get("/api/custom/jobs")
+def list_jobs():
+    """Return all custom T-code job definitions."""
+    return database.get_all_jobs()
+
+@app.post("/api/custom/jobs")
+def create_job(job: JobDefinition):
+    """Create a new custom T-code job definition."""
+    new_id = database.add_job(job.dict())
+    created = database.get_job(new_id)
+    return created
+
+@app.put("/api/custom/jobs/{job_id}")
+def update_job(job_id: int, job: JobDefinition):
+    """Update an existing custom T-code job definition."""
+    existing = database.get_job(job_id)
+    if not existing:
+        raise HTTPException(status_code=404, detail="Job not found")
+    database.update_job(job_id, job.dict())
+    return database.get_job(job_id)
+
+@app.delete("/api/custom/jobs/{job_id}")
+def delete_job(job_id: int):
+    """Delete a custom T-code job."""
+    existing = database.get_job(job_id)
+    if not existing:
+        raise HTTPException(status_code=404, detail="Job not found")
+    database.delete_job(job_id)
+    return {"success": True}
+
+@app.get("/api/custom/status")
+def get_custom_status():
+    """Return current custom job run status."""
+    return custom_run_status
+
+@app.post("/api/custom/jobs/{job_id}/run")
+async def run_job(job_id: int, req: RunJobRequest, background_tasks: BackgroundTasks):
+    """Execute a custom T-code job against a SAP system."""
+    global custom_run_status
+    if custom_run_status.get("is_running"):
+        raise HTTPException(status_code=409, detail="A custom job is already running")
+
+    job = database.get_job(job_id)
+    if not job:
+        raise HTTPException(status_code=404, detail="Job not found")
+
+    system = database.get_system(req.system_id)
+    if not system:
+        raise HTTPException(status_code=404, detail="System not found")
+
+    background_tasks.add_task(_execute_custom_job, job, system)
+    return {"success": True, "message": f"Job '{job['job_name']}' started"}
+
+@app.get("/api/custom/download")
+def download_custom_report():
+    """Download the last generated custom recording report."""
+    path = custom_run_status.get("report_path")
+    if not path or not os.path.exists(path):
+        raise HTTPException(status_code=404, detail="No report available")
+    return FileResponse(path, media_type="application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+                        filename=os.path.basename(path))
+
+async def _execute_custom_job(job: dict, system: dict):
+    """Background task: runs the custom engine and generates the report."""
+    global custom_run_status
+    custom_run_status = {
+        "is_running": True,
+        "job_id": job["id"],
+        "status": f"Starting job: {job['job_name']}",
+        "steps_executed": 0,
+        "screenshots": [],
+        "report_path": None,
+        "error": None
+    }
+    try:
+        from custom_tcode_engine import CustomTcodeEngine
+        from custom_report_generator import CustomReportGenerator
+
+        output_dir = os.path.join(os.path.dirname(__file__), "custom_recordings")
+        os.makedirs(output_dir, exist_ok=True)
+
+        def status_cb(msg):
+            custom_run_status["status"] = msg
+
+        engine = CustomTcodeEngine(
+            webgui_url=system.get("webgui_url", ""),
+            username=system.get("sap_username", ""),
+            password=system.get("sap_password", ""),
+            client=system.get("sap_client", "100"),
+            output_dir=output_dir
+        )
+
+        result = await engine.run_job(
+            steps=job["steps"],
+            system_config=system,
+            status_callback=status_cb
+        )
+
+        custom_run_status["steps_executed"] = result.get("steps_executed", 0)
+        custom_run_status["screenshots"] = result.get("screenshots", [])
+
+        if result.get("success"):
+            reporter = CustomReportGenerator(output_dir=output_dir)
+            report_path = reporter.generate(
+                job_name=job["job_name"],
+                job_description=job.get("description", ""),
+                system_name=system.get("system_name", system.get("sid", "")),
+                sid=system.get("sid", ""),
+                steps=job["steps"],
+                screenshots=result.get("screenshots", [])
+            )
+            custom_run_status["report_path"] = report_path
+            custom_run_status["status"] = f"Complete. {len(result.get('screenshots',[]))} screenshots captured."
+        else:
+            custom_run_status["error"] = result.get("error", "Unknown error")
+            custom_run_status["status"] = "Failed"
+
+    except Exception as e:
+        custom_run_status["error"] = str(e)
+        custom_run_status["status"] = f"Error: {e}"
+        print(f"Custom job error: {e}")
+    finally:
+        custom_run_status["is_running"] = False
