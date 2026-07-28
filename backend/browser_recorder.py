@@ -251,24 +251,31 @@ class BrowserRecorder:
         """Enter T-code into the SAP command field."""
         page = self.page
         cmd_selectors = [
+            'input[id*="okcd" i]',
+            'input[title*="Command" i]',
+            'input[title*="command" i]',
             'input[name="sap-startapp"]',
-            "input.urEdtBx",
+            'input.urEdtBx',
             '#CMD_FIELD',
-            'input[title*="Command"]',
-            'input[title*="command"]',
         ]
-        for sel in cmd_selectors:
-            try:
-                el = page.locator(sel).first
-                if await el.count() > 0:
-                    await el.triple_click()
-                    await el.fill(f"/n{tcode}")
-                    await page.keyboard.press("Enter")
-                    await page.wait_for_load_state("domcontentloaded", timeout=12_000)
-                    await asyncio.sleep(2)
-                    return
-            except Exception:
-                pass
+        
+        # Search across all frames for the command field
+        for frame in page.frames:
+            for sel in cmd_selectors:
+                try:
+                    el = frame.locator(sel).first
+                    if await el.count() > 0:
+                        print(f"[BrowserRecorder] Found command field using {sel} in frame {frame.name}", flush=True)
+                        # Use force=True in case the input is visually collapsed/hidden by SAP theme
+                        await el.fill(f"/n{tcode}", force=True)
+                        await frame.keyboard.press("Enter")
+                        await page.wait_for_load_state("domcontentloaded", timeout=15_000)
+                        await asyncio.sleep(2)
+                        return
+                except Exception:
+                    pass
+                    
+        print("[BrowserRecorder] Could not find command field, falling back to URL...", flush=True)
         # Fallback: URL with transaction param
         try:
             base = self.system.get("webgui_url", "").rstrip("?&")
@@ -277,7 +284,7 @@ class BrowserRecorder:
             await page.goto(url, timeout=15_000, wait_until="domcontentloaded")
             await asyncio.sleep(2)
         except Exception as exc:
-            print(f"[BrowserRecorder] _navigate_tcode fallback error: {exc}")
+            print(f"[BrowserRecorder] _navigate_tcode fallback error: {exc}", flush=True)
 
     async def _inject_recorder(self) -> None:
         """Inject lightweight JS event listener into every frame."""
