@@ -628,12 +628,13 @@ async def browser_websocket(websocket: WebSocket, session_id: str):
     
     # Wait for browser to be ready
     for _ in range(60):
-        if recorder.is_ready:
+        if recorder.is_ready or recorder.error:
             break
         await asyncio.sleep(0.5)
     
     if not recorder.is_ready:
-        await websocket.send_json({"type": "error", "message": "Browser failed to start"})
+        err_msg = recorder.error or "Browser failed to start (timeout)"
+        await websocket.send_json({"type": "error", "message": err_msg})
         await websocket.close()
         return
 

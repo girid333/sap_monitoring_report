@@ -31,6 +31,7 @@ class BrowserRecorder:
         self.is_ready: bool = False
         self._last_url: str = ""
         self._shot_count: int = 0
+        self.error: Optional[str] = None
 
     # -------------------------------------------------------------------------
     # Public lifecycle
@@ -38,43 +39,56 @@ class BrowserRecorder:
 
     async def start(self, tcode: str = "") -> None:
         """Launch browser, login to SAP, optionally navigate to T-code."""
-        from playwright.async_api import async_playwright
-        self._playwright = await async_playwright().start()
-        self._browser = await self._playwright.chromium.launch(
-            headless=True,
-            args=[
-                "--no-sandbox",
-                "--disable-setuid-sandbox",
-                "--disable-dev-shm-usage",
-                "--disable-gpu",
-            ],
-        )
-        self._context = await self._browser.new_context(
-            viewport=self.VIEWPORT,
-            ignore_https_errors=True,
-        )
-        self.page = await self._context.new_page()
+        try:
+            from playwright.async_api import async_playwright
+            self._playwright = await async_playwright().start()
+            self._browser = await self._playwright.chromium.launch(
+                headless=True,
+                args=[
+                    "--no-sandbox",
+                    "--disable-setuid-sandbox",
+                    "--disable-dev-shm-usage",
+                    "--disable-gpu",
+                ],
+            )
+            self._context = await self._browser.new_context(
+                viewport=self.VIEWPORT,
+                ignore_https_errors=True,
+            )
+            self.page = await self._context.new_page()
 
-        # Navigate to SAP WebGUI
-        webgui_url = self.system.get("webgui_url", "")
-        await self.page.goto(webgui_url, timeout=30_000, wait_until="networkidle")
+            # Navigate to SAP WebGUI
+            webgui_url = self.system.get("webgui_url", "")
+            if not webgui_url:
+                raise ValueError("System has no WebGUI URL configured.")
+                
+            await self.page.goto(webgui_url, timeout=45_000, wait_until="domcontentloaded")
 
-        # Login
-        await self._login()
+            # Login
+            await self._login()
 
-        # Navigate to T-code if given
-        if tcode:
-            await self._navigate_tcode(tcode)
-            self.steps.append({"type": "navigate_tcode", "tcode": tcode.upper()})
+            # Navigate to T-code if given
+            if tcode:
+                await self._navigate_tcode(tcode)
+                self.steps.append({"type": "navigate_tcode", "tcode": tcode.upper()})
 
-        # Inject JS event recorder
-        await self._inject_recorder()
+            # Inject JS event recorder
+            await self._inject_recorder()
 
-        # Listen for navigations to re-inject recorder
-        self.page.on("framenavigated", self._on_frame_navigated)
+            # Listen for navigations to re-inject recorder
+            self.page.on("framenavigated", self._on_frame_navigated)
 
-        self.is_running = True
-        self.is_ready = True
+            self.is_running = True
+            self.is_ready = True
+        except Exception as e:
+            self.error = f"Browser startup failed: {str(e)}"
+            print(f"[BrowserRecorder] start error: {e}")
+            self.is_ready = False
+            # Clean up if failed
+            if self._browser:
+                await self._browser.close()
+            if self._playwright:
+                await self._playwright.stop()
 
     async def stop(self) -> List[Dict]:
         """Stop recording, close browser, return captured steps."""
@@ -188,7 +202,7 @@ class BrowserRecorder:
 
         # Wait briefly for login page
         try:
-            await page.wait_for_load_state("networkidle", timeout=10_000)
+            await page.wait_for_load_state("domcontentloaded", timeout=10_000)
         except Exception:
             pass
 
@@ -225,7 +239,8 @@ class BrowserRecorder:
         # Submit
         try:
             await page.keyboard.press("Enter")
-            await page.wait_for_load_state("networkidle", timeout=15_000)
+            await page.wait_for_load_state("domcontentloaded", timeout=15_000)
+            await asyncio.sleep(2) # Give UI time to render after DOM is ready
         except Exception:
             pass
 
@@ -246,7 +261,8 @@ class BrowserRecorder:
                     await el.triple_click()
                     await el.fill(f"/n{tcode}")
                     await page.keyboard.press("Enter")
-                    await page.wait_for_load_state("networkidle", timeout=12_000)
+                    await page.wait_for_load_state("domcontentloaded", timeout=12_000)
+                    await asyncio.sleep(2)
                     return
             except Exception:
                 pass
@@ -255,7 +271,8 @@ class BrowserRecorder:
             base = self.system.get("webgui_url", "").rstrip("?&")
             sep  = "&" if "?" in base else "?"
             url  = f"{base}{sep}~transaction={tcode}&sap-client={self.system.get('sap_client','100')}"
-            await page.goto(url, timeout=15_000, wait_until="networkidle")
+            await page.goto(url, timeout=15_000, wait_until="domcontentloaded")
+            await asyncio.sleep(2)
         except Exception as exc:
             print(f"[BrowserRecorder] _navigate_tcode fallback error: {exc}")
 
