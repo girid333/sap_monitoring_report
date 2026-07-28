@@ -125,6 +125,20 @@ export default function Home() {
       } catch (e) {}
     };
     
+    ws.onerror = (e) => {
+      console.error("WebSocket error:", e);
+      alert("WebSocket connection failed! Check console and backend logs.");
+      setIsRecLoading(false);
+    };
+
+    ws.onclose = (e) => {
+      console.log("WebSocket closed", e.code, e.reason);
+      if (recActive && !recFrame) {
+         alert("WebSocket closed before receiving stream. Reason: " + e.reason);
+         setIsRecLoading(false);
+      }
+    };
+    
     setRecSocket(ws);
     return () => { ws.close(); setRecSocket(null); };
   }, [recSessionId]);

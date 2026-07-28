@@ -40,8 +40,10 @@ class BrowserRecorder:
     async def start(self, tcode: str = "") -> None:
         """Launch browser, login to SAP, optionally navigate to T-code."""
         try:
+            print(f"[BrowserRecorder] Starting async_playwright...", flush=True)
             from playwright.async_api import async_playwright
             self._playwright = await async_playwright().start()
+            print(f"[BrowserRecorder] Launching chromium...", flush=True)
             self._browser = await self._playwright.chromium.launch(
                 headless=True,
                 args=[
@@ -51,6 +53,7 @@ class BrowserRecorder:
                     "--disable-gpu",
                 ],
             )
+            print(f"[BrowserRecorder] Chromium launched, creating context...", flush=True)
             self._context = await self._browser.new_context(
                 viewport=self.VIEWPORT,
                 ignore_https_errors=True,
@@ -82,7 +85,7 @@ class BrowserRecorder:
             self.is_ready = True
         except Exception as e:
             self.error = f"Browser startup failed: {str(e)}"
-            print(f"[BrowserRecorder] start error: {e}")
+            print(f"[BrowserRecorder] start error: {e}", flush=True)
             self.is_ready = False
             # Clean up if failed
             if self._browser:

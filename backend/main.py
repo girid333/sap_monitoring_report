@@ -605,28 +605,34 @@ class StartBrowserRequest(BaseModel):
 
 @app.post("/api/custom/recorder/start-browser")
 async def start_browser_recording(req: StartBrowserRequest):
+    print(f"[{datetime.now()}] /api/custom/recorder/start-browser called for system {req.system_id}", flush=True)
     system = database.get_system(req.system_id)
     if not system:
+        print("System not found!", flush=True)
         raise HTTPException(status_code=404, detail="System not found")
     
     session_id = str(uuid.uuid4())[:8]
+    print(f"[{datetime.now()}] Initializing BrowserRecorder for session {session_id}", flush=True)
     recorder = BrowserRecorder(session_id=session_id, system=system)
     live_browser_sessions[session_id] = recorder
     
     # Start the browser async
     asyncio.create_task(recorder.start(req.tcode))
     
+    print(f"[{datetime.now()}] Returning session {session_id} to frontend", flush=True)
     return {"session_id": session_id}
 
 @app.websocket("/ws/browser/{session_id}")
 async def browser_websocket(websocket: WebSocket, session_id: str):
+    print(f"[{datetime.now()}] WebSocket connection requested for session {session_id}", flush=True)
     await websocket.accept()
     recorder = live_browser_sessions.get(session_id)
     if not recorder:
+        print(f"[{datetime.now()}] Session {session_id} not found", flush=True)
         await websocket.close(code=1008, reason="Session not found")
         return
     
-    # Wait for browser to be ready
+    print(f"[{datetime.now()}] Waiting for browser to be ready...", flush=True)
     for _ in range(60):
         if recorder.is_ready or recorder.error:
             break
@@ -678,8 +684,9 @@ async def browser_websocket(websocket: WebSocket, session_id: str):
     except WebSocketDisconnect:
         pass
     except Exception as e:
-        print(f"Browser WS error: {e}")
+        print(f"[{datetime.now()}] Browser WS error: {e}", flush=True)
     finally:
+        print(f"[{datetime.now()}] Closing WebSocket and stopping recorder", flush=True)
         stream_task.cancel()
         steps = await recorder.stop()
         live_browser_sessions.pop(session_id, None)
