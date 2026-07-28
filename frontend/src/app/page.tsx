@@ -909,9 +909,17 @@ export default function Home() {
                         onBlur={e => e.target.focus()}
                         onKeyDown={(e) => {
                           if (!recSocket || recSocket.readyState !== WebSocket.OPEN) return;
-                          if (["F3","F4","F5","F6","F7","F8","F9","F10","F11","F12","Enter"].includes(e.key)) {
+                          
+                          // Forward special keys
+                          const specialKeys = ["F3","F4","F5","F6","F7","F8","F9","F10","F11","F12","Enter","Backspace","Tab","Delete","ArrowUp","ArrowDown","ArrowLeft","ArrowRight","Escape"];
+                          if (specialKeys.includes(e.key)) {
                             e.preventDefault();
                             recSocket.send(JSON.stringify({ type: 'key', key: e.key }));
+                          } 
+                          // Forward typed printable characters
+                          else if (e.key.length === 1) {
+                            e.preventDefault();
+                            recSocket.send(JSON.stringify({ type: 'type', text: e.key }));
                           }
                         }}
                       />
