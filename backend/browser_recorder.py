@@ -253,9 +253,11 @@ class BrowserRecorder:
         cmd_selectors = [
             'input[id*="okcd" i]',
             'input[title*="Command" i]',
-            'input[title*="command" i]',
+            'input[title*="Transaction" i]',
             'input[name="sap-startapp"]',
             'input.urEdtBx',
+            'input.urTxfOkCd',
+            'input.lsField--standalone',
             '#CMD_FIELD',
         ]
         
@@ -266,7 +268,6 @@ class BrowserRecorder:
                     el = frame.locator(sel).first
                     if await el.count() > 0:
                         print(f"[BrowserRecorder] Found command field using {sel} in frame {frame.name}", flush=True)
-                        # Use force=True in case the input is visually collapsed/hidden by SAP theme
                         await el.fill(f"/n{tcode}", force=True)
                         await frame.keyboard.press("Enter")
                         await page.wait_for_load_state("domcontentloaded", timeout=15_000)
@@ -275,8 +276,21 @@ class BrowserRecorder:
                 except Exception:
                     pass
                     
-        print("[BrowserRecorder] Could not find command field, falling back to URL...", flush=True)
-        # Fallback: URL with transaction param
+        print("[BrowserRecorder] Could not find command field, attempting Ctrl+/ keyboard shortcut...", flush=True)
+        # Fallback 1: Keyboard shortcut to focus command field
+        try:
+            await page.keyboard.press("Control+/")
+            await asyncio.sleep(0.5)
+            await page.keyboard.type(f"/n{tcode}")
+            await page.keyboard.press("Enter")
+            await page.wait_for_load_state("domcontentloaded", timeout=15_000)
+            await asyncio.sleep(2)
+            return
+        except Exception as exc:
+            print(f"[BrowserRecorder] Ctrl+/ fallback error: {exc}", flush=True)
+
+        print("[BrowserRecorder] Keyboard shortcut failed, falling back to URL...", flush=True)
+        # Fallback 2: URL with transaction param
         try:
             base = self.system.get("webgui_url", "").rstrip("?&")
             sep  = "&" if "?" in base else "?"
