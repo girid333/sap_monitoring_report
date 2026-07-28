@@ -53,6 +53,11 @@ export default function Home() {
   const [recSteps, setRecSteps] = useState<any[]>([]);
   const [recEventCount, setRecEventCount] = useState(0);
   const [recActive, setRecActive] = useState(false);
+  const [recTcode, setRecTcode] = useState("");
+  const [recFrame, setRecFrame] = useState<string | null>(null);
+  const [isRecLoading, setIsRecLoading] = useState(false);
+  const [recSocket, setRecSocket] = useState<WebSocket | null>(null);
+  const [recCaption, setRecCaption] = useState("");
 
   // === BATCH RUN STATE ===
   const [batchStatus, setBatchStatus] = useState<any>({ is_running: false, total_rows: 0, completed_rows: 0, current_run: '', results: [], report_path: null, error: null });
@@ -90,18 +95,40 @@ export default function Home() {
         const bres = await fetch(`${apiBase}/api/custom/batch/status`);
         const bdata = await bres.json();
         setBatchStatus(bdata);
-        // Poll recording status if active
-        if (recSessionId) {
-          const rres = await fetch(`${apiBase}/api/custom/recorder/status/${recSessionId}`);
-          const rdata = await rres.json();
-          setRecSteps(rdata.steps || []);
-          setRecEventCount(rdata.event_count || 0);
-          if (!rdata.active) setRecActive(false);
-        }
       } catch (e) {}
     }, 2000);
     return () => clearInterval(interval);
   }, []);
+
+  // Live Browser WebSocket
+  useEffect(() => {
+    if (!recSessionId) return;
+    const wsUrl = apiBase.replace('http://', 'ws://').replace('https://', 'wss://');
+    const ws = new WebSocket(`${wsUrl}/ws/browser/${recSessionId}`);
+    
+    ws.onmessage = (event) => {
+      try {
+        const data = JSON.parse(event.data);
+        if (data.type === 'frame') {
+          setRecFrame(data.data);
+          setIsRecLoading(false);
+        } else if (data.type === 'step') {
+          setRecSteps(prev => [...prev, data.step]);
+          setRecEventCount(prev => prev + 1);
+        } else if (data.type === 'stopped') {
+          setRecSteps(data.steps || []);
+          setRecActive(false);
+        } else if (data.type === 'error') {
+          alert(`Browser Error: ${data.message}`);
+          setIsRecLoading(false);
+        }
+      } catch (e) {}
+    };
+    
+    setRecSocket(ws);
+    return () => { ws.close(); setRecSocket(null); };
+  }, [recSessionId]);
+
 
   const fetchSystems = async () => {
     try {
@@ -148,28 +175,52 @@ export default function Home() {
   };
 
   // ---- Record & Replay handlers ----
-  const startRecording = async (job: any) => {
+  const openRecordModal = (job: any) => {
+    setRecJobId(job.id);
+    setRecTcode('');
+    setRecSteps([]);
+    setRecEventCount(0);
+    setRecActive(false);
+    setRecFrame(null);
+    setRecSessionId(null);
+    setIsRecModalOpen(true);
+  };
+  
+  const startBrowserRecording = async () => {
+    if (!recJobId) return;
+    const job = jobs.find(j => j.id === recJobId);
+    if (!job?.system_id) return alert('No system assigned to this job');
+    setIsRecLoading(true);
     try {
-      const res = await fetch(`${apiBase}/api/custom/recorder/start`, { method: 'POST' });
+      const res = await fetch(`${apiBase}/api/custom/recorder/start-browser`, { 
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ system_id: job.system_id, tcode: recTcode })
+      });
       const data = await res.json();
-      setRecSessionId(data.session_id);
-      setRecJobId(job.id);
-      setRecSteps([]);
-      setRecEventCount(0);
-      setRecActive(true);
-      setIsRecModalOpen(true);
-    } catch (e) { alert('Failed to start recording session'); }
+      if (data.session_id) {
+         setRecSessionId(data.session_id);
+         setRecActive(true);
+      }
+    } catch (e) {
+      alert('Failed to start browser session');
+      setIsRecLoading(false);
+    }
   };
 
-  const stopRecording = async () => {
-    if (!recSessionId) return;
-    try {
-      const res = await fetch(`${apiBase}/api/custom/recorder/stop/${recSessionId}`, { method: 'POST' });
-      const data = await res.json();
-      setRecSteps(data.steps || []);
-      setRecActive(false);
-    } catch (e) { console.error(e); }
+  const stopRecording = () => {
+    if (recSocket && recSocket.readyState === WebSocket.OPEN) {
+      recSocket.send(JSON.stringify({ type: 'stop' }));
+    }
   };
+  
+  const takeScreenshot = () => {
+    if (recSocket && recSocket.readyState === WebSocket.OPEN) {
+      recSocket.send(JSON.stringify({ type: 'screenshot', caption: recCaption }));
+      setRecCaption('');
+    }
+  };
+
 
   const saveRecordingToJob = async () => {
     if (!recJobId || recSteps.length === 0) return;
@@ -186,10 +237,6 @@ export default function Home() {
     alert(`✅ ${recSteps.length} steps saved to job!`);
   };
 
-  const getRecorderSnippet = (sessionId: string) => {
-    const wsUrl = apiBase.replace('http://', 'ws://').replace('https://', 'wss://');
-    return `(function(){var WS='${wsUrl}/ws/recorder/${sessionId}';var ws=new WebSocket(WS);var p=document.createElement('div');p.id='_srec';p.style='position:fixed;top:16px;right:16px;z-index:99999;background:#1e3a5f;color:#fff;padding:14px 18px;border-radius:12px;font-family:sans-serif;box-shadow:0 8px 32px rgba(0,0,0,0.5);min-width:210px;';p.innerHTML='<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;"><span style="width:10px;height:10px;background:#ef4444;border-radius:50%;display:inline-block;"></span><b>Recording SAP...</b></div><div id="_rc" style="font-size:0.82rem;color:#93c5fd;margin-bottom:10px;">0 events</div><button id="_rs" style="background:#ef4444;color:#fff;border:none;padding:7px 14px;border-radius:6px;cursor:pointer;width:100%;font-weight:600;">\u23f9 Stop Recording</button>';document.body.appendChild(p);var n=0;function send(t,d){try{ws.send(JSON.stringify(Object.assign({type:t},d)));}catch(e){}n++;var el=document.getElementById('_rc');if(el)el.textContent=n+' events';}function attach(doc){try{doc.addEventListener('change',function(e){var el=e.target;if(el.tagName==='INPUT'||el.tagName==='SELECT'){var lb='';if(el.id){var l=doc.querySelector('label[for="'+el.id+'"]');if(l)lb=l.textContent.trim();}send('fill',{id:el.id,name:el.name,label:lb,value:el.value});}},true);doc.addEventListener('keydown',function(e){var fk=['F3','F4','F5','F6','F7','F8','F9','F10','F11','F12','Enter'];if(fk.indexOf(e.key)>=0)send('keypress',{key:e.key});},true);doc.addEventListener('click',function(e){var el=e.target;if(el.id==='_rs'||el.closest('#_srec'))return;var t=(el.textContent||'').trim().substring(0,80)||el.getAttribute('title')||'';if(t&&t.length>1)send('click',{text:t,id:el.id,title:el.getAttribute('title')});},true);}catch(ex){}}attach(document);function frames(){Array.from(document.querySelectorAll('iframe')).forEach(function(f){try{attach(f.contentDocument);}catch(e){}});}frames();setInterval(frames,2000);ws.onerror=function(){var el=document.getElementById('_rc');if(el)el.textContent='Connection error!';};document.getElementById('_rs').onclick=function(){ws.send(JSON.stringify({type:'stop'}));ws.close();p.remove();};})();`;
-  };
 
   // ---- Batch run handler ----
   const startBatchRun = async () => {
@@ -491,7 +538,7 @@ export default function Home() {
                     <div className={styles.ctJobActions}>
                       <button className={`${styles.btn} ${styles.btnOutline}`} style={{fontSize:'0.8rem'}} onClick={() => openEditJob(job)}>✏️ Edit</button>
                       <button className={`${styles.btn} ${styles.btnDanger}`} style={{fontSize:'0.8rem'}} onClick={() => deleteJob(job.id)}>Delete</button>
-                      <button className={`${styles.btn} ${styles.ctRecBtn}`} style={{fontSize:'0.8rem'}} onClick={() => startRecording(job)} disabled={recActive}>🔴 Record</button>
+                      <button className={`${styles.btn} ${styles.ctRecBtn}`} style={{fontSize:'0.8rem'}} onClick={() => openRecordModal(job)} disabled={recActive}>🔴 Record</button>
                       <button
                         className={`${styles.btn} ${styles.btnSuccess}`}
                         style={{fontSize:'0.8rem', marginLeft:'auto'}}
@@ -793,68 +840,113 @@ export default function Home() {
         {/* ================================================================
             RECORDING MODAL — Opens when user clicks 🔴 Record on a job
             ================================================================ */}
-        {isRecModalOpen && recSessionId && (
+        {isRecModalOpen && (
           <div className={styles.modalOverlay}>
-            <div className={styles.modalContent} style={{maxWidth:'680px', width:'95vw'}}>
-              <div style={{display:'flex', alignItems:'center', gap:'0.75rem', marginBottom:'1rem'}}>
+            <div className={styles.modalContent} style={{maxWidth:'1200px', width:'95vw', height:'90vh', display:'flex', flexDirection:'column'}}>
+              <div style={{display:'flex', alignItems:'center', gap:'0.75rem', marginBottom:'1rem', paddingBottom:'0.75rem', borderBottom:'1px solid #e5e7eb'}}>
                 {recActive ? <span className={styles.ctRecDot}/> : <span style={{fontSize:'1.2rem'}}>✅</span>}
-                <h2 style={{margin:0}}>{recActive ? 'Recording in Progress…' : 'Recording Complete'}</h2>
+                <h2 style={{margin:0}}>{recActive ? 'Live SAP Recording' : 'Recording Complete'}</h2>
+                
+                {/* T-Code Input (before start) */}
+                {!recSessionId && !recActive && (
+                  <div style={{display:'flex', gap:'0.5rem', marginLeft:'auto'}}>
+                    <input className={styles.formControl} style={{width:'150px'}} placeholder="Initial T-Code..." value={recTcode} onChange={e => setRecTcode(e.target.value.toUpperCase())} />
+                    <button className={`${styles.btn} ${styles.btnPrimary}`} onClick={startBrowserRecording} disabled={isRecLoading}>
+                      {isRecLoading ? 'Launching...' : '🚀 Launch Browser'}
+                    </button>
+                    <button className={`${styles.btn} ${styles.btnOutline}`} onClick={() => setIsRecModalOpen(false)}>Cancel</button>
+                  </div>
+                )}
+                {/* Close Button (after completion) */}
+                {recSessionId && !recActive && (
+                  <button className={`${styles.btn} ${styles.btnOutline}`} style={{marginLeft:'auto'}} onClick={() => { setIsRecModalOpen(false); setRecSessionId(null); }}>Discard & Close</button>
+                )}
               </div>
 
-              {recActive && (
-                <>
-                  <div className={styles.ctSnippetBox}>
-                    <div style={{fontSize:'0.8rem', color:'#93c5fd', marginBottom:'0.5rem', fontWeight:600}}>Step 1 — Open SAP WebGUI in your browser. Then open the browser console (F12 → Console tab) and paste the snippet below:</div>
-                    <code className={styles.ctSnippetCode}>{recSessionId ? getRecorderSnippet(recSessionId) : ''}</code>
-                    <button className={`${styles.btn} ${styles.btnOutline}`} style={{marginTop:'0.6rem', fontSize:'0.8rem', width:'100%'}}
-                      onClick={() => { navigator.clipboard.writeText(getRecorderSnippet(recSessionId!)); alert('Snippet copied!'); }}>
-                      📋 Copy Snippet
-                    </button>
+              {/* Main Content Area */}
+              {recSessionId ? (
+                <div style={{display:'flex', flex:1, gap:'1rem', minHeight:0}}>
+                  {/* Left: Canvas */}
+                  <div style={{flex:2, background:'#000', borderRadius:'8px', position:'relative', overflow:'hidden', display:'flex', alignItems:'center', justifyContent:'center'}}>
+                    {recFrame ? (
+                      <img 
+                        src={`data:image/jpeg;base64,${recFrame}`} 
+                        alt="SAP Live Stream"
+                        className={styles.ctRecCanvas}
+                        onClick={(e) => {
+                          if (!recActive || !recSocket || recSocket.readyState !== WebSocket.OPEN) return;
+                          const rect = e.currentTarget.getBoundingClientRect();
+                          const scaleX = 1280 / rect.width;
+                          const scaleY = 800 / rect.height;
+                          const x = (e.clientX - rect.left) * scaleX;
+                          const y = (e.clientY - rect.top) * scaleY;
+                          recSocket.send(JSON.stringify({ type: 'click', x, y }));
+                        }}
+                      />
+                    ) : (
+                      <div style={{color:'#64748b'}}>Loading SAP Screen...</div>
+                    )}
+                    {/* Keyboard listener overlay */}
+                    {recActive && (
+                      <input 
+                        type="text"
+                        style={{position:'absolute', top:'-100px', left:'-100px'}}
+                        autoFocus
+                        onBlur={e => e.target.focus()}
+                        onKeyDown={(e) => {
+                          if (!recSocket || recSocket.readyState !== WebSocket.OPEN) return;
+                          if (["F3","F4","F5","F6","F7","F8","F9","F10","F11","F12","Enter"].includes(e.key)) {
+                            e.preventDefault();
+                            recSocket.send(JSON.stringify({ type: 'key', key: e.key }));
+                          }
+                        }}
+                      />
+                    )}
                   </div>
-                  <div style={{background:'#f0fdf4', border:'1px solid #86efac', borderRadius:'8px', padding:'0.75rem', margin:'0.75rem 0', fontSize:'0.85rem', color:'#166534'}}>
-                    ✅ Step 2 — Navigate SAP normally. Every click, field fill and F-key is captured automatically.
-                  </div>
-                  <div className={styles.ctRecLive}>
-                    <span className={styles.ctSpinner}/>
-                    <span style={{fontWeight:600}}>{recEventCount} events captured → {recSteps.length} steps recorded</span>
-                  </div>
-                  <button className={`${styles.btn} ${styles.btnDanger}`} style={{width:'100%', marginTop:'0.75rem'}} onClick={stopRecording}>
-                    ⏹ Stop Recording
-                  </button>
-                </>
-              )}
-
-              {!recActive && recSteps.length > 0 && (
-                <>
-                  <div className={styles.ctSuccessBanner} style={{marginBottom:'1rem'}}>
-                    {recSteps.length} steps recorded ({recEventCount} total events)
-                  </div>
-                  <div style={{maxHeight:'260px', overflowY:'auto', border:'1px solid #e5e7eb', borderRadius:'8px', marginBottom:'1rem'}}>
-                    {recSteps.map((step, i) => {
-                      const defn = STEP_TYPES.find(s => s.value === step.type);
-                      return (
-                        <div key={i} className={styles.ctStepCard} style={{margin:'0.4rem', borderRadius:'6px'}}>
-                          <div className={styles.ctStepHeader}>
-                            <span className={styles.ctStepNum}>{i+1}</span>
-                            <span style={{fontWeight:600, fontSize:'0.85rem'}}>{defn?.label || step.type}</span>
-                            {step.value && <span style={{marginLeft:'auto', fontSize:'0.78rem', color:'#6b7280', fontStyle:'italic'}}>→ "{step.value}"</span>}
+                  
+                  {/* Right: Step List & Controls */}
+                  <div style={{flex:1, display:'flex', flexDirection:'column', gap:'0.75rem', background:'#f8fafc', padding:'1rem', borderRadius:'8px', border:'1px solid #e2e8f0'}}>
+                    <div style={{fontWeight:600, fontSize:'1.1rem'}}>Captured Steps ({recSteps.length})</div>
+                    <div style={{flex:1, overflowY:'auto', border:'1px solid #e5e7eb', borderRadius:'8px', background:'#fff'}}>
+                      {recSteps.map((step, i) => {
+                        const defn = STEP_TYPES.find(s => s.value === step.type);
+                        return (
+                          <div key={i} className={styles.ctStepCard} style={{margin:'0.4rem', borderRadius:'6px'}}>
+                            <div className={styles.ctStepHeader}>
+                              <span className={styles.ctStepNum}>{i+1}</span>
+                              <span style={{fontWeight:600, fontSize:'0.85rem'}}>{defn?.label || step.type}</span>
+                              {step.value && <span style={{marginLeft:'auto', fontSize:'0.78rem', color:'#6b7280', fontStyle:'italic'}}>→ "{step.value}"</span>}
+                            </div>
                           </div>
-                        </div>
-                      );
-                    })}
+                        );
+                      })}
+                      {recSteps.length === 0 && <div style={{padding:'1rem', color:'#94a3b8', textAlign:'center', fontSize:'0.9rem'}}>No steps recorded yet.<br/>Interact with the screen on the left.</div>}
+                    </div>
+                    
+                    {recActive && (
+                       <div style={{display:'flex', flexDirection:'column', gap:'0.5rem'}}>
+                         <div style={{display:'flex', gap:'0.5rem'}}>
+                           <input className={styles.formControl} style={{flex:1}} placeholder="Screenshot caption..." value={recCaption} onChange={e => setRecCaption(e.target.value)} />
+                           <button className={`${styles.btn} ${styles.btnOutline}`} onClick={takeScreenshot}>📸 Capture</button>
+                         </div>
+                         <button className={`${styles.btn} ${styles.btnDanger}`} style={{width:'100%', padding:'0.75rem', fontWeight:'bold'}} onClick={stopRecording}>
+                           ⏹ Finish Recording
+                         </button>
+                       </div>
+                    )}
+                    
+                    {!recActive && recSteps.length > 0 && (
+                      <button className={`${styles.btn} ${styles.btnPrimary}`} style={{padding:'0.75rem', fontWeight:'bold'}} onClick={saveRecordingToJob}>
+                        💾 Save Steps to Job
+                      </button>
+                    )}
                   </div>
-                  <div className={styles.modalActions}>
-                    <button className={`${styles.btn} ${styles.btnOutline}`} onClick={() => { setIsRecModalOpen(false); setRecSessionId(null); }}>Discard</button>
-                    <button className={`${styles.btn} ${styles.btnPrimary}`} onClick={saveRecordingToJob}>💾 Save Steps to Job</button>
-                  </div>
-                </>
-              )}
-
-              {!recActive && recSteps.length === 0 && (
-                <>
-                  <div className={styles.ctErrorBanner}>No steps were recorded. Try navigating SAP and then stop.</div>
-                  <button className={`${styles.btn} ${styles.btnOutline}`} style={{marginTop:'1rem'}} onClick={() => { setIsRecModalOpen(false); setRecSessionId(null); }}>Close</button>
-                </>
+                </div>
+              ) : (
+                // Pre-launch empty state
+                <div style={{flex:1, display:'flex', alignItems:'center', justifyContent:'center', color:'#64748b'}}>
+                  {isRecLoading ? 'Connecting to SAP System...' : 'Enter a starting T-Code and click Launch to begin.'}
+                </div>
               )}
             </div>
           </div>

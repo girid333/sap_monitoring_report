@@ -589,3 +589,102 @@ async def _execute_batch_job(job: dict, system: dict, excel_path: str):
                 os.remove(excel_path)
             except Exception:
                 pass
+
+# =============================================================================
+# LIVE BROWSER RECORDER (Canvas Streaming)
+# =============================================================================
+
+from browser_recorder import BrowserRecorder
+
+# In-memory storage for active browser recording sessions
+live_browser_sessions: Dict[str, BrowserRecorder] = {}
+
+class StartBrowserRequest(BaseModel):
+    system_id: int
+    tcode: str = ""
+
+@app.post("/api/custom/recorder/start-browser")
+async def start_browser_recording(req: StartBrowserRequest):
+    system = database.get_system(req.system_id)
+    if not system:
+        raise HTTPException(status_code=404, detail="System not found")
+    
+    session_id = str(uuid.uuid4())[:8]
+    recorder = BrowserRecorder(session_id=session_id, system=system)
+    live_browser_sessions[session_id] = recorder
+    
+    # Start the browser async
+    asyncio.create_task(recorder.start(req.tcode))
+    
+    return {"session_id": session_id}
+
+@app.websocket("/ws/browser/{session_id}")
+async def browser_websocket(websocket: WebSocket, session_id: str):
+    await websocket.accept()
+    recorder = live_browser_sessions.get(session_id)
+    if not recorder:
+        await websocket.close(code=1008, reason="Session not found")
+        return
+    
+    # Wait for browser to be ready
+    for _ in range(60):
+        if recorder.is_ready:
+            break
+        await asyncio.sleep(0.5)
+    
+    if not recorder.is_ready:
+        await websocket.send_json({"type": "error", "message": "Browser failed to start"})
+        await websocket.close()
+        return
+
+    # Callbacks for stream loop
+    async def on_frame(b64_img):
+        try:
+            await websocket.send_json({"type": "frame", "data": b64_img})
+        except Exception:
+            pass
+
+    async def on_step(step_dict):
+        try:
+            await websocket.send_json({"type": "step", "step": step_dict})
+        except Exception:
+            pass
+            
+    # Start stream loop in background
+    stream_task = asyncio.create_task(recorder.run_stream_loop(on_frame, on_step))
+
+    try:
+        while True:
+            data = await websocket.receive_json()
+            msg_type = data.get("type")
+            
+            if msg_type == "click":
+                step = await recorder.handle_click(data.get("x", 0), data.get("y", 0))
+                if step:
+                    await on_step(step)
+            elif msg_type == "key":
+                step = await recorder.handle_keypress(data.get("key", ""))
+                if step:
+                    await on_step(step)
+            elif msg_type == "type":
+                await recorder.handle_type(data.get("text", ""))
+            elif msg_type == "screenshot":
+                step = await recorder.mark_screenshot(data.get("caption", ""))
+                if step:
+                    await on_step(step)
+            elif msg_type == "stop":
+                break
+    except WebSocketDisconnect:
+        pass
+    except Exception as e:
+        print(f"Browser WS error: {e}")
+    finally:
+        stream_task.cancel()
+        steps = await recorder.stop()
+        live_browser_sessions.pop(session_id, None)
+        try:
+            await websocket.send_json({"type": "stopped", "steps": steps})
+            await websocket.close()
+        except Exception:
+            pass
+
