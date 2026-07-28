@@ -227,3 +227,89 @@ class CustomReportGenerator:
 
         doc.save(doc_path)
         return doc_path
+
+    def generate_batch(self, job_name: str, system_name: str, sid: str,
+                       all_results: List[Dict]) -> str:
+        """
+        Generate a combined Word report for all batch runs.
+        all_results: list of dicts with keys: run_name, row_data, success, screenshots
+        screenshots: list of dicts with keys: path, caption
+        """
+        doc = Document()
+
+        # Cover
+        title = doc.add_paragraph()
+        title.alignment = WD_ALIGN_PARAGRAPH.CENTER
+        run = title.add_run('SAP Custom T-Code — Batch Recording Report')
+        run.bold = True
+        run.font.size = Pt(26)
+        run.font.color.rgb = RGBColor(0x1E, 0x3A, 0x5F)
+
+        doc.add_paragraph(f'Job: {job_name}').runs[0].font.size = Pt(14)
+        doc.add_paragraph(f'System: {system_name} ({sid})').runs[0].font.size = Pt(12)
+        doc.add_paragraph(f'Generated: {datetime.now().strftime("%d %B %Y %H:%M")}').runs[0].font.size = Pt(11)
+        doc.add_paragraph(f'Total Runs: {len(all_results)}').runs[0].font.size = Pt(11)
+        self._add_horizontal_rule(doc)
+        doc.add_page_break()
+
+        # One section per run
+        for idx, result in enumerate(all_results):
+            run_name = result.get('run_name', f'Run {idx+1}')
+            row_data = result.get('row_data', {})
+            success = result.get('success', False)
+            screenshots = result.get('screenshots', [])
+
+            heading = doc.add_heading(f'Run {idx+1}: {run_name}', level=1)
+            heading.runs[0].font.color.rgb = RGBColor(0x1E, 0x3A, 0x5F)
+
+            # Status badge
+            status_p = doc.add_paragraph()
+            status_run = status_p.add_run('✓ SUCCESS' if success else '✗ FAILED')
+            status_run.bold = True
+            status_run.font.color.rgb = RGBColor(0x16, 0x65, 0x34) if success else RGBColor(0x99, 0x1B, 0x1B)
+
+            # Input data table
+            if row_data:
+                doc.add_paragraph('Input Data:', style='Heading 3')
+                data_items = {k: v for k, v in row_data.items() if k != 'Run_Name'}
+                if data_items:
+                    tbl = doc.add_table(rows=1, cols=2)
+                    tbl.style = 'Table Grid'
+                    hdr = tbl.rows[0].cells
+                    hdr[0].text = 'Field'
+                    hdr[1].text = 'Value'
+                    for cell in hdr:
+                        cell.paragraphs[0].runs[0].bold = True
+                        self._set_cell_background(cell, 'DBEAFE')
+                    for field_name, field_val in data_items.items():
+                        row_cells = tbl.add_row().cells
+                        row_cells[0].text = str(field_name)
+                        row_cells[1].text = str(field_val)
+
+            # Screenshots
+            if screenshots:
+                doc.add_paragraph('Screenshots:', style='Heading 3')
+                for ss in screenshots:
+                    ss_path = ss.get('path', '')
+                    ss_caption = ss.get('caption', '')
+                    if ss_path and os.path.exists(ss_path):
+                        p = doc.add_paragraph()
+                        p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+                        p.add_run().add_picture(ss_path, width=Inches(6.0))
+                        cap_p = doc.add_paragraph()
+                        cap_p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+                        cap_run = cap_p.add_run(ss_caption)
+                        cap_run.italic = True
+                        cap_run.font.color.rgb = RGBColor(0x6B, 0x72, 0x80)
+            else:
+                doc.add_paragraph('No screenshots captured for this run.')
+
+            if idx < len(all_results) - 1:
+                doc.add_page_break()
+
+        timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+        safe_name = job_name.replace(' ', '_').replace('/', '_')
+        doc_path = os.path.join(self.output_dir,
+                                f'batch_recording_{safe_name}_{timestamp}.docx')
+        doc.save(doc_path)
+        return doc_path

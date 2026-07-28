@@ -46,6 +46,20 @@ export default function Home() {
   ];
   const [newStepType, setNewStepType] = useState("navigate_tcode");
 
+  // === RECORD & REPLAY STATE ===
+  const [recSessionId, setRecSessionId] = useState<string | null>(null);
+  const [isRecModalOpen, setIsRecModalOpen] = useState(false);
+  const [recJobId, setRecJobId] = useState<number | null>(null);
+  const [recSteps, setRecSteps] = useState<any[]>([]);
+  const [recEventCount, setRecEventCount] = useState(0);
+  const [recActive, setRecActive] = useState(false);
+
+  // === BATCH RUN STATE ===
+  const [batchStatus, setBatchStatus] = useState<any>({ is_running: false, total_rows: 0, completed_rows: 0, current_run: '', results: [], report_path: null, error: null });
+  const [batchJobId, setBatchJobId] = useState<number | null>(null);
+  const [batchSysId, setBatchSysId] = useState<string>('');
+  const [batchFile, setBatchFile] = useState<File | null>(null);
+
   
   // Modal State
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -72,6 +86,18 @@ export default function Home() {
         const cres = await fetch(`${apiBase}/api/custom/status`);
         const cdata = await cres.json();
         setCustomStatus(cdata);
+        // Poll batch status
+        const bres = await fetch(`${apiBase}/api/custom/batch/status`);
+        const bdata = await bres.json();
+        setBatchStatus(bdata);
+        // Poll recording status if active
+        if (recSessionId) {
+          const rres = await fetch(`${apiBase}/api/custom/recorder/status/${recSessionId}`);
+          const rdata = await rres.json();
+          setRecSteps(rdata.steps || []);
+          setRecEventCount(rdata.event_count || 0);
+          if (!rdata.active) setRecActive(false);
+        }
       } catch (e) {}
     }, 2000);
     return () => clearInterval(interval);
@@ -119,6 +145,62 @@ export default function Home() {
         body: JSON.stringify({ system_id: job.system_id })
       });
     } catch (e) { alert("Error starting job"); setRunningJobId(null); }
+  };
+
+  // ---- Record & Replay handlers ----
+  const startRecording = async (job: any) => {
+    try {
+      const res = await fetch(`${apiBase}/api/custom/recorder/start`, { method: 'POST' });
+      const data = await res.json();
+      setRecSessionId(data.session_id);
+      setRecJobId(job.id);
+      setRecSteps([]);
+      setRecEventCount(0);
+      setRecActive(true);
+      setIsRecModalOpen(true);
+    } catch (e) { alert('Failed to start recording session'); }
+  };
+
+  const stopRecording = async () => {
+    if (!recSessionId) return;
+    try {
+      const res = await fetch(`${apiBase}/api/custom/recorder/stop/${recSessionId}`, { method: 'POST' });
+      const data = await res.json();
+      setRecSteps(data.steps || []);
+      setRecActive(false);
+    } catch (e) { console.error(e); }
+  };
+
+  const saveRecordingToJob = async () => {
+    if (!recJobId || recSteps.length === 0) return;
+    const job = jobs.find(j => j.id === recJobId);
+    if (!job) return;
+    const payload = { ...job, steps: recSteps };
+    await fetch(`${apiBase}/api/custom/jobs/${recJobId}`, {
+      method: 'PUT', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+    setIsRecModalOpen(false);
+    setRecSessionId(null);
+    fetchJobs();
+    alert(`✅ ${recSteps.length} steps saved to job!`);
+  };
+
+  const getRecorderSnippet = (sessionId: string) => {
+    const wsUrl = apiBase.replace('http://', 'ws://').replace('https://', 'wss://');
+    return `(function(){var WS='${wsUrl}/ws/recorder/${sessionId}';var ws=new WebSocket(WS);var p=document.createElement('div');p.id='_srec';p.style='position:fixed;top:16px;right:16px;z-index:99999;background:#1e3a5f;color:#fff;padding:14px 18px;border-radius:12px;font-family:sans-serif;box-shadow:0 8px 32px rgba(0,0,0,0.5);min-width:210px;';p.innerHTML='<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;"><span style="width:10px;height:10px;background:#ef4444;border-radius:50%;display:inline-block;"></span><b>Recording SAP...</b></div><div id="_rc" style="font-size:0.82rem;color:#93c5fd;margin-bottom:10px;">0 events</div><button id="_rs" style="background:#ef4444;color:#fff;border:none;padding:7px 14px;border-radius:6px;cursor:pointer;width:100%;font-weight:600;">\u23f9 Stop Recording</button>';document.body.appendChild(p);var n=0;function send(t,d){try{ws.send(JSON.stringify(Object.assign({type:t},d)));}catch(e){}n++;var el=document.getElementById('_rc');if(el)el.textContent=n+' events';}function attach(doc){try{doc.addEventListener('change',function(e){var el=e.target;if(el.tagName==='INPUT'||el.tagName==='SELECT'){var lb='';if(el.id){var l=doc.querySelector('label[for="'+el.id+'"]');if(l)lb=l.textContent.trim();}send('fill',{id:el.id,name:el.name,label:lb,value:el.value});}},true);doc.addEventListener('keydown',function(e){var fk=['F3','F4','F5','F6','F7','F8','F9','F10','F11','F12','Enter'];if(fk.indexOf(e.key)>=0)send('keypress',{key:e.key});},true);doc.addEventListener('click',function(e){var el=e.target;if(el.id==='_rs'||el.closest('#_srec'))return;var t=(el.textContent||'').trim().substring(0,80)||el.getAttribute('title')||'';if(t&&t.length>1)send('click',{text:t,id:el.id,title:el.getAttribute('title')});},true);}catch(ex){}}attach(document);function frames(){Array.from(document.querySelectorAll('iframe')).forEach(function(f){try{attach(f.contentDocument);}catch(e){}});}frames();setInterval(frames,2000);ws.onerror=function(){var el=document.getElementById('_rc');if(el)el.textContent='Connection error!';};document.getElementById('_rs').onclick=function(){ws.send(JSON.stringify({type:'stop'}));ws.close();p.remove();};})();`;
+  };
+
+  // ---- Batch run handler ----
+  const startBatchRun = async () => {
+    if (!batchJobId || !batchSysId || !batchFile) return alert('Please select system and upload Excel file.');
+    const formData = new FormData();
+    formData.append('system_id', batchSysId);
+    formData.append('file', batchFile);
+    try {
+      await fetch(`${apiBase}/api/custom/jobs/${batchJobId}/batch-run`, { method: 'POST', body: formData });
+      setBatchFile(null);
+    } catch (e) { alert('Error starting batch run'); }
   };
 
   const addStep = () => {
@@ -409,6 +491,7 @@ export default function Home() {
                     <div className={styles.ctJobActions}>
                       <button className={`${styles.btn} ${styles.btnOutline}`} style={{fontSize:'0.8rem'}} onClick={() => openEditJob(job)}>✏️ Edit</button>
                       <button className={`${styles.btn} ${styles.btnDanger}`} style={{fontSize:'0.8rem'}} onClick={() => deleteJob(job.id)}>Delete</button>
+                      <button className={`${styles.btn} ${styles.ctRecBtn}`} style={{fontSize:'0.8rem'}} onClick={() => startRecording(job)} disabled={recActive}>🔴 Record</button>
                       <button
                         className={`${styles.btn} ${styles.btnSuccess}`}
                         style={{fontSize:'0.8rem', marginLeft:'auto'}}
@@ -418,6 +501,49 @@ export default function Home() {
                         {customStatus.is_running && runningJobId === job.id ? '⏳ Running…' : '▶ Run'}
                       </button>
                     </div>
+                    {/* Per-job batch controls */}
+                    <div className={styles.ctBatchRow}>
+                      <a href={`${apiBase}/api/custom/jobs/${job.id}/excel-template`} className={`${styles.btn} ${styles.btnOutline}`} style={{fontSize:'0.75rem'}} target="_blank">📥 Excel Template</a>
+                      <button className={`${styles.btn} ${styles.ctBatchBtn}`} style={{fontSize:'0.75rem'}}
+                        onClick={() => { setBatchJobId(job.id); setBatchSysId(String(job.system_id||'')); }}
+                      >📊 Batch Run</button>
+                    </div>
+                    {/* Inline batch upload for this job */}
+                    {batchJobId === job.id && (
+                      <div className={styles.ctBatchPanel}>
+                        <div style={{fontWeight:600, marginBottom:'0.5rem', fontSize:'0.85rem'}}>📊 Batch Run — {job.job_name}</div>
+                        <div className={styles.formGroup}>
+                          <label style={{fontSize:'0.8rem'}}>Target System</label>
+                          <select className={styles.formControl} style={{fontSize:'0.85rem'}} value={batchSysId} onChange={e => setBatchSysId(e.target.value)}>
+                            <option value=''>— Select System —</option>
+                            {systems.map(s => <option key={s.id} value={s.id}>{s.system_name} ({s.sid})</option>)}
+                          </select>
+                        </div>
+                        <div className={styles.formGroup}>
+                          <label style={{fontSize:'0.8rem'}}>Upload Filled Excel</label>
+                          <input type='file' accept='.xlsx,.xls' className={styles.formControl} style={{fontSize:'0.85rem'}}
+                            onChange={e => setBatchFile(e.target.files?.[0] || null)} />
+                        </div>
+                        <div style={{display:'flex', gap:'0.5rem', marginTop:'0.5rem'}}>
+                          <button className={`${styles.btn} ${styles.btnPrimary}`} style={{fontSize:'0.82rem'}} onClick={startBatchRun} disabled={batchStatus.is_running}>▶ Start Batch</button>
+                          <button className={`${styles.btn} ${styles.btnOutline}`} style={{fontSize:'0.82rem'}} onClick={() => setBatchJobId(null)}>Cancel</button>
+                        </div>
+                        {batchStatus.is_running && batchJobId === job.id && (
+                          <div className={styles.ctStatusBar} style={{marginTop:'0.75rem'}}>
+                            <span className={styles.ctSpinner}/>
+                            <span>Run {batchStatus.completed_rows}/{batchStatus.total_rows}: {batchStatus.current_run}</span>
+                          </div>
+                        )}
+                        {!batchStatus.is_running && batchStatus.report_path && (
+                          <div className={styles.ctSuccessBanner} style={{marginTop:'0.75rem'}}>
+                            ✅ Batch complete — {batchStatus.results?.length} runs
+                            <a href={`${apiBase}/api/custom/batch/download`} target='_blank' className={`${styles.btn} ${styles.btnSuccess}`} style={{marginLeft:'0.75rem', fontSize:'0.8rem'}}>⬇ Download</a>
+                          </div>
+                        )}
+                        {batchStatus.error && <div className={styles.ctErrorBanner} style={{marginTop:'0.5rem'}}>⚠️ {batchStatus.error}</div>}
+                      </div>
+                    )}
+
                   </div>
                 );
               })}
@@ -664,6 +790,75 @@ export default function Home() {
           </div>
         </div>
       )}
+        {/* ================================================================
+            RECORDING MODAL — Opens when user clicks 🔴 Record on a job
+            ================================================================ */}
+        {isRecModalOpen && recSessionId && (
+          <div className={styles.modalOverlay}>
+            <div className={styles.modalContent} style={{maxWidth:'680px', width:'95vw'}}>
+              <div style={{display:'flex', alignItems:'center', gap:'0.75rem', marginBottom:'1rem'}}>
+                {recActive ? <span className={styles.ctRecDot}/> : <span style={{fontSize:'1.2rem'}}>✅</span>}
+                <h2 style={{margin:0}}>{recActive ? 'Recording in Progress…' : 'Recording Complete'}</h2>
+              </div>
+
+              {recActive && (
+                <>
+                  <div className={styles.ctSnippetBox}>
+                    <div style={{fontSize:'0.8rem', color:'#93c5fd', marginBottom:'0.5rem', fontWeight:600}}>Step 1 — Open SAP WebGUI in your browser. Then open the browser console (F12 → Console tab) and paste the snippet below:</div>
+                    <code className={styles.ctSnippetCode}>{recSessionId ? getRecorderSnippet(recSessionId) : ''}</code>
+                    <button className={`${styles.btn} ${styles.btnOutline}`} style={{marginTop:'0.6rem', fontSize:'0.8rem', width:'100%'}}
+                      onClick={() => { navigator.clipboard.writeText(getRecorderSnippet(recSessionId!)); alert('Snippet copied!'); }}>
+                      📋 Copy Snippet
+                    </button>
+                  </div>
+                  <div style={{background:'#f0fdf4', border:'1px solid #86efac', borderRadius:'8px', padding:'0.75rem', margin:'0.75rem 0', fontSize:'0.85rem', color:'#166534'}}>
+                    ✅ Step 2 — Navigate SAP normally. Every click, field fill and F-key is captured automatically.
+                  </div>
+                  <div className={styles.ctRecLive}>
+                    <span className={styles.ctSpinner}/>
+                    <span style={{fontWeight:600}}>{recEventCount} events captured → {recSteps.length} steps recorded</span>
+                  </div>
+                  <button className={`${styles.btn} ${styles.btnDanger}`} style={{width:'100%', marginTop:'0.75rem'}} onClick={stopRecording}>
+                    ⏹ Stop Recording
+                  </button>
+                </>
+              )}
+
+              {!recActive && recSteps.length > 0 && (
+                <>
+                  <div className={styles.ctSuccessBanner} style={{marginBottom:'1rem'}}>
+                    {recSteps.length} steps recorded ({recEventCount} total events)
+                  </div>
+                  <div style={{maxHeight:'260px', overflowY:'auto', border:'1px solid #e5e7eb', borderRadius:'8px', marginBottom:'1rem'}}>
+                    {recSteps.map((step, i) => {
+                      const defn = STEP_TYPES.find(s => s.value === step.type);
+                      return (
+                        <div key={i} className={styles.ctStepCard} style={{margin:'0.4rem', borderRadius:'6px'}}>
+                          <div className={styles.ctStepHeader}>
+                            <span className={styles.ctStepNum}>{i+1}</span>
+                            <span style={{fontWeight:600, fontSize:'0.85rem'}}>{defn?.label || step.type}</span>
+                            {step.value && <span style={{marginLeft:'auto', fontSize:'0.78rem', color:'#6b7280', fontStyle:'italic'}}>→ "{step.value}"</span>}
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                  <div className={styles.modalActions}>
+                    <button className={`${styles.btn} ${styles.btnOutline}`} onClick={() => { setIsRecModalOpen(false); setRecSessionId(null); }}>Discard</button>
+                    <button className={`${styles.btn} ${styles.btnPrimary}`} onClick={saveRecordingToJob}>💾 Save Steps to Job</button>
+                  </div>
+                </>
+              )}
+
+              {!recActive && recSteps.length === 0 && (
+                <>
+                  <div className={styles.ctErrorBanner}>No steps were recorded. Try navigating SAP and then stop.</div>
+                  <button className={`${styles.btn} ${styles.btnOutline}`} style={{marginTop:'1rem'}} onClick={() => { setIsRecModalOpen(false); setRecSessionId(null); }}>Close</button>
+                </>
+              )}
+            </div>
+          </div>
+        )}
     </div>
   );
 }

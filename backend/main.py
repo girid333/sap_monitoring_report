@@ -1,4 +1,4 @@
-from fastapi import FastAPI, BackgroundTasks, HTTPException
+from fastapi import FastAPI, BackgroundTasks, HTTPException, WebSocket, WebSocketDisconnect, Form, File, UploadFile
 from fastapi.responses import FileResponse, JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
@@ -7,6 +7,9 @@ import asyncio
 import os
 import zipfile
 import shutil
+import json
+import uuid
+import tempfile
 
 from orchestrator import ReportOrchestrator
 from report_generator import ReportGenerator
@@ -327,3 +330,262 @@ async def _execute_custom_job(job: dict, system: dict):
         print(f"Custom job error: {e}")
     finally:
         custom_run_status["is_running"] = False
+
+# =============================================================================
+# RECORD & REPLAY — WebSocket Recorder + Batch Runner
+# Appended below. Zero changes to any existing code above.
+# =============================================================================
+
+# In-memory storage for recording sessions
+recording_sessions: Dict[str, Dict] = {}
+
+# In-memory batch run status (separate from single-job custom_run_status)
+batch_run_status: Dict[str, Any] = {
+    "is_running": False,
+    "total_rows": 0,
+    "completed_rows": 0,
+    "current_run": "",
+    "results": [],
+    "report_path": None,
+    "error": None
+}
+
+# ---- Recorder Session Management ----
+
+@app.post("/api/custom/recorder/start")
+def start_recorder_session():
+    """Create a new recording session ID. Returns the session_id and JS snippet."""
+    session_id = str(uuid.uuid4())[:8]
+    recording_sessions[session_id] = {
+        "events": [],
+        "steps": [],
+        "active": True,
+        "event_count": 0
+    }
+    return {"session_id": session_id}
+
+@app.get("/api/custom/recorder/status/{session_id}")
+def get_recorder_status(session_id: str):
+    """Poll this to get live recording status."""
+    if session_id not in recording_sessions:
+        return {"active": False, "steps": [], "event_count": 0}
+    s = recording_sessions[session_id]
+    return {"active": s["active"], "steps": s["steps"], "event_count": s["event_count"]}
+
+@app.post("/api/custom/recorder/stop/{session_id}")
+def stop_recorder_session(session_id: str):
+    """Finalize the session and return captured steps."""
+    if session_id not in recording_sessions:
+        raise HTTPException(status_code=404, detail="Session not found")
+    s = recording_sessions[session_id]
+    s["active"] = False
+    return {"steps": s["steps"], "event_count": s["event_count"]}
+
+@app.websocket("/ws/recorder/{session_id}")
+async def recorder_websocket(websocket: WebSocket, session_id: str):
+    """WebSocket endpoint: receives raw browser events from the JS recorder snippet."""
+    await websocket.accept()
+    # Ensure session exists
+    if session_id not in recording_sessions:
+        recording_sessions[session_id] = {"events": [], "steps": [], "active": True, "event_count": 0}
+    session = recording_sessions[session_id]
+    session["active"] = True
+    try:
+        while True:
+            try:
+                data = await asyncio.wait_for(websocket.receive_text(), timeout=600)
+                event = json.loads(data)
+                if event.get("type") == "stop":
+                    break
+                session["events"].append(event)
+                session["event_count"] += 1
+                step = _convert_event_to_step(event)
+                if step:
+                    session["steps"].append(step)
+            except asyncio.TimeoutError:
+                break
+    except (WebSocketDisconnect, Exception) as e:
+        print(f"Recorder WS closed: {e}")
+    finally:
+        session["active"] = False
+        try:
+            await websocket.close()
+        except Exception:
+            pass
+
+def _convert_event_to_step(event: dict) -> Optional[dict]:
+    """Convert a raw browser event dict into a step definition."""
+    etype = event.get("type", "")
+    if etype == "fill":
+        value = str(event.get("value", "")).strip()
+        if not value:
+            return None  # Ignore empty fills
+        label = str(event.get("label", "")).strip()
+        elem_id = str(event.get("id", "")).strip()
+        if label:
+            return {"type": "fill_by_label", "label": label, "value": value}
+        elif elem_id:
+            return {"type": "fill_by_id", "element_id": elem_id, "value": value}
+        else:
+            return {"type": "fill_by_position", "position": 0, "value": value}
+    elif etype == "keypress":
+        key = event.get("key", "")
+        valid = {"F3","F4","F5","F6","F7","F8","F9","F10","F11","F12","Enter"}
+        if key in valid:
+            return {"type": "press_fkey", "key": key}
+    elif etype == "click":
+        text = (str(event.get("text") or event.get("title") or "")).strip()
+        if text and 2 < len(text) < 80:
+            return {"type": "click_button", "button_text": text}
+    elif etype == "navigate":
+        tcode = str(event.get("tcode", "")).strip().upper()
+        if tcode:
+            return {"type": "navigate_tcode", "tcode": tcode}
+    elif etype == "screenshot_marker":
+        return {"type": "screenshot", "caption": str(event.get("caption", "Screenshot"))}
+    return None
+
+# ---- Excel Template Download ----
+
+@app.get("/api/custom/jobs/{job_id}/excel-template")
+def download_excel_template(job_id: int):
+    """Generate and download an Excel data-input template for this job."""
+    job = database.get_job(job_id)
+    if not job:
+        raise HTTPException(status_code=404, detail="Job not found")
+    from excel_handler import ExcelHandler
+    handler = ExcelHandler()
+    template_path = handler.generate_template(job)
+    safe_name = job["job_name"].replace(" ", "_")[:40]
+    return FileResponse(
+        template_path,
+        media_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        filename=f"{safe_name}_template.xlsx"
+    )
+
+# ---- Batch Run ----
+
+@app.get("/api/custom/batch/status")
+def get_batch_status():
+    """Return current batch run status."""
+    return batch_run_status
+
+@app.get("/api/custom/batch/download")
+def download_batch_report():
+    """Download the latest batch report."""
+    path = batch_run_status.get("report_path")
+    if not path or not os.path.exists(path):
+        raise HTTPException(status_code=404, detail="No batch report available")
+    return FileResponse(
+        path,
+        media_type="application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+        filename=os.path.basename(path)
+    )
+
+@app.post("/api/custom/jobs/{job_id}/batch-run")
+async def batch_run_job(
+    job_id: int,
+    background_tasks: BackgroundTasks,
+    system_id: int = Form(...),
+    file: UploadFile = File(...)
+):
+    """Upload an Excel file and run the job once for every data row."""
+    global batch_run_status
+    if batch_run_status.get("is_running"):
+        raise HTTPException(status_code=409, detail="A batch job is already running")
+    job = database.get_job(job_id)
+    if not job:
+        raise HTTPException(status_code=404, detail="Job not found")
+    system = database.get_system(system_id)
+    if not system:
+        raise HTTPException(status_code=404, detail="System not found")
+
+    # Save uploaded Excel to a temp file
+    content = await file.read()
+    tmp = tempfile.NamedTemporaryFile(suffix=".xlsx", delete=False)
+    tmp.write(content)
+    tmp.close()
+
+    background_tasks.add_task(_execute_batch_job, job, system, tmp.name)
+    return {"success": True, "message": f"Batch run started for job '{job['job_name']}'"}
+
+async def _execute_batch_job(job: dict, system: dict, excel_path: str):
+    """Background task: run the job for every row in the Excel file."""
+    global batch_run_status
+    batch_run_status = {
+        "is_running": True,
+        "total_rows": 0,
+        "completed_rows": 0,
+        "current_run": "Reading Excel...",
+        "results": [],
+        "report_path": None,
+        "error": None
+    }
+    try:
+        from excel_handler import ExcelHandler
+        from custom_tcode_engine import CustomTcodeEngine
+        from custom_report_generator import CustomReportGenerator
+
+        handler = ExcelHandler()
+        rows = handler.read_batch_data(excel_path)
+
+        if not rows:
+            batch_run_status["error"] = "No data rows found in Excel file"
+            return
+
+        batch_run_status["total_rows"] = len(rows)
+        output_dir = os.path.join(os.path.dirname(__file__), "custom_recordings")
+        os.makedirs(output_dir, exist_ok=True)
+
+        all_results = []
+        for i, row_data in enumerate(rows):
+            run_name = row_data.get("Run_Name", f"Run_{i+1}")
+            batch_run_status["current_run"] = f"{run_name} ({i+1}/{len(rows)})"
+
+            modified_steps = handler.substitute_values(job["steps"], row_data)
+
+            engine = CustomTcodeEngine(
+                webgui_url=system.get("webgui_url", ""),
+                username=system.get("sap_username", ""),
+                password=system.get("sap_password", ""),
+                client=system.get("sap_client", "100"),
+                output_dir=output_dir
+            )
+
+            result = await engine.run_job(
+                steps=modified_steps,
+                system_config=system
+            )
+
+            all_results.append({
+                "run_name": run_name,
+                "row_data": row_data,
+                "success": result.get("success", False),
+                "screenshots": result.get("screenshots", [])
+            })
+            batch_run_status["completed_rows"] = i + 1
+
+        batch_run_status["results"] = all_results
+
+        # Generate combined batch report
+        reporter = CustomReportGenerator(output_dir=output_dir)
+        report_path = reporter.generate_batch(
+            job_name=job["job_name"],
+            system_name=system.get("system_name", system.get("sid", "")),
+            sid=system.get("sid", ""),
+            all_results=all_results
+        )
+        batch_run_status["report_path"] = report_path
+        batch_run_status["current_run"] = f"Complete — {len(all_results)} runs finished"
+
+    except Exception as e:
+        batch_run_status["error"] = str(e)
+        print(f"Batch job error: {e}")
+        import traceback; traceback.print_exc()
+    finally:
+        batch_run_status["is_running"] = False
+        if os.path.exists(excel_path):
+            try:
+                os.remove(excel_path)
+            except Exception:
+                pass
