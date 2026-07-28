@@ -60,6 +60,9 @@ class BrowserRecorder:
             )
             self.page = await self._context.new_page()
 
+            # Auto-accept dialogs so they don't block screenshots
+            self.page.on("dialog", lambda dialog: asyncio.create_task(dialog.accept()))
+
             # Navigate to SAP WebGUI
             webgui_url = self.system.get("webgui_url", "")
             if not webgui_url:

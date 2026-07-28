@@ -951,9 +951,21 @@ export default function Home() {
                            <input className={styles.formControl} style={{flex:1}} placeholder="Screenshot caption..." value={recCaption} onChange={e => setRecCaption(e.target.value)} />
                            <button className={`${styles.btn} ${styles.btnOutline}`} onClick={takeScreenshot}>📸 Capture</button>
                          </div>
-                         <button className={`${styles.btn} ${styles.btnDanger}`} style={{width:'100%', padding:'0.75rem', fontWeight:'bold'}} onClick={stopRecording}>
-                           ⏹ Finish Recording
-                         </button>
+                         <div style={{marginTop:'auto', display:'flex', gap:'0.5rem', flexDirection:'column'}}>
+                        <button className={styles.btn} onClick={() => {
+                          if (recSocket && recSocket.readyState === WebSocket.OPEN) {
+                            recSocket.close();
+                          }
+                          setRecActive(false);
+                          setRecFrame(null);
+                          setRecSessionId('');
+                        }} style={{padding:'0.75rem', fontWeight:'bold', background:'#e2e8f0', color:'#475569', border:'1px solid #cbd5e1'}}>
+                          ✕ Cancel Recording
+                        </button>
+                        <button className={`${styles.btn} ${styles.btnDanger}`} onClick={stopRecording} style={{padding:'0.75rem', fontWeight:'bold'}}>
+                          ■ Finish Recording
+                        </button>
+                      </div>
                        </div>
                     )}
                     
