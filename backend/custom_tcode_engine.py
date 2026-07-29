@@ -116,15 +116,49 @@ class CustomTcodeEngine:
         step_type = step.get('type')
         try:
             if step_type == 'navigate_tcode':
+                tcode = step.get('tcode', step.get('value', ''))
+                
+                # 1. Reveal command field (modern themes)
                 for frame in page.frames:
+                    for sel in ['div[title*="Command" i]', 'a[title*="Command" i]', 'span[title*="Command" i]', '.lsAppHeaderSearchBtn']:
+                        try:
+                            el = frame.locator(sel).first
+                            if await el.count() > 0:
+                                await el.click(force=True)
+                                await asyncio.sleep(0.5)
+                        except Exception:
+                            pass
+                            
+                # 2. Search for the actual command field across all frames
+                cmd_selectors = [
+                    'input[id*="okcd" i]', 'input[title*="Command" i]', 'input[title*="Transaction" i]',
+                    'input[name="sap-startapp"]', 'input.urEdtBx', 'input.urTxfOkCd', 'input.lsField--standalone', '#CMD_FIELD'
+                ]
+                navigated = False
+                for frame in page.frames:
+                    for sel in cmd_selectors:
+                        try:
+                            el = frame.locator(sel).first
+                            if await el.count() > 0:
+                                await el.fill(f"/n{tcode}", force=True)
+                                await frame.keyboard.press("Enter")
+                                navigated = True
+                                break
+                        except Exception:
+                            pass
+                    if navigated:
+                        break
+                        
+                # 3. Fallback: Ctrl + /
+                if not navigated:
                     try:
-                        cmd_field = await frame.query_selector("input[name='sap-wd-amf'], .urComboBoxInput, input[id*='OKCODE'], input[id*='okcd']")
-                        if cmd_field:
-                            await cmd_field.fill(step.get('value', ''))
-                            await cmd_field.press('Enter')
-                            break
+                        await page.keyboard.press("Control+/")
+                        await asyncio.sleep(0.5)
+                        await page.keyboard.type(f"/n{tcode}", delay=20)
+                        await page.keyboard.press("Enter")
                     except Exception:
                         pass
+                        
                 await self._wait_for_sap_ready(page)
                 
             elif step_type == 'press_fkey':
