@@ -245,14 +245,35 @@ class BrowserRecorder:
         # Submit
         try:
             await page.keyboard.press("Enter")
-            await page.wait_for_load_state("domcontentloaded", timeout=15_000)
-            await asyncio.sleep(2) # Give UI time to render after DOM is ready
+            try:
+                await page.wait_for_load_state("networkidle", timeout=3_000)
+            except Exception:
+                await asyncio.sleep(2)
         except Exception:
             pass
 
     async def _navigate_tcode(self, tcode: str) -> None:
         """Enter T-code into the SAP command field."""
         page = self.page
+        
+        # 1. Modern Themes (Belize/Fiori): The command field is often hidden behind a Search/Command icon.
+        # We must click it first to reveal the input field.
+        open_cmd_selectors = [
+            'div[title*="Command" i]',
+            'a[title*="Command" i]',
+            'span[title*="Command" i]',
+            '.lsAppHeaderSearchBtn'
+        ]
+        for frame in page.frames:
+            for sel in open_cmd_selectors:
+                try:
+                    el = frame.locator(sel).first
+                    if await el.count() > 0:
+                        await el.click(force=True)
+                        await asyncio.sleep(0.5)
+                except Exception:
+                    pass
+
         cmd_selectors = [
             'input[id*="okcd" i]',
             'input[title*="Command" i]',
@@ -264,7 +285,7 @@ class BrowserRecorder:
             '#CMD_FIELD',
         ]
         
-        # Search across all frames for the command field
+        # 2. Search across all frames for the command field
         for frame in page.frames:
             for sel in cmd_selectors:
                 try:
@@ -273,8 +294,8 @@ class BrowserRecorder:
                         print(f"[BrowserRecorder] Found command field using {sel} in frame {frame.name}", flush=True)
                         await el.fill(f"/n{tcode}", force=True)
                         await frame.keyboard.press("Enter")
-                        await page.wait_for_load_state("domcontentloaded", timeout=15_000)
-                        await asyncio.sleep(2)
+                        # Return immediately so the user can see the navigation happening live!
+                        await asyncio.sleep(1)
                         return
                 except Exception:
                     pass
@@ -282,12 +303,13 @@ class BrowserRecorder:
         print("[BrowserRecorder] Could not find command field, attempting Ctrl+/ keyboard shortcut...", flush=True)
         # Fallback 1: Keyboard shortcut to focus command field
         try:
+            # Click the body first to ensure the frame has focus
+            await page.locator("body").click(force=True)
             await page.keyboard.press("Control+/")
             await asyncio.sleep(0.5)
             await page.keyboard.type(f"/n{tcode}")
             await page.keyboard.press("Enter")
-            await page.wait_for_load_state("domcontentloaded", timeout=15_000)
-            await asyncio.sleep(2)
+            await asyncio.sleep(1)
             return
         except Exception as exc:
             print(f"[BrowserRecorder] Ctrl+/ fallback error: {exc}", flush=True)
@@ -298,8 +320,8 @@ class BrowserRecorder:
             base = self.system.get("webgui_url", "").rstrip("?&")
             sep  = "&" if "?" in base else "?"
             url  = f"{base}{sep}~transaction={tcode}&sap-client={self.system.get('sap_client','100')}"
-            await page.goto(url, timeout=15_000, wait_until="domcontentloaded")
-            await asyncio.sleep(2)
+            # Do not wait for load state, let it load in the background
+            await page.goto(url)
         except Exception as exc:
             print(f"[BrowserRecorder] _navigate_tcode fallback error: {exc}", flush=True)
 
