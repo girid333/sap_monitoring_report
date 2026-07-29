@@ -97,7 +97,11 @@ class CustomTcodeEngine:
                     # fallback
                     await page.keyboard.press("Enter")
                 
-                await asyncio.sleep(3)
+                try:
+                    await page.wait_for_load_state("networkidle", timeout=10000)
+                except Exception:
+                    await asyncio.sleep(5)
+                    
                 await self._wait_for_sap_ready(page)
                 
                 for i, step in enumerate(steps):
@@ -118,36 +122,42 @@ class CustomTcodeEngine:
             if step_type == 'navigate_tcode':
                 tcode = step.get('tcode', step.get('value', ''))
                 
-                # 1. Reveal command field (modern themes)
-                for frame in page.frames:
-                    for sel in ['div[title*="Command" i]', 'a[title*="Command" i]', 'span[title*="Command" i]', '.lsAppHeaderSearchBtn']:
-                        try:
-                            el = frame.locator(sel).first
-                            if await el.count() > 0:
-                                await el.click(force=True)
-                                await asyncio.sleep(0.5)
-                        except Exception:
-                            pass
-                            
-                # 2. Search for the actual command field across all frames
                 cmd_selectors = [
                     'input[id*="okcd" i]', 'input[title*="Command" i]', 'input[title*="Transaction" i]',
                     'input[name="sap-startapp"]', 'input.urEdtBx', 'input.urTxfOkCd', 'input.lsField--standalone', '#CMD_FIELD'
                 ]
+                
                 navigated = False
-                for frame in page.frames:
-                    for sel in cmd_selectors:
-                        try:
-                            el = frame.locator(sel).first
-                            if await el.count() > 0:
-                                await el.fill(f"/n{tcode}", force=True)
-                                await frame.keyboard.press("Enter")
-                                navigated = True
-                                break
-                        except Exception:
-                            pass
+                for attempt in range(15):
+                    # 1. Reveal command field (modern themes)
+                    for frame in page.frames:
+                        for sel in ['div[title*="Command" i]', 'a[title*="Command" i]', 'span[title*="Command" i]', '.lsAppHeaderSearchBtn']:
+                            try:
+                                el = frame.locator(sel).first
+                                if await el.count() > 0:
+                                    await el.click(force=True)
+                                    await asyncio.sleep(0.5)
+                            except Exception:
+                                pass
+                                
+                    # 2. Search for the actual command field across all frames
+                    for frame in page.frames:
+                        for sel in cmd_selectors:
+                            try:
+                                el = frame.locator(sel).first
+                                if await el.count() > 0:
+                                    await el.fill(f"/n{tcode}", force=True)
+                                    await frame.keyboard.press("Enter")
+                                    navigated = True
+                                    break
+                            except Exception:
+                                pass
+                        if navigated:
+                            break
+                            
                     if navigated:
                         break
+                    await asyncio.sleep(1)
                         
                 # 3. Fallback: Ctrl + /
                 if not navigated:
@@ -159,6 +169,7 @@ class CustomTcodeEngine:
                     except Exception:
                         pass
                         
+                await asyncio.sleep(2)
                 await self._wait_for_sap_ready(page)
                 
             elif step_type == 'press_fkey':
