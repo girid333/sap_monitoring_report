@@ -531,7 +531,8 @@ class CustomTcodeEngine:
                 await page.screenshot(path=path)
                 screenshots.append({
                     'path': path,
-                    'caption': step.get('caption', f'Step {step_index}')
+                    'caption': step.get('caption', f'Step {step_index}'),
+                    'step_index': step_index
                 })
                 
             elif step_type == 'screenshot_full_page':
@@ -541,7 +542,8 @@ class CustomTcodeEngine:
                 await page.screenshot(path=path, full_page=True)
                 screenshots.append({
                     'path': path,
-                    'caption': step.get('caption', f'Step {step_index}')
+                    'caption': step.get('caption', f'Step {step_index}'),
+                    'step_index': step_index
                 })
                 
             elif step_type == 'for_each_table_row':

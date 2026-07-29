@@ -167,11 +167,12 @@ class CustomReportGenerator:
                     step_screenshot = ss
                     break
                     
-            if step_screenshot and 'filepath' in step_screenshot and os.path.exists(step_screenshot['filepath']):
+            img_path = step_screenshot.get('path', step_screenshot.get('filepath')) if step_screenshot else None
+            if img_path and os.path.exists(img_path):
                 img_p = doc.add_paragraph()
                 img_p.alignment = WD_ALIGN_PARAGRAPH.CENTER
                 img_run = img_p.add_run()
-                img_run.add_picture(step_screenshot['filepath'], width=Inches(6.0))
+                img_run.add_picture(img_path, width=Inches(6.0))
                 
                 cap_p = doc.add_paragraph()
                 cap_p.alignment = WD_ALIGN_PARAGRAPH.CENTER
@@ -198,10 +199,11 @@ class CustomReportGenerator:
                 p_c1 = cell1.add_paragraph()
                 p_c1.add_run(f"Screenshot {i+1}").font.bold = True
                 
-                if 'filepath' in ss1 and os.path.exists(ss1['filepath']):
+                img_path1 = ss1.get('path', ss1.get('filepath'))
+                if img_path1 and os.path.exists(img_path1):
                     p_img1 = cell1.add_paragraph()
                     p_img1.alignment = WD_ALIGN_PARAGRAPH.CENTER
-                    p_img1.add_run().add_picture(ss1['filepath'], width=Inches(5.5))
+                    p_img1.add_run().add_picture(img_path1, width=Inches(5.5))
                 
                 p_cap1 = cell1.add_paragraph()
                 p_cap1.alignment = WD_ALIGN_PARAGRAPH.CENTER
@@ -215,10 +217,11 @@ class CustomReportGenerator:
                     p_c2 = cell2.add_paragraph()
                     p_c2.add_run(f"Screenshot {i+2}").font.bold = True
                     
-                    if 'filepath' in ss2 and os.path.exists(ss2['filepath']):
+                    img_path2 = ss2.get('path', ss2.get('filepath'))
+                    if img_path2 and os.path.exists(img_path2):
                         p_img2 = cell2.add_paragraph()
                         p_img2.alignment = WD_ALIGN_PARAGRAPH.CENTER
-                        p_img2.add_run().add_picture(ss2['filepath'], width=Inches(5.5))
+                        p_img2.add_run().add_picture(img_path2, width=Inches(5.5))
                         
                     p_cap2 = cell2.add_paragraph()
                     p_cap2.alignment = WD_ALIGN_PARAGRAPH.CENTER
