@@ -132,11 +132,9 @@ export default function Home() {
     };
 
     ws.onclose = (e) => {
-      console.log("WebSocket closed", e.code, e.reason);
-      if (recActive && !recFrame) {
-         alert("WebSocket closed before receiving stream. Reason: " + e.reason);
-         setIsRecLoading(false);
-      }
+      console.log('Recorder WebSocket closed');
+      setRecActive(false);
+      setRecSessionId('');
     };
     
     setRecSocket(ws);
@@ -237,18 +235,26 @@ export default function Home() {
 
 
   const saveRecordingToJob = async () => {
-    if (!recJobId || recSteps.length === 0) return;
+    if (!recJobId || recSteps.length === 0) return alert('No steps to save!');
     const job = jobs.find(j => j.id === recJobId);
-    if (!job) return;
-    const payload = { ...job, steps: recSteps };
-    await fetch(`${apiBase}/api/custom/jobs/${recJobId}`, {
-      method: 'PUT', headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(payload)
-    });
-    setIsRecModalOpen(false);
-    setRecSessionId(null);
-    fetchJobs();
-    alert(`✅ ${recSteps.length} steps saved to job!`);
+    if (!job) return alert('Job not found in state!');
+    
+    try {
+      const payload = { ...job, steps: recSteps };
+      const res = await fetch(`${apiBase}/api/custom/jobs/${recJobId}`, {
+        method: 'PUT', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+      if (!res.ok) {
+         const err = await res.text();
+         return alert(`Failed to save: ${err}`);
+      }
+      setIsRecModalOpen(false);
+      setRecSessionId('');
+      fetchJobs();
+    } catch (e: any) {
+      alert(`Error saving job: ${e.message}`);
+    }
   };
 
 
