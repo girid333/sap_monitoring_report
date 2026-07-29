@@ -133,8 +133,8 @@ export default function Home() {
 
     ws.onclose = (e) => {
       console.log('Recorder WebSocket closed');
-      setRecActive(false);
-      setRecSessionId('');
+      // DO NOT clear recSessionId here! If we do, the UI immediately reverts to the pre-launch state,
+      // destroying the step list and the 'Save Steps' button before the user can click it.
     };
     
     setRecSocket(ws);
