@@ -30,18 +30,6 @@ def init_db():
             created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
         )
     ''')
-    # === ADDITIVE: Custom T-Code Jobs table ===
-    cursor.execute('''
-        CREATE TABLE IF NOT EXISTS custom_tcode_jobs (
-            id          INTEGER PRIMARY KEY AUTOINCREMENT,
-            job_name    TEXT NOT NULL,
-            description TEXT,
-            system_id   INTEGER,
-            steps       TEXT NOT NULL DEFAULT '[]',
-            created_at  TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-            updated_at  TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-        )
-    ''')
     conn.commit()
     conn.close()
 
@@ -146,80 +134,3 @@ def delete_system(system_id: int):
 
 # Initialize DB on load
 init_db()
-
-# =============================================================================
-# CUSTOM T-CODE JOBS — Additive CRUD functions (new table, existing untouched)
-# =============================================================================
-
-def get_all_jobs():
-    conn = sqlite3.connect(DB_FILE)
-    conn.row_factory = sqlite3.Row
-    cursor = conn.cursor()
-    cursor.execute("SELECT * FROM custom_tcode_jobs ORDER BY updated_at DESC")
-    rows = cursor.fetchall()
-    conn.close()
-    jobs = []
-    for row in rows:
-        d = dict(row)
-        d['steps'] = json.loads(d['steps']) if d['steps'] else []
-        jobs.append(d)
-    return jobs
-
-def get_job(job_id: int):
-    conn = sqlite3.connect(DB_FILE)
-    conn.row_factory = sqlite3.Row
-    cursor = conn.cursor()
-    cursor.execute("SELECT * FROM custom_tcode_jobs WHERE id = ?", (job_id,))
-    row = cursor.fetchone()
-    conn.close()
-    if row:
-        d = dict(row)
-        d['steps'] = json.loads(d['steps']) if d['steps'] else []
-        return d
-    return None
-
-def add_job(data: dict) -> int:
-    conn = sqlite3.connect(DB_FILE)
-    cursor = conn.cursor()
-    steps_json = json.dumps(data.get('steps', []))
-    cursor.execute('''
-        INSERT INTO custom_tcode_jobs (job_name, description, system_id, steps)
-        VALUES (?, ?, ?, ?)
-    ''', (
-        data.get('job_name', 'Unnamed Job'),
-        data.get('description', ''),
-        data.get('system_id'),
-        steps_json
-    ))
-    conn.commit()
-    new_id = cursor.lastrowid
-    conn.close()
-    return new_id
-
-def update_job(job_id: int, data: dict) -> bool:
-    conn = sqlite3.connect(DB_FILE)
-    cursor = conn.cursor()
-    steps_json = json.dumps(data.get('steps', []))
-    cursor.execute('''
-        UPDATE custom_tcode_jobs SET
-            job_name = ?, description = ?, system_id = ?, steps = ?,
-            updated_at = CURRENT_TIMESTAMP
-        WHERE id = ?
-    ''', (
-        data.get('job_name'),
-        data.get('description', ''),
-        data.get('system_id'),
-        steps_json,
-        job_id
-    ))
-    conn.commit()
-    conn.close()
-    return True
-
-def delete_job(job_id: int) -> bool:
-    conn = sqlite3.connect(DB_FILE)
-    cursor = conn.cursor()
-    cursor.execute("DELETE FROM custom_tcode_jobs WHERE id = ?", (job_id,))
-    conn.commit()
-    conn.close()
-    return True
